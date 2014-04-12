@@ -2,10 +2,13 @@
 title: "OK"
 ---
 
-You can find this on http://duleorlovic.github.io/tips
+You can find this on http://duleorlovic.github.io/tips or
+
+https://github.com/duleorlovic/tips/blob/gh-pages/index.md
 
 GIT
 ===
+
 track remote branch if we did not have this branch already
 
     git checkout -t origin/branch
