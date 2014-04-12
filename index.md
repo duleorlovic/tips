@@ -101,6 +101,7 @@ Commands
 * gg goes top, G goes bottom
 * :args app/*/*  to add all files to arg list
 * :argdo %s/foo/bar/ge | update   replace in all arg
+* find /home/bruno/old-friends -type f -exec sed -i 's/ugly/beautiful/g' {} \;
 
 GIT
 ===
