@@ -32,8 +32,16 @@ Rspec
   
       it_should_behave_like "all static pages"
     end
+    
 * testing model validation:
-    ds
+    
+    before do
+      @user = User.new(name: "Example User", email: "user@example.com")
+    end
+    describe "when email is not present" do
+      before { @user.email = " " }
+      it { should_not be_valid }
+    end
 
 Rails
 ===
