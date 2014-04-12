@@ -18,7 +18,22 @@ Cucumber
 
 Rspec
 ===
-Do not depend on implementation https://www.youtube.com/watch?v=m3nMrWpIRKo use stub and mock, and check with integration test whole functionality
+
+* Do not depend on implementation https://www.youtube.com/watch?v=m3nMrWpIRKo use stub and mock, and check with integration test whole functionality
+* testing static pages: 
+
+    subject { page } 
+    shared_examples_for "all static pages" do
+      it { should have_selector('h1', text: heading) }
+    end
+    describe "GET Home page" do
+      before { visit root_path }
+      let(:heading) { 'Home page' }
+  
+      it_should_behave_like "all static pages"
+    end
+* testing model validation:
+    ds
 
 Rails
 ===
