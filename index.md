@@ -5,7 +5,7 @@ title: "OK"
 GIT
 ===
 track remote branch if we did not have this branch already
-  git checkout -t origin/branch
+    git checkout -t origin/branch
 push branch and track
   git push bitbucket development:development
 Getting existing git branches to track remote branches:  
