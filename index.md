@@ -36,3 +36,28 @@ Git checkout previous branch
 see all the changed cod
 
     git log -p
+    
+Wercker
+===
+
+Some notes when you are creating new step for wercker registry.
+
+Since variables that you are using in run.sh are $WERCKER_[stepi-name]_[property-name], they should be renamed to [property-name] just for that user can easily recognize them. For example, env variable PASSWORD in my step is WERCKER_FTP_DEPLOY_PASSWORD and I am using it in script as PASSWORD=$WERCKER_FTP_DEPLOY_PASSWORD
+build and deploy are completely separated. WERCKER_OUTPUT_DIR of build process is copied to WERCKER_SOURCE_DIR of deploy process. That is only way to pass data.
+to test run.sh on local computer, you can use "function success() { echo "$@";}" and export them with "export -f success debug fail" . run.sh should start with "#!/bin/sh" because wercker is using sh . Export like this:
+export WERCKER_FTP_DEPLOY_DESTINATION=ftp://domain/public_html
+export WERCKER_FTP_DEPLOY_USERNAME=webdesign
+export WERCKER_FTP_DEPLOY_PASSWORD=password
+export WERCKER_CACHE_DIR=~/Downloads
+
+function success() { echo "$@";}
+function debug() { echo "$@";}
+function fail() { echo "$@";exit 1;}
+export -f success debug fail
+wercker variables:
+$WERCKER_GIT_COMMIT  sha
+$WERCKER_GIT_BRANCH master
+$WERCKER_OUTPUT_DIR /pipeline/output
+$WERCKER_SOURCE_DIR /pipeline/build
+$WERCKER_CACHE_DIR /cache
+but for step from wercker registry this is different
