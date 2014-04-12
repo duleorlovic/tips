@@ -6,25 +6,59 @@ title: "OK"
 
 You can find this on [http://duleorlovic.github.io/tips](http://duleorlovic.github.io/tips) or edit [https://github.com/duleorlovic/tips/blob/gh-pages/index.md](https://github.com/duleorlovic/tips/blob/gh-pages/index.md)
 
+Heroku 
+===
+
+Could not create resource with vendor, please try again later is a heroku problem, not ours.
+
+Cucumber
+===
+
+@temp is shared between blocks
+
+Rspec
+===
+Do not depend on implementation https://www.youtube.com/watch?v=m3nMrWpIRKo use stub and mock, and check with integration test whole functionality
+
+Rails
+===
+
+folders in app/assets/* are hidden when you are accessing files, for example: @domain/assets/file.txt@ should be here app/assets/javascript/file.txt or app/assets/img/file.txt (last one overrides prev).
+
+All files from assets are provided but not all are included in all layouts (default is app/views/layouts/application.html.erb)
+comments like // *= require_tree . does not exclude it
+
+Ruby
+===
+
+put -w for warning log https://github.com/bbatsov/ruby-style-guide
+lambda literal syntax is: method = ->(a, b) { a + b }
+lambda method for multi line blocks:
+method = lambda do |a, b|
+  tmp = a * 7
+  tmp * b / 50
+end
+if dont know if path is array use: [*paths].each { |path| do_something(path) }
+
 VIM
 ===
 
-    .vimrc
-    http://vim.wikia.com/wiki/Example_vimrc
+.vimrc http://vim.wikia.com/wiki/Example_vimrc
+
     set history=1000 " to save history between vim session
     wild tab, set wildmode=longest,list,full " this is for tab completion , to stop cycle press CTRL+E than tab
-    
-    Repeat last colon command  @:  and @@
-    :grep subject -R * --exclude-dir={log,spec,public,features,tmp,vendor,views,assets,db} -I
-    :nnoremap gr :grep <cword> * -I -R<CR>
-    
+    :nnoremap gr :grep <cword> * -I -R --exclude-dir={log,spec,public,features,tmp,vendor,views,assets,db}<CR>
     :set hlsearch
-    Ctrl+p  # insert modu radi completion
-    ciw
-    dE
-    yy
-    :%s/old/new/gc
-    mA i 'A ili `A ili :marks #dva puta ' skace na zadnju lokaciju, a '. zadnje menjano
+
+Commands
+
+* Repeat last colon command  @:  and @@
+* :grep subject -R * --exclude-dir={log,spec,public,features,tmp,vendor,views,assets,db} -I
+* Ctrl+p  # in insert mode is completing the string
+* dE # remove to the End of the string
+* yy
+* :%s/old/new/gc
+* mA then 'A jumb there, :marks gives the jump location, '' is last jump, '. jump and change
     :tabe file  i gt
     :vsp #1
     :on ili Ctrl+o #closes all windord except current
