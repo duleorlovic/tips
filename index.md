@@ -59,13 +59,14 @@ Commands
 * yy
 * :%s/old/new/gc
 * mA then 'A jumb there, :marks gives the jump location, '' is last jump, '. jump and change
-    :tabe file  i gt
-    :vsp #1
-    :on ili Ctrl+o #closes all windord except current
-    :buffers i :b1 i  :bun
-    q: i q/
-    5G, gg
-    :cw ili :ccl
+* :tabe file  open file in new tab, gt switch between tabs
+* :vsp #1  vertically split window with file #1
+* :on or Ctrl+W+o #closes all windord except current
+* :buffers, :b1, :bun closes the buffer
+* q: shows history of commands
+* q/ shows history of searches
+* 5G or :5 goes to the line 5
+* gg goes top, G goes bottom
 
 GIT
 ===
