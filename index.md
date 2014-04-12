@@ -55,7 +55,8 @@ Commands
 * Repeat last colon command  @:  and @@
 * :grep subject -R * --exclude-dir={log,spec,public,features,tmp,vendor,views,assets,db} -I
 * Ctrl+p  # in insert mode is completing the string
-* dE # remove to the End of the string
+* dE # removes to the End of the string
+* daw removes the inner word
 * yy
 * :%s/old/new/gc
 * mA then 'A jumb there, :marks gives the jump location, '' is last jump, '. jump and change
