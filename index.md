@@ -6,6 +6,33 @@ title: "OK"
 
 You can find this on [http://duleorlovic.github.io/tips](http://duleorlovic.github.io/tips) or edit [https://github.com/duleorlovic/tips/blob/gh-pages/index.md](https://github.com/duleorlovic/tips/blob/gh-pages/index.md)
 
+VIM
+===
+
+    .vimrc
+    http://vim.wikia.com/wiki/Example_vimrc
+    set history=1000 " to save history between vim session
+    wild tab, set wildmode=longest,list,full " this is for tab completion , to stop cycle press CTRL+E than tab
+    
+    Repeat last colon command  @:  and @@
+    :grep subject -R * --exclude-dir={log,spec,public,features,tmp,vendor,views,assets,db} -I
+    :nnoremap gr :grep <cword> * -I -R<CR>
+    
+    :set hlsearch
+    Ctrl+p  # insert modu radi completion
+    ciw
+    dE
+    yy
+    :%s/old/new/gc
+    mA i 'A ili `A ili :marks #dva puta ' skace na zadnju lokaciju, a '. zadnje menjano
+    :tabe file  i gt
+    :vsp #1
+    :on ili Ctrl+o #closes all windord except current
+    :buffers i :b1 i  :bun
+    q: i q/
+    5G, gg
+    :cw ili :ccl
+
 GIT
 ===
 
