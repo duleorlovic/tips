@@ -2,6 +2,8 @@
 title: "OK"
 ---
 
+You can find this on http://duleorlovic.github.io/tips
+
 GIT
 ===
 track remote branch if we did not have this branch already
@@ -10,7 +12,7 @@ track remote branch if we did not have this branch already
     
 push branch and track
 
-  git push bitbucket development:development
+    git push bitbucket development:development
   
 Getting existing git branches to track remote branches:  
 
