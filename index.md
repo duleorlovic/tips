@@ -1,7 +1,8 @@
 ---
 title: "OK"
 ---
-<link href="https://github.global.ssl.fastly.net/assets/github-9bb53a970698e77802f98db076a34f260ae63ee3.css" rel="stylesheet"></link>
+<link href="http://kevinburke.bitbucket.org/markdowncss/markdown.css" rel="stylesheet"></link>
+<link href="stylesheets/tips.css"></link>
 
 You can find this on [http://duleorlovic.github.io/tips](http://duleorlovic.github.io/tips) or [https://github.com/duleorlovic/tips/blob/gh-pages/index.md](https://github.com/duleorlovic/tips/blob/gh-pages/index.md)
 
