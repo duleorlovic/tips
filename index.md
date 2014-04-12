@@ -19,10 +19,11 @@ Cucumber
 Rspec
 ===
 
-https://www.relishapp.com/rspec/
-https://github.com/jnicklas/capybara
-https://github.com/cucumber/cucumber
-http://rubydoc.info/github/thoughtbot/shoulda-matchers/master/index
+* https://www.relishapp.com/rspec/
+* https://github.com/jnicklas/capybara
+* https://github.com/cucumber/cucumber
+* http://rubydoc.info/github/thoughtbot/shoulda-matchers/master/index
+* https://github.com/thoughtbot/factory_girl
 
 * Do not depend on implementation https://www.youtube.com/watch?v=m3nMrWpIRKo use stub and mock, and check with integration test whole functionality
 * testing static pages: 
