@@ -1,8 +1,7 @@
 ---
 title: "OK"
 ---
-<link href="stylesheets/pygment_trac.css" rel="stylesheet"></link>
-<link href="stylesheets/pygment_trac.css" rel="stylesheet"></link>
+<link href="https://github.global.ssl.fastly.net/assets/github-9bb53a970698e77802f98db076a34f260ae63ee3.css" rel="stylesheet"></link>
 
 You can find this on [http://duleorlovic.github.io/tips](http://duleorlovic.github.io/tips) or [https://github.com/duleorlovic/tips/blob/gh-pages/index.md](https://github.com/duleorlovic/tips/blob/gh-pages/index.md)
 
