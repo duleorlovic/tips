@@ -1,5 +1,5 @@
 ---
-
+title: TIPS
 ---
 
 RAILS
