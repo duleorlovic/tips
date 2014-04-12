@@ -54,6 +54,7 @@ comments like // *= require_tree . does not exclude it
 Ruby
 ===
 
+regular expression http://www.rubular.com/
 put -w for warning log https://github.com/bbatsov/ruby-style-guide
 lambda literal syntax is: method = ->(a, b) { a + b }
 lambda method for multi line blocks:
