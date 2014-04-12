@@ -2,9 +2,7 @@
 title: "OK"
 ---
 
-You can find this on http://duleorlovic.github.io/tips or
-
-[https://github.com/duleorlovic/tips/blob/gh-pages/index.md](https://github.com/duleorlovic/tips/blob/gh-pages/index.md)
+You can find this on [http://duleorlovic.github.io/tips](http://duleorlovic.github.io/tips) or [https://github.com/duleorlovic/tips/blob/gh-pages/index.md](https://github.com/duleorlovic/tips/blob/gh-pages/index.md)
 
 GIT
 ===
