@@ -87,6 +87,26 @@ Rspec
       it { should_not be_valid }
     end
 
+Rails
+===
+
+folders in app/assets/* are hidden when you are accessing files, for example: @domain/assets/file.txt@ should be here app/assets/javascript/file.txt or app/assets/img/file.txt (last one overrides prev).
+
+All files from assets are provided but not all are included in all layouts (default is app/views/layouts/application.html.erb)
+comments like // *= require_tree . does not exclude it
+
+Ruby
+===
+
+regular expression http://www.rubular.com/
+put -w for warning log https://github.com/bbatsov/ruby-style-guide
+lambda literal syntax is: method = ->(a, b) { a + b }
+lambda method for multi line blocks:
+method = lambda do |a, b|
+  tmp = a * 7
+  tmp * b / 50
+end
+if dont know if path is array use: [*paths].each { |path| do_something(path) }
 
 GIT
 ===
