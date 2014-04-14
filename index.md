@@ -23,7 +23,24 @@ Commands
 
 - dap}p switch two paragraph
 - Repeat last colon command  @:  and @@
-
+- :grep subject -R \* --exclude-dir={log,spec,public,features,tmp,vendor,views,assets,db} -I
+- Ctrl+p  # in insert mode is completing the string
+- dE # removes to the End of the string
+- daw removes the inner word
+- yy
+- :%s/old/new/gc
+- mA then 'A jumb there, :marks gives the jump location, '' is last jump, '. jump and change
+- :tabe file  open file in new tab, gt switch between tabs
+- :vsp #1  vertically split window with file #1
+- :on or Ctrl+W+o #closes all windord except current
+- :buffers, :b1, :bun closes the buffer
+- q: shows history of commands
+- q/ shows history of searches
+- 5G or :5 goes to the line 5
+- gg goes top, G goes bottom
+- :args app/  to add all files to arg list
+- :argdo %s/foo/bar/ge | update   replace in all arg
+- find /home/bruno/old-friends -type f -exec sed -i 's/ugly/beautiful/g' {} \;
 
 
 Heroku 
