@@ -60,7 +60,7 @@ VIM
     :set hlsearch
 
 * dsa
-* :dsa
+* dsa
 * /45-*
 
 GIT
