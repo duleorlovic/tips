@@ -56,14 +56,14 @@ VIM
     set history=1000 " to save history between vim session
     wild tab, set wildmode=longest,list,full " this is for tab completion , to stop cycle press CTRL+E than tab
     :nnoremap gr :grep <cword> * -I -R --exclude-dir={log,spec,public,features,tmp,vendor,views,assets,db}<CR>
-    :nnoremap gy :grep "<c-r>"" features/* spec/* -R -I<CR>
+    :nnoremap gy :grep "<c-r>"" features/ spec/ -R -I<CR>
     :set hlsearch
 
 Commands
 
 - dap}p switch two paragraph
 - Repeat last colon command  @:  and @@
-- :grep subject -R \* --exclude-dir={log,spec,public,features,tmp,vendor,views,assets,db} -I
+- :grep subject -R * --exclude-dir={log,spec,public,features,tmp,vendor,views,assets,db} -I
 - Ctrl+p  # in insert mode is completing the string
 - dE # removes to the End of the string
 - daw removes the inner word
@@ -78,7 +78,7 @@ Commands
 - q/ shows history of searches
 - 5G or :5 goes to the line 5
 - gg goes top, G goes bottom
-- :args app/*/*  to add all files to arg list
+- :args app/\*  to add all files to arg list
 - :argdo %s/foo/bar/ge | update   replace in all arg
 - find /home/bruno/old-friends -type f -exec sed -i 's/ugly/beautiful/g' {} \;
 
