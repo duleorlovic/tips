@@ -98,16 +98,16 @@ Rails
 Ruby
 ===
 
-regular expression http://www.rubular.com/
-put -w for warning log https://github.com/bbatsov/ruby-style-guide
-lambda literal syntax is: method = ->(a, b) { a + b }
-lambda method for multi line blocks:
-    method = lambda do |a, b|
-      tmp = a * 7
-      tmp * b / 50
-    end
-if dont know if path is array use: 
-    [*paths].each { |path| do_something(path) }
+    regular expression http://www.rubular.com/
+    put -w for warning log https://github.com/bbatsov/ruby-style-guide
+    lambda literal syntax is: method = ->(a, b) { a + b }
+    lambda method for multi line blocks:
+        method = lambda do |a, b|
+          tmp = a * 7
+          tmp * b / 50
+        end
+    if dont know if path is array use: 
+        [*paths].each { |path| do_something(path) }
 
 GIT
 ===
