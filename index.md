@@ -22,7 +22,7 @@ VIM
 Commands
 
 - dap}p switch two paragraph
-- Repeat last colon command  @:  and @@
+- Repeat last colon command and 
 - :grep subject -R --exclude-dir
 
 
