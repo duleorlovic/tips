@@ -109,6 +109,12 @@ Ruby
     if dont know if path is array use: 
         [*paths].each { |path| do_something(path) }
 
+BASH
+===
+
+* find and remove files
+    find . -type f -name "FILE-TO-FIND" -exec rm -f {} \;
+
 GIT
 ===
 
