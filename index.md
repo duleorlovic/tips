@@ -54,6 +54,15 @@ Cucumber
 
 @temp is shared between blocks
 
+    require 'capybara/dsl'
+    => true 
+    include Capybara::DSL
+    => Object 
+    Capybara.default_driver = :selenium
+    => :selenium 
+    visit "http://google.co.uk"
+    => "" 
+
 Rspec
 ===
 
