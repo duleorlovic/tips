@@ -72,11 +72,16 @@ Rspec
 * http://rubydoc.info/github/thoughtbot/shoulda-matchers/master/index
 * https://github.com/thoughtbot/factory_girl
 * gem 'spork-rails' 
+
     spork --bootstrap 
     in spec/spec_helper.rb move everthing inside Spork.prefork
     add to .rspec --drb
 
-* gem 'guard' #
+* gem 'guard-rspec'
+
+    guard init spork
+    in Guard file on guard 'spork', :test_unit => false
+
 
 * Do not depend on implementation https://www.youtube.com/watch?v=m3nMrWpIRKo use stub and mock, and check with integration test whole functionality
 * testing static pages: 
