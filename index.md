@@ -84,6 +84,7 @@ Rspec
 
 
 * Do not depend on implementation https://www.youtube.com/watch?v=m3nMrWpIRKo use stub and mock, and check with integration test whole functionality
+* should_receive can be before action, but response.should and flash.should have to be after
 * testing static pages: 
 
     subject { page } 
