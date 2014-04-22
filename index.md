@@ -71,6 +71,7 @@ Rspec
 * https://github.com/cucumber/cucumber
 * http://rubydoc.info/github/thoughtbot/shoulda-matchers/master/index
 * https://github.com/thoughtbot/factory_girl
+* let(:form) { mock_model(Form, :success_message => "Success message") }
 * gem 'spork-rails' 
 
     spork --bootstrap 
