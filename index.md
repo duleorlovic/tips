@@ -165,6 +165,10 @@ Git checkout previous branch
 
     git checkout -
   
-see all the changed cod
+see all the changed code
 
     git log -p
+
+Show file at specific revision
+
+    git show HEAD~4:index.html
