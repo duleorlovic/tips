@@ -132,6 +132,11 @@ Ruby
     if dont know if path is array use: 
         [*paths].each { |path| do_something(path) }
 
+JEKYLL
+===
+
+http://cheat.markdunkley.com/
+
 BASH
 ===
 
