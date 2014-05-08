@@ -137,6 +137,15 @@ JEKYLL
 
 http://cheat.markdunkley.com/
 
+Difference betweet page and post:
+
+* Post file name contains the title and the date of the post. invalid date in the filename cause an error.
+* Posts are Comparable objects, which means two posts can be compared. The comparison is made by the post date and the post slugs.
+* The generated default relative url of Post and Page are different (eg. /2000/01/01/my-post.html and /about.html).
+* Page can be placed anywhere but Post can only be placed under "_posts" folder.
+* Post has more data out of the box for use in Liquid templates (title, url, date, id, categories, next, previous, tags, content).
+* Posts has unique id.
+
 BASH
 ===
 
