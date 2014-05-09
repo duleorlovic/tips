@@ -117,6 +117,16 @@ Rails
 * All files from assets are provided but not all are included in all layouts (default is app/views/layouts/application.html.erb)
 * comments like // *= require_tree . does not exclude it
 * rake stats #shows number of code lines, tests ...
+* 
+
+Gems
+===
+
+get the country based on ip address: 
+* https://github.com/alexreisner/geocoder, 
+* http://rubygems.org/gems/geo_ip (instructions http://igotrailed.wordpress.com/2013/11/19/detecting-user-location-with-rails/)
+* http://rubygems.org/gems/geoip (which can be downloaded as database http://dev.maxmind.com/geoip/legacy/geolite/)
+* get locale based on country: https://github.com/grosser/i18n_data
 
 Ruby
 ===
