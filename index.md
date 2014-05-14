@@ -123,6 +123,7 @@ Gems
 ===
 
 get the country based on ip address: 
+
 * https://github.com/alexreisner/geocoder, 
 * http://rubygems.org/gems/geo_ip (instructions http://igotrailed.wordpress.com/2013/11/19/detecting-user-location-with-rails/)
 * http://rubygems.org/gems/geoip (which can be downloaded as database http://dev.maxmind.com/geoip/legacy/geolite/) and have country code based on [iso3166](http://dev.maxmind.com/geoip/legacy/codes/iso3166/)
