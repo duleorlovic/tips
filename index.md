@@ -127,7 +127,9 @@ get the country based on ip address:
 * https://github.com/alexreisner/geocoder, 
 * http://rubygems.org/gems/geo_ip (instructions http://igotrailed.wordpress.com/2013/11/19/detecting-user-location-with-rails/)
 * http://rubygems.org/gems/geoip (which can be downloaded as database http://dev.maxmind.com/geoip/legacy/geolite/) and have country code based on [iso3166](http://dev.maxmind.com/geoip/legacy/codes/iso3166/)
-* get locale based on country: https://github.com/grosser/i18n_data
+* https://github.com/scottwater/detect_timezone_rails or https://github.com/kbaum/browser-timezone-rails using jsTimezoneDetect
+
+get locale based on country: https://github.com/grosser/i18n_data
 * country gem using currency gem to get currency https://github.com/hexorx/countries/
 
 Ruby
