@@ -101,9 +101,17 @@ hr {
     color: #999;
 }
 
+/* custom */
+
 pre {
   background-color: #f8f8f8;
   border: 1px solid #ddd;
 }
 
-.fixed_nav #nav ul { position: fixed; top: 0; left: 0; right: 0; opacity: 0.8; }
+.container {
+    padding-left: 55px;
+}
+
+.navbar-default {
+    opacity: 0.5
+}    
