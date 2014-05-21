@@ -28,13 +28,14 @@
         <li><a href="#bash">Bash</a></li>
         <li><a href="#git">Git</a></li>
       </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://github.com/duleorlovic/tips/blob/gh-pages/index.md">Edit</a></li>
+      </ul>
     </div><!--/.nav-collapse -->
   </div>
 </div>
 
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="https://github.com/duleorlovic/tips/blob/gh-pages/index.md">Edit</a></li>
-      </ul>
+<div class='container'>
 
 <a name='vim'></a>
 
@@ -247,3 +248,5 @@ Show file at specific revision
 
     git show HEAD~4:index.html
 
+
+</div>
