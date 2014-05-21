@@ -17,7 +17,7 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#vim">Vim</a></li>
+        <li><a href="#vim">Vim</a></li>
         <li><a href="#heroku">Heroku</a></li>
         <li><a href="#cucumber">Cucumber</a></li>
         <li><a href="#rspec">Rspec</a></li>
