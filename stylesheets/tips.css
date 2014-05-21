@@ -116,4 +116,4 @@ pre {
     opacity: 0.5
 }    
 
-#nav a.active { color: #333; border-bottom: none; }
+#nav a:hover {color:red;}
