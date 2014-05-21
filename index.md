@@ -35,8 +35,6 @@
   </div>
 </div>
 
-<div class="container">
-
 <a name='vim'></a>
 
 VIM
@@ -241,5 +239,3 @@ Show file at specific revision
 
     git show HEAD~4:index.html
 
-
-</div>
