@@ -94,6 +94,10 @@ Cucumber
 Rspec
 ===
 
+* double('output').as_null_object ignore other messages (unexpected messages are recorded) so this will work
+
+    output.should_receive(:puts).with('Second guess:')
+
 * https://www.relishapp.com/rspec/
 * https://github.com/jnicklas/capybara
 * https://github.com/cucumber/cucumber
