@@ -6,29 +6,37 @@
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-<div class="container">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#vim">Vim</a></li>
+        <li><a href="#heroku">Heroku</a></li>
+        <li><a href="#cucumber">Cucumber</a></li>
+        <li><a href="#rspec">Rspec</a></li>
+        <li><a href="#rails">Rails</a></li>
+        <li><a href="#ruby">Ruby</a></li>
+        <li><a href="#gems">Gems</a></li>
+        <li><a href="#jekyll">Jekyll</a></li>
+        <li><a href="#bash">Bash</a></li>
+        <li><a href="#git">Git</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="http://duleorlovic.github.io/tips">Home</a></li>
+        <li><a href="https://github.com/duleorlovic/tips/blob/gh-pages/index.md">Edit</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
   </div>
-  <div class="navbar-collapse collapse">
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Vim</a></li>
-      <li><a href="#about">Heroku</a></li>
-      <li><a href="#contact">Cucumber</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="http://duleorlovic.github.io/tips">Home</a></li>
-      <li><a href="https://github.com/duleorlovic/tips/blob/gh-pages/index.md">Edit</a></li>
-    </ul>
-  </div><!--/.nav-collapse -->
-</div>
 </div>
 
+<a name='vim'></a>
 VIM
 ===
 
@@ -66,7 +74,7 @@ Commands
     find /home/bruno/old-friends -type f -exec sed -i 's/ugly/beautiful/g' {} \;
 
 
-
+<a name='heroku'></a>
 Heroku 
 ===
 
@@ -85,7 +93,8 @@ Cucumber
     => :selenium 
     visit "http://google.co.uk"
     => "" 
-
+    
+<a name='rpsec'></a>
 Rspec
 ===
 
@@ -132,6 +141,7 @@ Rspec
       it { should_not be_valid }
     end
 
+<a name='rails'></a>
 Rails
 ===
 
@@ -141,7 +151,7 @@ Rails
 * comments like // *= require_tree . does not exclude it
 * rake stats #shows number of code lines, tests ...
 
-
+<a name='gems'></a>
 Gems
 ===
 
@@ -155,6 +165,7 @@ get the country based on ip address:
 get locale based on country: https://github.com/grosser/i18n_data
 * country gem using currency gem to get currency https://github.com/hexorx/countries/
 
+<a name='ruby'></a>
 Ruby
 ===
 
@@ -169,6 +180,7 @@ Ruby
     if dont know if path is array use: 
         [*paths].each { |path| do_something(path) }
 
+<a name='jekyll'></a>
 JEKYLL
 ===
 
@@ -183,12 +195,14 @@ Difference betweet page and post:
 * Post has more data out of the box for use in Liquid templates (title, url, date, id, categories, next, previous, tags, content).
 * Posts has unique id.
 
+<a name='bash'></a>
 BASH
 ===
 
 * find and remove files
     find . -type f -name "FILE-TO-FIND" -exec rm -f {} \;
 
+<a name='git'></a>
 GIT
 ===
 
