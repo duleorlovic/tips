@@ -38,16 +38,14 @@
 VIM
 ===
 
-.vimrc http://vim.wikia.com/wiki/Example_vimrc
 
-* l
+* .vimrc http://vim.wikia.com/wiki/Example_vimrc
 
       set history=1000 " to save history between vim session
-
-    wild tab, set wildmode=longest,list,full " this is for tab completion , to stop cycle press CTRL+E than tab
-    :nnoremap gr :grep <cword> * -I -R --exclude-dir={log,spec,public,features,tmp,vendor,views,assets,db}<CR>
-    :nnoremap gy :grep "<c-r>"" features/ spec/ -R -I<CR>
-    :set hlsearch
+      wild tab, set wildmode=longest,list,full " this is for tab completion , to stop cycle press CTRL+E than tab
+      :nnoremap gr :grep <cword> * -I -R --exclude-dir={log,spec,public,features,tmp,vendor,views,assets,db}<CR>
+      :nnoremap gy :grep "<c-r>"" features/ spec/ -R -I<CR>
+      :set hlsearch
 
 
 Commands
@@ -98,7 +96,9 @@ Rspec
 
 * double('output').as_null_object ignore other messages (unexpected messages are recorded) so this will work:
 
-        output.should_receive(:puts).with('Second guess:')
+      output.should_receive(:puts).with('Second guess:')
+
+* let will create memoized local variable so you do not need @var
 
 * https://www.relishapp.com/rspec/
 * https://github.com/jnicklas/capybara
