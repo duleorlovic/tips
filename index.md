@@ -17,6 +17,7 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
+        <li><a href="http://duleorlovic.github.io/tips">Home</a></li>
         <li><a href="#vim">Vim</a></li>
         <li><a href="#heroku">Heroku</a></li>
         <li><a href="#cucumber">Cucumber</a></li>
@@ -29,7 +30,6 @@
         <li><a href="#git">Git</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="http://duleorlovic.github.io/tips">Home</a></li>
         <li><a href="https://github.com/duleorlovic/tips/blob/gh-pages/index.md">Edit</a></li>
       </ul>
     </div><!--/.nav-collapse -->
