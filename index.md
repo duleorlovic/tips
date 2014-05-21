@@ -74,7 +74,7 @@ Commands
     find /home/bruno/old-friends -type f -exec sed -i 's/ugly/beautiful/g' {} \;
 
 
-<a name='heroku'></a>
+<a name='herfdoku'></a>
 <p>aaaa</p>
 <p>b</p>
 <p>aaaa</p>
