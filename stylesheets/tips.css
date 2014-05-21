@@ -3,7 +3,7 @@ body{
     font-family: Georgia, Palatino, serif;
     color: #444444;
     line-height: 1;
-   /* max-width: 960px;*/
+    max-width: 960px;
     padding: 30px;
 }
 h1, h2, h3, h4 {
@@ -58,7 +58,7 @@ li ul, li ul {
 p, ul, ol {
     font-size: 16px;
     line-height: 24px;
-    max-width: 540px;
+   /* max-width: 540px;*/
 }
 pre {
     padding: 0px 24px;
