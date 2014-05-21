@@ -35,6 +35,8 @@
   </div>
 </div>
 
+<div class="container">
+
 <a name='vim'></a>
 
 VIM
@@ -238,3 +240,6 @@ see all the changed code
 Show file at specific revision
 
     git show HEAD~4:index.html
+
+
+</div>
