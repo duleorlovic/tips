@@ -14,37 +14,20 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="#">Project name</a>
   </div>
   <div class="navbar-collapse collapse">
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Action</a></li>
-          <li><a href="#">Another action</a></li>
-          <li><a href="#">Something else here</a></li>
-          <li class="divider"></li>
-          <li class="dropdown-header">Nav header</li>
-          <li><a href="#">Separated link</a></li>
-          <li><a href="#">One more separated link</a></li>
-        </ul>
-      </li>
+      <li class="active"><a href="#">Vim</a></li>
+      <li><a href="#about">Heroku</a></li>
+      <li><a href="#contact">Cucumber</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="../navbar/">Default</a></li>
-      <li><a href="../navbar-static-top/">Static top</a></li>
-      <li class="active"><a href="./">Fixed top</a></li>
+      <li><a href="http://duleorlovic.github.io/tips">Home</a></li>
+      <li><a href="https://github.com/duleorlovic/tips/blob/gh-pages/index.md">Edit</a></li>
     </ul>
   </div><!--/.nav-collapse -->
 </div>
 </div>
-<p>
-You can find this on [http://duleorlovic.github.io/tips](http://duleorlovic.github.io/tips) or edit [https://github.com/duleorlovic/tips/blob/gh-pages/index.md](https://github.com/duleorlovic/tips/blob/gh-pages/index.md)
-
 
 VIM
 ===
