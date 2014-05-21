@@ -135,8 +135,6 @@ Rspec
       it { should_not be_valid }
     end
 
-<a name='rails'></a>
-
 Rails
 ===
 
@@ -145,8 +143,6 @@ Rails
 * All files from assets are provided but not all are included in all layouts (default is app/views/layouts/application.html.erb)
 * comments like // *= require_tree . does not exclude it
 * rake stats #shows number of code lines, tests ...
-
-<a name='gems'></a>
 
 Gems
 ===
@@ -160,8 +156,6 @@ get the country based on ip address:
 
 get locale based on country: https://github.com/grosser/i18n_data
 * country gem using currency gem to get currency https://github.com/hexorx/countries/
-
-<a name='ruby'></a>
 
 Ruby
 ===
@@ -177,8 +171,6 @@ Ruby
     if dont know if path is array use: 
         [*paths].each { |path| do_something(path) }
 
-<a name='jekyll'></a>
-
 JEKYLL
 ===
 
@@ -193,15 +185,12 @@ Difference betweet page and post:
 * Post has more data out of the box for use in Liquid templates (title, url, date, id, categories, next, previous, tags, content).
 * Posts has unique id.
 
-<a name='bash'></a>
 
 BASH
 ===
 
 * find and remove files
     find . -type f -name "FILE-TO-FIND" -exec rm -f {} \;
-
-<a name='git'></a>
 
 GIT
 ===
