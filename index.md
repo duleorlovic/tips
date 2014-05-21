@@ -28,12 +28,13 @@
         <li><a href="#bash">Bash</a></li>
         <li><a href="#git">Git</a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="https://github.com/duleorlovic/tips/blob/gh-pages/index.md">Edit</a></li>
-      </ul>
     </div><!--/.nav-collapse -->
   </div>
 </div>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://github.com/duleorlovic/tips/blob/gh-pages/index.md">Edit</a></li>
+      </ul>
 
 <a name='vim'></a>
 
