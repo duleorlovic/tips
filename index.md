@@ -3,6 +3,7 @@
 <link href="stylesheets/tips.css" rel="stylesheet">
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 <link href="http://kevinburke.bitbucket.org/markdowncss/markdown.css" rel="stylesheet">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
 <div class="container">
@@ -41,6 +42,7 @@
   </div><!--/.nav-collapse -->
 </div>
 </div>
+<p>
 You can find this on [http://duleorlovic.github.io/tips](http://duleorlovic.github.io/tips) or edit [https://github.com/duleorlovic/tips/blob/gh-pages/index.md](https://github.com/duleorlovic/tips/blob/gh-pages/index.md)
 
 
