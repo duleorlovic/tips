@@ -168,6 +168,8 @@ get locale based on country: https://github.com/grosser/i18n_data
 Ruby
 ===
 
+* p ["a", "b"].map(&:upcase) is equivalent to p ["a", "b"].map{|string| string.upcase}
+
     regular expression http://www.rubular.com/
     put -w for warning log https://github.com/bbatsov/ruby-style-guide
     lambda literal syntax is: method = ->(a, b) { a + b }
