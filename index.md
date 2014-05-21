@@ -40,8 +40,8 @@ VIM
 
 .vimrc http://vim.wikia.com/wiki/Example_vimrc
 
-
     set history=1000 " to save history between vim session
+    
     wild tab, set wildmode=longest,list,full " this is for tab completion , to stop cycle press CTRL+E than tab
     :nnoremap gr :grep <cword> * -I -R --exclude-dir={log,spec,public,features,tmp,vendor,views,assets,db}<CR>
     :nnoremap gy :grep "<c-r>"" features/ spec/ -R -I<CR>
