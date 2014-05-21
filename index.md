@@ -33,8 +33,6 @@
   </div>
 </div>
 
-<a name='vim'></a>
-
 VIM
 ===
 
@@ -72,12 +70,6 @@ Commands
     find /home/bruno/old-friends -type f -exec sed -i 's/ugly/beautiful/g' {} \;
 
 
-<a name='herfdoku'></a>
-<p>aaaa</p>
-<p>b</p>
-<p>aaaa</p>
-<p>b</p>
-
 Heroku 
 ===
 
@@ -97,8 +89,6 @@ Cucumber
     visit "http://google.co.uk"
     => "" 
     
-<a name='rpsec'></a>
-
 Rspec
 ===
 
