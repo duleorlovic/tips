@@ -97,6 +97,7 @@ Cucumber
     => "" 
     
 <a name='rpsec'></a>
+
 Rspec
 ===
 
@@ -144,6 +145,7 @@ Rspec
     end
 
 <a name='rails'></a>
+
 Rails
 ===
 
@@ -154,6 +156,7 @@ Rails
 * rake stats #shows number of code lines, tests ...
 
 <a name='gems'></a>
+
 Gems
 ===
 
@@ -168,6 +171,7 @@ get locale based on country: https://github.com/grosser/i18n_data
 * country gem using currency gem to get currency https://github.com/hexorx/countries/
 
 <a name='ruby'></a>
+
 Ruby
 ===
 
@@ -183,6 +187,7 @@ Ruby
         [*paths].each { |path| do_something(path) }
 
 <a name='jekyll'></a>
+
 JEKYLL
 ===
 
@@ -198,6 +203,7 @@ Difference betweet page and post:
 * Posts has unique id.
 
 <a name='bash'></a>
+
 BASH
 ===
 
@@ -205,6 +211,7 @@ BASH
     find . -type f -name "FILE-TO-FIND" -exec rm -f {} \;
 
 <a name='git'></a>
+
 GIT
 ===
 
