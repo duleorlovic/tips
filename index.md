@@ -51,7 +51,7 @@ VIM
 
 Commands
 
-    dap}p switch two paragraph
+  dap}p switch two paragraph
     Repeat last colon command  @:  and @@
     :grep subject -R * --exclude-dir={log,spec,public,features,tmp,vendor,views,assets,db} -I
     Ctrl+p  # in insert mode is completing the string
@@ -71,7 +71,7 @@ Commands
     :args app/*/*  to add all files to arg list
     :argdo %s/foo/bar/ge | update   replace in all arg
     find /home/bruno/old-friends -type f -exec sed -i 's/ugly/beautiful/g' {} \;
-
+    CTRL+^ (shift+6) jump to previous buffer  
 
 Heroku 
 ===
@@ -183,7 +183,7 @@ Ruby
     if dont know if path is array use: 
         [*paths].each { |path| do_something(path) }
 
-JEKYLL
+Jekyll
 ===
 
 http://cheat.markdunkley.com/
