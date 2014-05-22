@@ -238,4 +238,6 @@ see all the changed code
 Show file at specific revision
 
     git show HEAD~4:index.html
+    
+Versioning [SEMVER](http://semver.org/)
 
