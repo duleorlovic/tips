@@ -165,6 +165,7 @@ get the country based on ip address:
 
 get locale based on country: https://github.com/grosser/i18n_data
 * country gem using currency gem to get currency https://github.com/hexorx/countries/
+* Query perfomance analyser https://github.com/nesquena/query_reviewer
 
 Ruby
 ===
