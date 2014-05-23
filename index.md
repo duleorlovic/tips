@@ -163,9 +163,12 @@ get the country based on ip address:
 * http://rubygems.org/gems/geoip (which can be downloaded as database http://dev.maxmind.com/geoip/legacy/geolite/) and have country code based on [iso3166](http://dev.maxmind.com/geoip/legacy/codes/iso3166/)
 * https://github.com/scottwater/detect_timezone_rails or https://github.com/kbaum/browser-timezone-rails using jsTimezoneDetect
 
-get locale based on country: https://github.com/grosser/i18n_data
+get locale based on country: https://github.com/grosser/i18n_data:
+
 * country gem using currency gem to get currency https://github.com/hexorx/countries/
 * Query perfomance analyser https://github.com/nesquena/query_reviewer
+
+If there is an error *invalid byte sequence in US-ASCII* try to *export LANG=en_US.UTF-8* before installing a gem
 
 Ruby
 ===
