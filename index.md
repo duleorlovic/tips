@@ -244,7 +244,7 @@ Show file at specific revision
     
 Versioning [SEMVER](http://semver.org/)
 
-If there is two accounts on bitbucket or github with different keys use .ssh/config file
+If there is two accounts on bitbucket or github with different keys use `.ssh/config` file
 
     Host secure.bitbucket.org
       Hostname bitbucket.org
