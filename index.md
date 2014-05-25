@@ -170,6 +170,8 @@ get locale based on country: https://github.com/grosser/i18n_data:
 
 If there is an error *invalid byte sequence in US-ASCII* try to *export LANG=en_US.UTF-8* before installing a gem
 
+For rvm put ```source ~/.bash_profile``` in your **~/.bashrc** file and you do not need to enable terminal settings to "Run command as login shell"
+
 Ruby
 ===
 
