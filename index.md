@@ -202,6 +202,11 @@ Difference betweet page and post:
 * Post has more data out of the box for use in Liquid templates (title, url, date, id, categories, next, previous, tags, content).
 * Posts has unique id.
 
+Interesting plugins:
+
+* search with js: http://10consulting.com/2013/03/06/jekyll-and-lunr-js-static-websites-with-powerful-full-text-search-using-javascript/
+* another js search: https://github.com/mathaywarduk/jekyll-search
+* 
 
 BASH
 ===
