@@ -42,7 +42,8 @@ VIM
 
 * **.vimrc** should be copied from  [http://vim.wikia.com/wiki/Example_vimrc] + this lines
 
-```
+
+``
 " override this from http://vim.wikia.com/wiki/Example_vimrc
 set cmdheight=1  " 2 is to more
 set number! " unset number
