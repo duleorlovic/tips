@@ -40,14 +40,16 @@ VIM
 ===
 
 
-* .vimrc http://vim.wikia.com/wiki/Example_vimrc
+* **.vimrc** should be copied from  [http://vim.wikia.com/wiki/Example_vimrc] + this lines
 
-      set history=1000 " to save history between vim session
-      wild tab, set wildmode=longest,list,full " this is for tab completion , to stop cycle press CTRL+E than tab
-      :nnoremap gr :grep <cword> * -I -R --exclude-dir={log,spec,public,features,tmp,vendor,views,assets,db}<CR>
-      :nnoremap gy :grep "<c-r>"" features/ spec/ -R -I<CR>
-      :set hlsearch
-
+```
+execute pathogen#infect() " to enable pathogen plugin that is need for rails and git plugin
+set history=1000 " to save history between vim session
+wild tab, set wildmode=longest,list,full " this is for tab completion , to stop cycle press CTRL+E than tab
+:nnoremap gr :grep <cword> * -I -R --exclude-dir={log,spec,public,features,tmp,vendor,views,assets,db}<CR>
+:nnoremap gy :grep "<c-r>"" features/ spec/ -R -I<CR>
+:set hlsearch
+```
 
 Commands
 
