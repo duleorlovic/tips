@@ -164,6 +164,12 @@ Rails
 * comments like // *= require_tree . does not exclude it
 * rake stats #shows number of code lines, tests ...
 
+Migrations:
+
+* if we call Products.update_all :fuzz => 'fuzzy' in migration, it will probably break in the future, because Products will be validated for something that we did not planned. Better is to create local **class Product < ActiveRecord::Base;end**, and call **Product.reset_column_information**
+*
+
+
 Gems
 ===
 
