@@ -167,6 +167,7 @@ Migrations:
 
 * if we call Products.update_all :fuzz => 'fuzzy' in migration, it will probably break in the future, because Products will be validated for something that we did not planned. Better is to create local **class Product < ActiveRecord::Base;end**, and call **Product.reset_column_information**
 * To change class **fields_with_error** you can override ActionView::Base.field_error_proc in any controller
+ 
 ~~~
 ActionView::Base.field_error_proc = Proc.new { |html_tag, instance|
   #html = %(<div class="field_with_errors">#{html_tag}</div>).html_safe
