@@ -163,6 +163,9 @@ Rails
 * comments like // *= require_tree . does not exclude it
 * rake stats #shows number of code lines, tests ...
 
+## Active record
+* Assigning an object to a [belongs_to](http://guides.rubyonrails.org/association_basics.html#belongs-to-association-reference) association does not automatically save the object. It does not save the associated object either.
+
 Migrations:
 
 * if we call Products.update_all :fuzz => 'fuzzy' in migration, it will probably break in the future, because Products will be validated for something that we did not planned. Better is to create local **class Product < ActiveRecord::Base;end**, and call **Product.reset_column_information**
