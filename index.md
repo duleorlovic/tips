@@ -43,7 +43,7 @@ VIM
 * **.vimrc** should be copied from  [http://vim.wikia.com/wiki/Example_vimrc] + this lines
 
 
-```
+~~~
 " override this from http://vim.wikia.com/wiki/Example_vimrc
 set cmdheight=1  " 2 is to more
 set number! " unset number
@@ -56,7 +56,7 @@ nnoremap gy :grep "<c-r>"" * --exclude-dir={log,public,tmp,vendor} -R -I<CR> " g
 set hlsearch
 wild tab, set wildmode=longest,list,full " this is for tab completion , to stop cycle press CTRL+E than tab
 set history=1000 " to save history between vim session
-```
+~~~
 
 vim
 
@@ -168,7 +168,7 @@ Migrations:
 
 * if we call Products.update_all :fuzz => 'fuzzy' in migration, it will probably break in the future, because Products will be validated for something that we did not planned. Better is to create local **class Product < ActiveRecord::Base;end**, and call **Product.reset_column_information**
 * To change class **fields_with_error** you can override ActionView::Base.field_error_proc in any controller
-```
+~~~
 ActionView::Base.field_error_proc = Proc.new { |html_tag, instance|
   #html = %(<div class="field_with_errors">#{html_tag}</div>).html_safe
   # add nokogiri gem to Gemfile
@@ -182,7 +182,7 @@ ActionView::Base.field_error_proc = Proc.new { |html_tag, instance|
   end
   html_tag
 }
-```
+~~~
 
 
 Gems
