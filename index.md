@@ -296,5 +296,8 @@ If there is two accounts on bitbucket or github with different keys use `.ssh/co
     Host test.bitbucket.org
       Hostname bitbucket.org
       IdentityFile ~/.ssh/id_rsa_test
-~                                 
+
+
+To see which username is using *ssh -T git@bitbucket.org*
+                                
 
