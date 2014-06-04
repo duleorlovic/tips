@@ -61,7 +61,7 @@ vim
 
 Commands
 
-  dap}p switch two paragraph
+    dap}p switch two paragraph
     Repeat last colon command  @:  and @@
     :grep subject -R * --exclude-dir={log,spec,public,features,tmp,vendor,views,assets,db} -I
     Ctrl+p  # in insert mode is completing the string
