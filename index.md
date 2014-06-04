@@ -157,7 +157,7 @@ Rspec
 Rails
 ===
 
-* folders in app/assets/* are hidden when you are accessing files, for example: @domain/assets/file.txt@ should be here app/assets/javascript/file.txt or app/assets/img/file.txt (last one overrides prev).
+* folders in app/assets/* are hidden when you are accessing files, for example: `localhost:3000/assets/file.txt` should be here `app/assets/javascript/file.txt` or `app/assets/img/file.txt` (last one overrides prev).
 
 * All files from assets are provided but not all are included in all layouts (default is app/views/layouts/application.html.erb)
 * comments like // *= require_tree . does not exclude it
