@@ -159,9 +159,9 @@ Rails
 
 * folders in app/assets/* are hidden when you are accessing files, for example: `localhost:3000/assets/file.txt` should be here `app/assets/javascript/file.txt` or `app/assets/img/file.txt` (last one overrides prev).
 
-* All files from assets are provided but not all are included in all layouts (default is app/views/layouts/application.html.erb)
-* comments like // *= require_tree . does not exclude it
-* rake stats #shows number of code lines, tests ...
+* All files from assets are provided but not all are included in all layouts (default is `app/views/layouts/application.html.erb`)
+* comments like `// *= require_tree` . does not exclude it
+* `rake stats` shows number of code lines, tests ...
 * [debugging tools](http://guides.rubyonrails.org/debugging_rails_applications.html): finish (up backtrace function)
 
 ## Active record
