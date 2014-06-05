@@ -86,7 +86,9 @@ Commands
 Heroku 
 ===
 
-Could not create resource with vendor, please try again later is a heroku problem, not ours.
+Heroku problems that we shold not care
+* `Could not create resource with vendor, please try again later`
+* `Launching... Push failed: could not store slugis a heroku`
 
 Cucumber
 ===
