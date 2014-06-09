@@ -93,7 +93,8 @@ Heroku problems that we shold not care
 Cucumber
 ===
 
-@temp is shared between blocks
+* `@temp` is shared between blocks
+* pause can be implemented with: `STDIN.getc`
 
     require 'capybara/dsl'
     => true 
