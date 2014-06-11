@@ -174,6 +174,18 @@ Rails
 Migrations:
 
 * if we call Products.update_all :fuzz => 'fuzzy' in migration, it will probably break in the future, because Products will be validated for something that we did not planned. Better is to create local **class Product < ActiveRecord::Base;end**, and call **Product.reset_column_information**
+* to change type from string to integer (using cast)
+```
+class ChangeScoreTypeInFilledAnswers < ActiveRecord::Migration 
+  def up 
+    change_column :filled_answers, :score, 'integer USING CAST(score AS integer)'
+  end 
+  def down 
+    change_column :filled_answers, :score, :string 
+  end 
+end
+~    
+```
 * To change class **fields_with_error** you can override ActionView::Base.field_error_proc in any controller
  
 ~~~
