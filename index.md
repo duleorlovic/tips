@@ -160,7 +160,7 @@ Rspec
 Rails
 ===
 
-* folders in app/assets/* are hidden when you are accessing files, for example: `localhost:3000/assets/file.txt` should be here `app/assets/javascript/file.txt` or `app/assets/img/file.txt` (last one overrides prev).
+* folders in app/assets/* are hidden when you are accessing files, for example: `localhost:3000/assets/file.txt` should be here `app/assets/javascript/file.txt` or `app/assets/img/file.txt` (last one overrides prev). In production files that are listed in application.css.erb would be served as part of application.css, but all other files are served as is on their locations. 
 * to undo `rails generate model survey` you can call `rails destroy model survey`
 * All files from assets are provided but not all are included in all layouts (default is `app/views/layouts/application.html.erb`)
 * comments like `// *= require_tree` . does not exclude it
