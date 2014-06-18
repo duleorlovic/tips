@@ -168,6 +168,7 @@ Rails
 * [debugging tools](http://guides.rubyonrails.org/debugging_rails_applications.html): finish (up backtrace function)
 * rendering views instead of writing js partials http://stackoverflow.com/questions/16328472/rails-render-a-view-not-a-partial-from-within-a-view
 * in views, render "something" will render partial _something, render "controller/something" will render template, render :partial => 'contr/something' will render partial
+* render @products, will render partial _product with local variable product
 
 ## Active record
 
