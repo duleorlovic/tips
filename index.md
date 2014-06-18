@@ -166,6 +166,7 @@ Rails
 * comments like `// *= require_tree` . does not exclude it
 * `rake stats` shows number of code lines, tests ...
 * [debugging tools](http://guides.rubyonrails.org/debugging_rails_applications.html): finish (up backtrace function)
+* rendering views instead of writing js partials http://stackoverflow.com/questions/16328472/rails-render-a-view-not-a-partial-from-within-a-view
 
 ## Active record
 
