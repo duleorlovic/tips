@@ -82,6 +82,8 @@ Commands
     :argdo %s/foo/bar/ge | update   replace in all arg
     find /home/bruno/old-friends -type f -exec sed -i 's/ugly/beautiful/g' {} \;
     CTRL+^ (shift+6) jump to previous buffer  
+    :set tabstop=2 shiftwidth=2 expandtab # set configuration
+    retab # this will actually reformat all source
 
 Heroku 
 ===
