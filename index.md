@@ -49,12 +49,15 @@ set number! " unset number
 
 "custom 
 execute pathogen#infect()
-set history=1000 " to save history between vim session
-nnoremap gr :grep <cword> * -I -R --exclude-dir={log,spec,public,features,tmp,vendor,views,assets,db}<CR> " grep current word
-nnoremap gy :grep "<c-r>"" * --exclude-dir={log,public,tmp,vendor} -R -I<CR> " grep yanked word
+" to save history between vim session
+set history=1000
+" grep current word
+nnoremap gr :grep <cword> * -I -R --exclude-dir={log,spec,public,features,tmp,vendor,assets,db}<CR>
+" grep yanked word
+nnoremap gy :grep "<c-r>"" * --exclude-dir={log,public,tmp,vendor} -R -I<CR>
 set hlsearch
-wild tab, set wildmode=longest,list,full " this is for tab completion , to stop cycle press CTRL+E than tab
-set history=1000 " to save history between vim session
+" this is for tab completion , to stop cycle press CTRL+E than tab
+set wildmode=longest,list,full
 ~~~
 
 vim
