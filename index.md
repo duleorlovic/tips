@@ -216,6 +216,11 @@ ActionView::Base.field_error_proc = Proc.new { |html_tag, instance|
 Gems
 ===
 
+performance:
+
+* Gem [miniprofiler](https://github.com/MiniProfiler/rack-mini-profiler) for analysing load time, disable with `http://mysite.com?pp=disable`
+ 
+
 get the country based on ip address: 
 
 * https://github.com/alexreisner/geocoder, 
