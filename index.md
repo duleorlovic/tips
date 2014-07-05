@@ -66,7 +66,7 @@ Commands
 
     dap}p switch two paragraph
     Repeat last colon command  @:  and @@
-    :grep subject -R * --exclude-dir={log,spec,public,features,tmp,vendor,views,assets,db} -I
+    :grep subject -R * --exclude-dir={log,spec,public,features,tmp,vendor,assets,db} -I
     Ctrl+p  # in insert mode is completing the string
     dE # removes to the End of the string
     daw removes the inner word
@@ -87,6 +87,7 @@ Commands
     CTRL+^ (shift+6) jump to previous buffer  
     :set tabstop=2 shiftwidth=2 expandtab # set configuration
     retab # this will actually reformat all source
+    `"+y` copy visual selection to system clipboard, ubuntu should run `sudo apt-get install vim-gtk`
 
 Heroku 
 ===
