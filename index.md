@@ -36,6 +36,11 @@
   </div>
 </div>
 
+HTML, CSS, Javascript
+===
+
+* when `<a></a>` does not have href that it will not follow thelink so you do not need to preventDefault. Use this for toggling some part
+
 VIM
 ===
 
