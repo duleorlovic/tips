@@ -40,6 +40,7 @@ HTML, CSS, Javascript
 ===
 
 * when `<a></a>` does not have href that it will not follow thelink so you do not need to preventDefault. Use this for toggling some part
+* `hover` on mobile devices does not work what is expected. It stays in hover state until the user press (click) on the screen next time.
 
 VIM
 ===
