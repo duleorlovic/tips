@@ -18,6 +18,7 @@
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li><a href="http://duleorlovic.github.io/tips">Home</a></li>
+        <li><a href="#javascript">Javascript</a></li>
         <li><a href="#vim">Vim</a></li>
         <li><a href="#heroku">Heroku</a></li>
         <li><a href="#cucumber">Cucumber</a></li>
@@ -36,7 +37,7 @@
   </div>
 </div>
 
-HTML, CSS, Javascript
+Javascript
 ===
 
 * when `<a></a>` does not have href that it will not follow thelink so you do not need to preventDefault. Use this for toggling some part
