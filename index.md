@@ -194,6 +194,7 @@ Rails
 
 * Assigning an object to a [belongs_to](http://guides.rubyonrails.org/association_basics.html#belongs-to-association-reference) association does not automatically save the object. It does not save the associated object either.
 * you can specify order for association: `has_many :educations, -> {order 'graduation_year DESC'}, :dependent => :destroy`
+* instead of `has_many :applied_jobs, through: :applications, source: :job` it is better to use `user.applications.map(&:job)` [link](https://coderwall.com/p/9xk6ra)
 
 Migrations:
 
