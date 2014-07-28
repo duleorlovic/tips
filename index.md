@@ -195,6 +195,7 @@ Rails
 * Assigning an object to a [belongs_to](http://guides.rubyonrails.org/association_basics.html#belongs-to-association-reference) association does not automatically save the object. It does not save the associated object either.
 * you can specify order for association: `has_many :educations, -> {order 'graduation_year DESC'}, :dependent => :destroy`
 * instead of `has_many :applied_jobs, through: :applications, source: :job` it is better to use `user.applications.map(&:job)` [link](https://coderwall.com/p/9xk6ra)
+* [N+1](http://guides.rubyonrails.org/active_record_querying.html#eager-loading-associations) problem is solved with `includes(:associated_table)` wich is actually LEFT OUTER JOINS, `joins(:associated_table)` is INNER JOIN. If model has_many :associated_table then `joins` will return multiple values because of multi values of :associated_table per item, or none is :associated_table does not exists for current item. `includes` will return the same number of items, with association objectloaded in memory.
 
 Migrations:
 
