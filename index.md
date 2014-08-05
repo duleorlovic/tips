@@ -260,6 +260,7 @@ For rvm put ```source ~/.bash_profile``` in your **~/.bashrc** file and you do n
 Ruby
 ===
 
+* `self` in ruby is implicitly assumed, but you can use it for class methods or if you have attr_accessor :name, and have name="asd", name= is local variable assignment
 * `p ["a", "b"].map(&:upcase)` is equivalent to `p ["a", "b"].map{|string| string.upcase}`
 * regular expression http://www.rubular.com/
 * put -w for warning log https://github.com/bbatsov/ruby-style-guide
