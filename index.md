@@ -203,6 +203,7 @@ Rails
 * in views, render "something" will render partial _something, render "controller/something" will render template, render :partial => 'contr/something' will render partial
 * render @products, will render partial _product with local variable product
 * to run production version follow this
+
 ```
 RAILS_ENV=production rake db:setup
 RAILS_ENV=production rake assets:precompile
