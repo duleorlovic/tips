@@ -204,13 +204,11 @@ Rails
 * render @products, will render partial _product with local variable product
 * to run production version follow this
 
-```
-RAILS_ENV=production rake db:setup
-RAILS_ENV=production rake assets:precompile
-rails s -e production
-rails c production
+   RAILS_ENV=production rake db:setup
+   RAILS_ENV=production rake assets:precompile
+   rails s -e production
+   rails c production
 
-```
 
 ## Active record
 
