@@ -43,6 +43,7 @@ Javascript
 * when `<a></a>` does not have href that it will not follow thelink so you do not need to preventDefault. Use this for toggling some part
 * `hover` on mobile devices does not work what is expected. It stays in hover state until the user press (click) on the screen next time.
 * for popups with buttons, if you want to close popup clicking anywhere outside button, button should not be included in background div to clearly separate when popup should be closed. if it is inside we can workaround with targeting more specifically and stop propagation `$('#letsdoit').click( function(e) { e.stopPropagation();});`
+* in rails-ujs click on links with remote:true is not efected with e.preventDefault() 
 
 iSO android and other mobile phone
 ===
@@ -109,6 +110,18 @@ Heroku
 Heroku problems that we shold not care
 * `Could not create resource with vendor, please try again later`
 * `Launching... Push failed: could not store slugis a heroku`
+
+To prevent heroku from sleep, add scheduler on every hour: `rake dyno_ping --trace`, and in lib/tasks/dyno_ping.rake
+
+```
+desc "Ping"
+task :dyno_ping do
+#  require "net/http"  it can not be included on heroku
+  uri = URI("http://time-tracklng.herokuapp.com/");
+  Net::HTTP.get_response(uri)
+end
+
+```
 
 Cucumber
 ===
