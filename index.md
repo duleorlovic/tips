@@ -202,6 +202,14 @@ Rails
 * rendering views instead of writing js partials http://stackoverflow.com/questions/16328472/rails-render-a-view-not-a-partial-from-within-a-view
 * in views, render "something" will render partial _something, render "controller/something" will render template, render :partial => 'contr/something' will render partial
 * render @products, will render partial _product with local variable product
+* to run production version follow this
+```
+RAILS_ENV=production rake db:setup
+RAILS_ENV=production rake assets:precompile
+rails s -e production
+rails c production
+
+```
 
 ## Active record
 
