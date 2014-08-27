@@ -208,6 +208,8 @@ Rails
    RAILS_ENV=production rake assets:precompile
    rails s -e production
    rails c production
+   
+* you can use `raw` or `.html_safe` but it is advised to use [`sanitize`](http://apidock.com/rails/ActionView/Helpers/SanitizeHelper/sanitize) with it to strip script tags
 
 
 ## Active record
