@@ -210,6 +210,7 @@ Rails
    rails c production
    
 * you can use `raw` or `.html_safe` but it is advised to use [`sanitize`](http://apidock.com/rails/ActionView/Helpers/SanitizeHelper/sanitize) with it to strip script tags
+* for ajax actions (links with remote:true) it should be implemented both, JS and  HTML version, since user can use right click on in new tab for that links
 
 
 ## Active record
