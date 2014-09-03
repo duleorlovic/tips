@@ -213,13 +213,13 @@ Rails
 * for ajax actions (links with remote:true) it should be implemented both, JS and  HTML version, since user can use right click on in new tab for that links
 * if you have ajax links, it is advisable to implement notification in case of error since ajax error tends to be silent.
 
-  // ajax error handling, currently only for debugging                                        
-  LOG && $(document).on('ajax:error', '[data-remote]', function(e, xhr, status, error) {      
-    LOG && console.log("ajax:error [data-remote] e.target="+e.target+" status="+status+" error="+error);
-    //disable eventual popups so user can see the message                                     
-    $('.active').removeClass('active');
-    flash_alert("Please refresh the page. Server responds with: \"" +status+ " " + error + "\".");
-  });
+    // ajax error handling, currently only for debugging                                        
+    LOG && $(document).on('ajax:error', '[data-remote]', function(e, xhr, status, error) {      
+      LOG && console.log("ajax:error [data-remote] e.target="+e.target+" status="+status+" error="+error);
+      //disable eventual popups so user can see the message                                     
+      $('.active').removeClass('active');
+      flash_alert("Please refresh the page. Server responds with: \"" +status+ " " + error + "\".");
+    });
 
 
 
