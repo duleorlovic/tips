@@ -372,10 +372,13 @@ If there is two accounts on bitbucket or github with different keys use `.ssh/co
       Hostname bitbucket.org
       IdentityFile ~/.ssh/id_rsa_test
 
+
+To see which username (-T) and wich key (-v) is using:
+    
+    ssh -T git@bitbucket.org
+    ssh -v git@bitbucket.org
+
 If you want to ignore/reignore some files that are tracked (gitignore does not work on tracked files)
 
-    git update-index --[no]-assume-unchanged <file>
-
-To see which username is using *ssh -T git@bitbucket.org*. To see which key *ssh -v git@bitbucket.org*
-                                
+    git update-index --[no]-assume-unchanged <file>                                
 
