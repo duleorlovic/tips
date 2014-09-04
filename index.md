@@ -43,7 +43,39 @@ Javascript
 * when `<a></a>` does not have href that it will not follow thelink so you do not need to preventDefault. Use this for toggling some part
 * `hover` on mobile devices does not work what is expected. It stays in hover state until the user press (click) on the screen next time.
 * for popups with buttons, if you want to close popup clicking anywhere outside button, button should not be included in background div to clearly separate when popup should be closed. if it is inside we can workaround with targeting more specifically and stop propagation `$('#letsdoit').click( function(e) { e.stopPropagation();});`
-* in rails-ujs click on links with remote:true is not efected with e.preventDefault() 
+* in rails-ujs click on links with remote:true is not efected with e.preventDefault()
+* detect browsers version
+
+    function is_uiwebview(){
+      return /(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i.test(navigator.userAgent);
+    }
+    function is_android(){
+      return /Android/i.test(navigator.userAgent);
+    }
+    function is_idevice(){
+      return /(iPhone|iPod|iPad)/i.test(navigator.userAgent);
+    }
+    
+* detect browser type in rails
+
+    def is_android?                                                                           
+      request.user_agent =~ /Android/i                                                        
+    end                                                                                       
+                                                                                              
+    def is_iphone_app?                                                                        
+      request.user_agent =~ /(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i                    
+    end                                                                                       
+                                                                                              
+    def is_idevice?                                                                           
+      request.user_agent =~ /(iPhone|iPod|iPad)/i                                             
+    end                                                                                       
+                                                                                              
+    def is_iphone?                                                                            
+      request.user_agent =~ /(iPhone|iPod)/i                                                  
+    end                                                                                       
+    
+    
+
 
 iSO android and other mobile phone
 ===
