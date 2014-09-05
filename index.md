@@ -148,7 +148,7 @@ To prevent heroku from sleep, add scheduler on every hour: `rake dyno_ping --tra
 ```
 desc "Ping"
 task :dyno_ping do
-#  require "net/http"  it can not be included on heroku
+#  require "net/http"  # uncomment on ruby 2.0
   uri = URI("http://time-tracklng.herokuapp.com/");
   Net::HTTP.get_response(uri)
 end
