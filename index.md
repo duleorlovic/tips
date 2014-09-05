@@ -374,7 +374,7 @@ track remote branch if we did not have this branch already
 
     git checkout -t origin/branch
     
-push branch and track
+Push branch and track
 
     git push bitbucket development:development
   
@@ -394,7 +394,7 @@ Git checkout previous branch
 
     git checkout -
   
-see all the changed code
+See all the changed code
 
     git log -p
 
@@ -402,6 +402,10 @@ Show file at specific revision
 
     git show HEAD~4:index.html
     
+Rebase branches
+
+     git pull --rebase # pull remote changes and rebase you local commits
+     git rebase master # call this while you are on some feature branch
 Versioning [SEMVER](http://semver.org/)
 
 If there is two accounts on bitbucket or github with different keys use `.ssh/config` file
