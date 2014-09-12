@@ -254,8 +254,7 @@ Rails
       flash_alert("Please refresh the page. Server responds with: \"" +status+ " " + error + "\".");
     });
 
-* [turbolinks](https://github.com/rails/turbolinks) loads new page, replaces body and title, and use pushState. Any javascript is run after replacement so you can reference all elements in <script> tags on the beggining of the page
-
+* [turbolinks](https://github.com/rails/turbolinks) loads new page, replaces body and title, and use pushState. Any javascript is run after replacement so you can reference all elements in <script> tags on the beggining of the page (if you really want to). [Execution order](http://stackoverflow.com/questions/8996852/load-and-execute-order-of-scripts) of non dymanically (defer or async) script are the same as they appear on the page (inline script is halted until external is loaded).  But with turbolinks, execution is done after replacing, but before external script are loaded, so you probably can not have javascript_include_tag inside a view, because the code it provides will be available after all script on a page is done
 
 ## Active record
 
