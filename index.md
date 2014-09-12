@@ -254,6 +254,7 @@ Rails
       flash_alert("Please refresh the page. Server responds with: \"" +status+ " " + error + "\".");
     });
 
+* [turbolinks](https://github.com/rails/turbolinks) loads new page, replaces body and title, and use pushState. Any javascript is run after replacement so you can reference all elements in <script> tags on the beggining of the page
 
 
 ## Active record
