@@ -75,12 +75,11 @@ Javascript
       request.user_agent =~ /(iPhone|iPod)/i                                                  
     end                                                                                       
     
-* [enabling CORS](http://stackoverflow.com/questions/17858178/allow-anything-through-cors-policy) add before filter
+* [enabling CORS](http://blog.jetthoughts.com/2010/12/22/allow-multiple-access-control-requests-for-rails/) add before filter:
+
 
     headers['Access-Control-Allow-Origin'] = '*'
-    headers['Access-Control-Allow-Methods'] = 'POST, PUT, DELETE, GET, OPTIONS'
     headers['Access-Control-Request-Method'] = '*'
-    headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
     
 
 
