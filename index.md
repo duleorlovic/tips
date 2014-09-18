@@ -375,6 +375,7 @@ BASH
 
 * find and remove files
     find . -type f -name "FILE-TO-FIND" -exec rm -f {} \;
+* test the speed, download: `curl -o /dev/null http://speedtest.qsc.de/1GB.qsc`, crate big files `fallocate -l 1G gentoo_root.img` and use scp to test upload link.
 
 GIT
 ===
