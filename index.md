@@ -327,6 +327,10 @@ get locale based on country: https://github.com/grosser/i18n_data:
 * country gem using currency gem to get currency https://github.com/hexorx/countries/
 * Query perfomance analyser https://github.com/nesquena/query_reviewer
 
+== CANCAN
+
+ * if you define ability in a [block](https://github.com/ryanb/cancan/wiki/Defining-Abilities-with-Blocks) instead of hash, then [load_resource](https://github.com/ryanb/cancan/wiki/authorizing-controller-actions) for :index will not populate @products 
+  
 If there is an error *invalid byte sequence in US-ASCII* try to *export LANG=en_US.UTF-8* before installing a gem
 
 For rvm put ```source ~/.bash_profile``` in your **~/.bashrc** file and you do not need to enable terminal settings to "Run command as login shell"
