@@ -81,7 +81,10 @@ Javascript
     headers['Access-Control-Allow-Origin'] = '*'
     
     headers['Access-Control-Request-Method'] = '*'
-    
+
+* console.log(data) is ok for objects, but if you append to a string you should use JSON.stringify
+
+    console.log("data="+JSON.stringify(data));
 
 
 iSO android and other mobile phone
