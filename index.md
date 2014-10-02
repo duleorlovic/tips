@@ -406,9 +406,10 @@ Getting existing git branches to track remote branches:
 
     git branch --set-upstream gh-pages-bitbucket bitbucket/gh-pages 
     
-Git child commit reference with
+Git log
 
-    git log --reverse --ancestry-path 894e8b4e93d8f3^..master
+    git log --reverse --ancestry-path commit1^..commit2 # show commits that are descendant of commit1 AND ancestors of commit2, in the same time
+    git log $(git merge-base HEAD branch)..branch  # show commits only on branch
     
 Git stash only unstaged changes
 
@@ -430,6 +431,7 @@ Rebase branches
 
      git pull --rebase # pull remote changes and rebase you local commits
      git rebase master # call this while you are on some feature branch
+     
 Versioning [SEMVER](http://semver.org/)
 
 If there is two accounts on bitbucket or github with different keys use `.ssh/config` file
