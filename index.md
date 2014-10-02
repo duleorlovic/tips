@@ -289,6 +289,8 @@ class ChangeScoreTypeInFilledAnswers < ActiveRecord::Migration
   end 
 end
 ~    
+* use db/seed.rb to add some working data (users, products) that should not go to production. add data to migration file if something needs to be in db (select box, customer plans) and use `rake db:migrate:reset & rake db:seed` instead of `rake db:setup` so migrations are actually perfomed
+
 ```
 * To change class **fields_with_error** you can override ActionView::Base.field_error_proc in any controller
  
