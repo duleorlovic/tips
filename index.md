@@ -341,7 +341,7 @@ get locale based on country: https://github.com/grosser/i18n_data:
  * is your server need to use third party api, it is advisable to put it in background, so in case of traffic congestion (for example you and target api) user do not receive 'not responding page' since browsers have timeout 30 sec.
  * [SuckerPunch](https://github.com/brandonhilkert/sucker_punch) is done in the same thread and can be run on heroku on single dyno (drawback is that it is cleaned on each restart, deploy, even error with exception)
  * [DelayedJob](https://github.com/collectiveidea/delayed_job) is peristent since it stores serialized object in db, and when it comes to run it, it retrive object and run method (drawback is number of ActiveRecord connections to db, since each worker need two, one to retreive the object, another to use with ActiveRecord. Watch out when you backup database, delayed jobs should not be restored).
- * [Sidekiq](http://sidekiq.org/) is identical to Socker Punch, fast and run on single thread, better than delayed_job since it can run 20 processes in same time, works on [one heroky dyno with unicorn webserver](https://coderwall.com/p/fprnhg) (drawback is use Redis server for in memory database storage)
+ * [Sidekiq](http://sidekiq.org/) is identical to Socker Punch, fast and run on single thread, better than delayed_job since it can run 20 processes in same time, threadsafe, works on [one heroky dyno with unicorn webserver](https://coderwall.com/p/fprnhg) set up heroku `config:set REDIS_PROVIDER=REDISTOGO_URL` (drawback is that you need to use Redis server for in memory database storage)
   
 If there is an error *invalid byte sequence in US-ASCII* try to *export LANG=en_US.UTF-8* before installing a gem
 
