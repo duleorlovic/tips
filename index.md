@@ -85,6 +85,8 @@ Javascript
 * console.log(data) is ok for objects, but if you append to a string you should use JSON.stringify
 
     console.log("data="+JSON.stringify(data));
+    
+* disable turbolinks `document.body.setAttribute('data-no-turbolink','true')`
 
 
 iSO android and other mobile phone
