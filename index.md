@@ -73,7 +73,10 @@ Javascript
                                                                                               
     def is_iphone?                                                                            
       request.user_agent =~ /(iPhone|iPod)/i                                                  
-    end                                                                                       
+    end                                                          
+    
+* if you are using `window.location.replace('http://a.b');` then browser back button is not working as espected
+ 
     
 * [enabling CORS](http://blog.jetthoughts.com/2010/12/22/allow-multiple-access-control-requests-for-rails/) add before filter:
 
