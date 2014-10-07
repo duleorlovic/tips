@@ -279,6 +279,19 @@ Rails
 * [N+1](http://guides.rubyonrails.org/active_record_querying.html#eager-loading-associations) problem is solved with `includes(:associated_table)` wich is actually LEFT OUTER JOINS, `joins(:associated_table)` is INNER JOIN. If model has_many :associated_table then `joins` will return multiple values because of multi values of :associated_table per item, or none is :associated_table does not exists for current item. `includes` will return the same number of items, with association objectloaded in memory.
 * new_record? does not work with associated count. It is beter to use length ie `survey.questions.length` 
 * [naming conventions](http://guides.rubyonrails.org/active_record_basics.html#convention-over-configuration-in-active-record) is to have `foreign_table_name_id` for associations (belongs_to :foreign_table_name), `type` for single table inheritance (class Firm < Company), `imageable_id` and `imageable_type` for polymorphic associations (belongs_to :imageable, polymorphic: true).
+* you can set any user in config/database.yml (even without password), but you need to change postgres config and create that user, simple:
+
+    sudo vi /etc/postgresql/9.1/main/pg_hba.conf 
+    # change all this words [md5, ident, peer] to trust 
+    sudo /etc/init.d/postgresql restart 
+    psql postgres 
+    CREATE USER "Dusan" CREATEDB ; 
+    \q 
+    # if it does not work because previous command created `dusan` instead of `Dusan` 
+    ALTER ROLE dusan RENAME TO "Dusan"; 
+    # or 
+    pgadmin3 # login as postgres without password and chage it to Dusan
+
 
 Migrations:
 
