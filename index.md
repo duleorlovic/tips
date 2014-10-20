@@ -385,6 +385,8 @@ end
 ```
 * if dont know if path is array use: ` [*paths].each { |path| do_something(path) }`
 * `%w{word}` is non onterpolated, `W{#{some variable} word}` is interpolated array of words separated by space
+* ! has greater priority then == so use () to determine precedence, for example `if ! a==3` is not the same as `if a!=3`
+
 
 Jekyll
 ===
