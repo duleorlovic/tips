@@ -184,6 +184,19 @@ Cucumber
     => :selenium 
     visit "http://google.co.uk"
     => "" 
+* [selenium-webdriver](http://selenium.googlecode.com/git/docs/api/rb/Selenium/WebDriver.html) scripts can be debuged with 
+
+    driver = ""                                                                                
+    eval File.open('./scraping_selenium.rb').read
+    
+or something like
+ 
+    require 'rubygems'
+    require 'ruby-debug'
+    x = 23
+    puts "welcome"
+    debugger
+    puts "end"
     
 Rspec
 ===
