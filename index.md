@@ -36,6 +36,11 @@
   </div>
 </div>
 
+references:
+
+* http://www.w3.org/TR/selectors/
+
+
 HTML, CSS, Javascript
 ===
 
@@ -181,11 +186,55 @@ Rails
 * rendering views instead of writing js partials http://stackoverflow.com/questions/16328472/rails-render-a-view-not-a-partial-from-within-a-view
 * in views, render "something" will render partial _something, render "controller/something" will render template, render :partial => 'contr/something' will render partial
 * render @products, will render partial _product with local variable product
+* mail attachments.inline['logo.png'] = File.read('app/assets/images/logo.png') will be attached with disposition="attachments" if there is no `<%= image_tag attachments['logo.png'].url %>` in a view [url](http://guides.rubyonrails.org/action_mailer_basics.html#making-inline-attachments). Rails look for its reference and if it does not find it will not include it as "inline". One way to include all inline attachments but not to show them (that is the case when you already have a inline img tag inside the view, for example forwarding emails)
+
+    <% attachments.each do |a| %>
+      <% if a.content_disposition[0..5] == "inline" %>
+        <%  image_tag a.url, size: "0x0" %>
+      <% end %>
+    <% end %>
+
+This way they are using its own content_id. To include inline attachments for existing mails, you have to use the same content_id
+
+     @email_message.temp_images.each do |mandrill_image_cid, mandrill_image_hash|
+        # mandrill_image_hash.keys = ["name", "type", "content"] and they are always base64
+        attachments.inline[mandrill_image_cid] = { mime_type: mandrill_image_hash["type"], content: Base64.decode64(mandrill_image_hash["content"]), content_id: mandrill_image_hash["name"]} # we have to set mime type and content_id because we are using the original email with refers this content_id
+      end
+ 
+And as we have refenece for those images in email body, we do not need to use img_tag with size "0".
+
+* sorting could be done with this helper that is used like `<th><%= sortable "id" %></th>`:
+
+      
+    def sortable(column, title = nil)
+     title ||= column.titleize
+     css_class = (column == sort_column) ? "current #{sort_direction}" : nil
+     direction = (column == sort_column && sort_direction == "asc") ? "desc" : "asc"
+     link_to title, { :sort => column, :direction => direction }, { :class => css_class }
+    end
+
+and this two methods:
+    
+    def sort_column
+      User.column_names.include?(params[:sort]) ? params[:sort] : "id"
+    end
+
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "desc"
+    end
+
+so in controller we can write `@users = User.order(sort_column+" "+sort_direction) 
 
 ## Active record
 
+* [default_scope is appended to all queries][http://rails-bestpractices.com/posts/806-default_scope-is-evil], only way to remove it is `uncope`
 * Assigning an object to a [belongs_to](http://guides.rubyonrails.org/association_basics.html#belongs-to-association-reference) association does not automatically save the object. It does not save the associated object either.
 * you can specify order for association: `has_many :educations, -> {order 'graduation_year DESC'}, :dependent => :destroy`
+* you can attach multiple polimorphic association with conditions:
+
+    has_many :attachments, as: :attachmentable, conditions: { is_image: false }
+    has_many :images, as: :attachmentable, class_name: 'Attachments', conditions: { is_image: true }
+
 
 Migrations:
 
