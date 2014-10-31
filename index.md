@@ -18,6 +18,7 @@
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li><a href="http://duleorlovic.github.io/tips">Home</a></li>
+        <li><a href="#javascript">Javascript</a></li>
         <li><a href="#vim">Vim</a></li>
         <li><a href="#heroku">Heroku</a></li>
         <li><a href="#cucumber">Cucumber</a></li>
@@ -36,16 +37,69 @@
   </div>
 </div>
 
-references:
-
 * http://www.w3.org/TR/selectors/
-
 
 HTML, CSS, Javascript
 ===
 
+* [document ready](http://learn.jquery.com/using-jquery-core/document-ready/) can be detected in `$(document).ready(function(){})` or because ready can be used [only on current document](http://www.w3schools.com/jquery/event_ready.asp) selector is not needed `$(function(){});`
 * when `<a></a>` does not have href that it will not follow thelink so you do not need to preventDefault. Use this for toggling some part
 * `hover` on mobile devices does not work what is expected. It stays in hover state until the user press (click) on the screen next time.
+* for popups with buttons, if you want to close popup clicking anywhere outside button, button should not be included in background div to clearly separate when popup should be closed. if it is inside we can workaround with targeting more specifically and stop propagation `$('#letsdoit').click( function(e) { e.stopPropagation();});`
+* in rails-ujs click on links with remote:true is not efected with e.preventDefault()
+* detect browsers version
+
+    function is_uiwebview(){
+      return /(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i.test(navigator.userAgent);
+    }
+    function is_android(){
+      return /Android/i.test(navigator.userAgent);
+    }
+    function is_idevice(){
+      return /(iPhone|iPod|iPad)/i.test(navigator.userAgent);
+    }
+    
+* detect browser type in rails
+
+    def is_android?                                                                           
+      request.user_agent =~ /Android/i                                                        
+    end                                                                                       
+                                                                                              
+    def is_iphone_app?                                                                        
+      request.user_agent =~ /(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i                    
+    end                                                                                       
+                                                                                              
+    def is_idevice?                                                                           
+      request.user_agent =~ /(iPhone|iPod|iPad)/i                                             
+    end                                                                                       
+                                                                                              
+    def is_iphone?                                                                            
+      request.user_agent =~ /(iPhone|iPod)/i                                                  
+    end                                                          
+    
+* if you are using `window.location.replace('http://a.b');` then browser back button is not working as espected. Its better to use `window.location.assign('new_page');` because the page is stored in history
+* when user click back button previous page is reshown, and chrome reruns the javascript, but mozilla don't. 
+ 
+    
+* [enabling CORS](http://blog.jetthoughts.com/2010/12/22/allow-multiple-access-control-requests-for-rails/) add before filter:
+
+
+    headers['Access-Control-Allow-Origin'] = '*'
+    
+    headers['Access-Control-Request-Method'] = '*'
+
+* console.log(data) is ok for objects, but if you append to a string you should use JSON.stringify
+
+    console.log("data="+JSON.stringify(data));
+    
+* disable turbolinks `document.body.setAttribute('data-no-turbolink','true')`
+
+
+iSO android and other mobile phone
+===
+
+* fadein and fadeout does not work well on mobilephone iOS android, its better to use display: block, display: none
+* click event [does not work on iOS](http://stackoverflow.com/questions/3705937/document-click-not-working-correctly-on-iphone-jquery) and element is not clicable. simple solution is to add style: "cursor: pointer".
 
 VIM
 ===
@@ -107,6 +161,17 @@ Heroku problems that we shold not care
 * `Could not create resource with vendor, please try again later`
 * `Launching... Push failed: could not store slugis a heroku`
 
+To prevent heroku from sleep, add scheduler on every hour: `rake dyno_ping --trace`, and in lib/tasks/dyno_ping.rake
+
+```
+desc "Ping"
+task :dyno_ping do
+#  require "net/http"  # uncomment on ruby 2.0
+  uri = URI("http://time-tracklng.herokuapp.com/");
+  Net::HTTP.get_response(uri)
+end
+
+```
 Cucumber
 ===
 
@@ -121,6 +186,19 @@ Cucumber
     => :selenium 
     visit "http://google.co.uk"
     => "" 
+* [selenium-webdriver](http://selenium.googlecode.com/git/docs/api/rb/Selenium/WebDriver.html) scripts can be debuged with 
+
+    driver = ""                                                                                
+    eval File.open('./scraping_selenium.rb').read
+    
+or something like
+ 
+    require 'rubygems'
+    require 'ruby-debug'
+    x = 23
+    puts "welcome"
+    debugger
+    puts "end"
     
 Rspec
 ===
@@ -186,6 +264,28 @@ Rails
 * rendering views instead of writing js partials http://stackoverflow.com/questions/16328472/rails-render-a-view-not-a-partial-from-within-a-view
 * in views, render "something" will render partial _something, render "controller/something" will render template, render :partial => 'contr/something' will render partial
 * render @products, will render partial _product with local variable product
+* to run production version follow this
+
+   RAILS_ENV=production rake db:setup
+   RAILS_ENV=production rake assets:precompile
+   rails s -e production
+   rails c production
+   
+* you can use `raw` or `.html_safe` but it is advised to use [`sanitize`](http://apidock.com/rails/ActionView/Helpers/SanitizeHelper/sanitize) with it to strip script tags
+* for ajax actions (links with remote:true) it should be implemented both, JS and  HTML version, since user can use right click on in new tab for that links
+* if you have ajax links, it is advisable to implement notification in case of error since ajax error tends to be silent.
+
+    // ajax error handling, currently only for debugging                                        
+    LOG && $(document).on('ajax:error', '[data-remote]', function(e, xhr, status, error) {      
+      LOG && console.log("ajax:error [data-remote] e.target="+e.target+" status="+status+" error="+error);
+      //disable eventual popups so user can see the message                                     
+      $('.active').removeClass('active');
+      flash_alert("Please refresh the page. Server responds with: \"" +status+ " " + error + "\".");
+    });
+
+* [turbolinks](https://github.com/rails/turbolinks) loads new page, replaces body and title, and use pushState. Any javascript is run after replacement so you can reference all elements in <script> tags on the beggining of the page (if you really want to). [Execution order](http://stackoverflow.com/questions/8996852/load-and-execute-order-of-scripts) of non dymanically ([defer or async](http://www.w3schools.com/tags/att_script_async.asp)) script are the same as they appear on the page (inline script is halted until external is loaded).  But with turbolinks, as with other dynamic loading where you can not know the order, execution is done after replacing, but before external script is loaded, so you probably can not have javascript_include_tag inside a view, because the code it provides will be available after all script on a page is done, and if you have several includes, the order is not preserved since the shortest one can be executed before all others. So the solution is to render all javascript inside the template with `<%= render 'app/assets/javascript/custom_script', formats: [:js] %>`
+* accessing helper functions in controller can be done using `view_context` (including ApplicationHelper is not generally a good idea)
+
 * mail attachments.inline['logo.png'] = File.read('app/assets/images/logo.png') will be attached with disposition="attachments" if there is no `<%= image_tag attachments['logo.png'].url %>` in a view [url](http://guides.rubyonrails.org/action_mailer_basics.html#making-inline-attachments). Rails look for its reference and if it does not find it will not include it as "inline". One way to include all inline attachments but not to show them (that is the case when you already have a inline img tag inside the view, for example forwarding emails)
 
     <% attachments.each do |a| %>
@@ -224,17 +324,40 @@ and this two methods:
     end
 
 so in controller we can write `@users = User.order(sort_column+" "+sort_direction) 
-
 ## Active record
 
 * [default_scope is appended to all queries][http://rails-bestpractices.com/posts/806-default_scope-is-evil], only way to remove it is `uncope`
 * Assigning an object to a [belongs_to](http://guides.rubyonrails.org/association_basics.html#belongs-to-association-reference) association does not automatically save the object. It does not save the associated object either.
 * you can specify order for association: `has_many :educations, -> {order 'graduation_year DESC'}, :dependent => :destroy`
-* you can attach multiple polimorphic association with conditions:
+* instead of `has_many :applied_jobs, through: :applications, source: :job` it is better to use `user.applications.map(&:job)` [link](https://coderwall.com/p/9xk6ra)
+* [N+1](http://guides.rubyonrails.org/active_record_querying.html#eager-loading-associations) problem is solved with `includes(:associated_table)` wich is actually LEFT OUTER JOINS, `joins(:associated_table)` is INNER JOIN. If model has_many :associated_table then `joins` will return multiple values because of multi values of :associated_table per item, or none is :associated_table does not exists for current item. `includes` will return the same number of items, with association objectloaded in memory.
+* new_record? does not work with associated count. It is beter to use length ie `survey.questions.length` 
+* [naming conventions](http://guides.rubyonrails.org/active_record_basics.html#convention-over-configuration-in-active-record) is to have `foreign_table_name_id` for associations (belongs_to :foreign_table_name), `type` for single table inheritance (class Firm < Company), `imageable_id` and `imageable_type` for polymorphic associations (belongs_to :imageable, polymorphic: true).
+* you can set any user in config/database.yml (even without password), but you need to change postgres config and create that user, simple:
 
     has_many :attachments, as: :attachmentable, conditions: { is_image: false }
     has_many :images, as: :attachmentable, class_name: 'Attachments', conditions: { is_image: true }
 
+* you can attach multiple polimorphic association with conditions:
+
+    has_many :attachments, as: :attachmentable, conditions: { is_image: false }
+    has_many :images, as: :attachmentable, class_name: 'Attachments', conditions: { is_image: true }
+* instead of `has_many :applied_jobs, through: :applications, source: :job` it is better to use `user.applications.map(&:job)` [link](https://coderwall.com/p/9xk6ra)
+* [N+1](http://guides.rubyonrails.org/active_record_querying.html#eager-loading-associations) problem is solved with `includes(:associated_table)` wich is actually LEFT OUTER JOINS, `joins(:associated_table)` is INNER JOIN. If model has_many :associated_table then `joins` will return multiple values because of multi values of :associated_table per item, or none is :associated_table does not exists for current item. `includes` will return the same number of items, with association objectloaded in memory.
+* new_record? does not work with associated count. It is beter to use length ie `survey.questions.length` 
+* [naming conventions](http://guides.rubyonrails.org/active_record_basics.html#convention-over-configuration-in-active-record) is to have `foreign_table_name_id` for associations (belongs_to :foreign_table_name), `type` for single table inheritance (class Firm < Company), `imageable_id` and `imageable_type` for polymorphic associations (belongs_to :imageable, polymorphic: true).
+* you can set any user in config/database.yml (even without password), but you need to change postgres config and create that user, simple:
+
+    sudo vi /etc/postgresql/9.1/main/pg_hba.conf 
+    # change all this words [md5, ident, peer] to trust 
+    sudo /etc/init.d/postgresql restart 
+    psql postgres 
+    CREATE USER "Dusan" CREATEDB ; 
+    \q 
+    # if it does not work because previous command created `dusan` instead of `Dusan` 
+    ALTER ROLE dusan RENAME TO "Dusan"; 
+    # or 
+    pgadmin3 # login as postgres without password and chage it to Dusan
 
 Migrations:
 
@@ -250,6 +373,7 @@ class ChangeScoreTypeInFilledAnswers < ActiveRecord::Migration
   end 
 end
 ~    
+* use db/seed.rb to add some working data (users, products) that should not go to production. add data to migration file if something needs to be in db (select box, customer plans) and use `rake db:migrate:reset & rake db:seed` instead of `rake db:setup` so migrations are actually perfomed
 ```
 * To change class **fields_with_error** you can override ActionView::Base.field_error_proc in any controller
  
@@ -277,6 +401,7 @@ performance:
 
 * Gem [miniprofiler](https://github.com/MiniProfiler/rack-mini-profiler) for analysing load time, disable with `http://mysite.com?pp=disable`
  
+* when using pagination on page where you have some activating/archiving [Kaminary gem](https://github.com/amatsuda/kaminari) with ajax does not know which params should be [black listed](https://github.com/amatsuda/kaminari/commit/2fd7d36b72af73d2506f8e2ab68704d804f70fc5) so use something like `paginate @jobs, params: { id: nil, action: 'index' }` in response index.js response file like this [ajax example](https://github.com/amatsuda/kaminari_example/tree/ajax)
 
 get the country based on ip address: 
 
@@ -290,6 +415,17 @@ get locale based on country: https://github.com/grosser/i18n_data:
 * country gem using currency gem to get currency https://github.com/hexorx/countries/
 * Query perfomance analyser https://github.com/nesquena/query_reviewer
 
+=== CANCAN
+
+ * if you set `can :manage, :all` in ability file, then after that you should define only what cannot. Only way that you need to define can after 'can :manage, :all' is for index, create or update actions, if you want to populate with hash, for example `can :index, Produc, { user: current_user }`, no block definitions for abilitity for managers since they can magane all!
+ * for [load_and_authorize_resource](https://github.com/ryanb/cancan/wiki/Authorizing-controller-actions) for :index, if you define ability in a [block](https://github.com/ryanb/cancan/wiki/Defining-Abilities-with-Blocks) instead of hash, then [load_resource](https://github.com/ryanb/cancan/wiki/Authorizing-controller-actions#index-action) will not populate @products since it does not know how to do it. For :show, :edit, :update and :destroy it will fetch by params[:id], for :new and :create it will create new one if you define hash, and it will be overwritten with params[:class] attributes 
+
+== BACKGROUND WORKER
+
+ * is your server need to use third party api, it is advisable to put it in background, so in case of traffic congestion (for example you and target api) user do not receive 'not responding page' since browsers have timeout 30 sec.
+ * [SuckerPunch](https://github.com/brandonhilkert/sucker_punch) is done in the same thread and can be run on heroku on single dyno (drawback is that it is cleaned on each restart, deploy, even error with exception)
+ * [DelayedJob](https://github.com/collectiveidea/delayed_job) is peristent since it stores serialized object in db, and when it comes to run it, it retrive object and run method (drawback is number of ActiveRecord connections to db, since each worker need two, one to retreive the object, another to use with ActiveRecord. Watch out when you backup database, delayed jobs should not be restored).
+ * [Sidekiq](http://sidekiq.org/) is identical to Socker Punch, fast and run on single thread, better than delayed_job since it can run 20 processes in same time, threadsafe, works on [one heroky dyno with unicorn webserver](https://coderwall.com/p/fprnhg) set up heroku `config:set REDIS_PROVIDER=REDISTOGO_URL` (drawback is that you need to use Redis server for in memory database storage)
 If there is an error *invalid byte sequence in US-ASCII* try to *export LANG=en_US.UTF-8* before installing a gem
 
 For rvm put ```source ~/.bash_profile``` in your **~/.bashrc** file and you do not need to enable terminal settings to "Run command as login shell"
@@ -297,6 +433,9 @@ For rvm put ```source ~/.bash_profile``` in your **~/.bashrc** file and you do n
 Ruby
 ===
 
+* [rescue_from](http://api.rubyonrails.org/classes/ActiveSupport/Rescuable/ClassMethods.html) are searched from bootom to top.
+* number of methods for some object can be large, to search method use grep, for example `request.methods.grep /url/`
+* `self` in ruby is implicitly assumed, but you can use it for class methods or if you have attr_accessor :name, and have name="asd", name= is local variable assignment
 * `p ["a", "b"].map(&:upcase)` is equivalent to `p ["a", "b"].map{|string| string.upcase}`
 * regular expression http://www.rubular.com/
 * put -w for warning log https://github.com/bbatsov/ruby-style-guide
@@ -310,6 +449,7 @@ end
 ```
 * if dont know if path is array use: ` [*paths].each { |path| do_something(path) }`
 * `%w{word}` is non onterpolated, `W{#{some variable} word}` is interpolated array of words separated by space
+* ! has greater priority then == so use () to determine precedence, for example `if ! a==3` is not the same as `if a!=3`
 
 Jekyll
 ===
@@ -336,6 +476,7 @@ BASH
 
 * find and remove files
     find . -type f -name "FILE-TO-FIND" -exec rm -f {} \;
+* test the speed, download: `curl -o /dev/null http://speedtest.qsc.de/1GB.qsc`, crate big files `fallocate -l 1G gentoo_root.img` and use scp to test upload link.
 
 GIT
 ===
@@ -344,7 +485,7 @@ track remote branch if we did not have this branch already
 
     git checkout -t origin/branch
     
-push branch and track
+Push branch and track
 
     git push bitbucket development:development
   
@@ -352,9 +493,10 @@ Getting existing git branches to track remote branches:
 
     git branch --set-upstream gh-pages-bitbucket bitbucket/gh-pages 
     
-Git child commit reference with
+Git log
 
-    git log --reverse --ancestry-path 894e8b4e93d8f3^..master
+    git log --reverse --ancestry-path commit1^..commit2 # show commits that are descendant of commit1 AND ancestors of commit2, in the same time
+    git log $(git merge-base HEAD branch)..branch  # show commits only on branch
     
 Git stash only unstaged changes
 
@@ -364,7 +506,7 @@ Git checkout previous branch
 
     git checkout -
   
-see all the changed code
+See all the changed code
 
     git log -p
 
@@ -372,6 +514,10 @@ Show file at specific revision
 
     git show HEAD~4:index.html
     
+Rebase branches
+
+     git pull --rebase # pull remote changes and rebase you local commits
+     git rebase master # call this while you are on some feature branch
 Versioning [SEMVER](http://semver.org/)
 
 If there is two accounts on bitbucket or github with different keys use `.ssh/config` file
@@ -384,10 +530,14 @@ If there is two accounts on bitbucket or github with different keys use `.ssh/co
       Hostname bitbucket.org
       IdentityFile ~/.ssh/id_rsa_test
 
+To see which username (-T) and wich key (-v) is using:
+    
+    ssh -T git@bitbucket.org
+    ssh -v git@bitbucket.org
+
 If you want to ignore/reignore some files that are tracked (gitignore does not work on tracked files)
 
     git update-index --[no]-assume-unchanged <file>
 
-To see which username is using *ssh -T git@bitbucket.org*. To see which key *ssh -v git@bitbucket.org*
                                 
 
