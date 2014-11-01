@@ -104,6 +104,12 @@ iSO android and other mobile phone
 VIM
 ===
 
+* install [rails pluging]() and [pathogen](https://github.com/tpope/vim-pathogen) and other interesting plugings
+    mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+    curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+    cd ~/.vim/bundle
+    git clone git://github.com/tpope/vim-rails.git
+    git clone git://github.com/tpope/vim-bundler.git
 
 * **.vimrc** should be copied from  <http://vim.wikia.com/wiki/Example_vimrc> with this addidional lines
 
