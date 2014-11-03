@@ -47,6 +47,7 @@ HTML, CSS, Javascript
 * `hover` on mobile devices does not work what is expected. It stays in hover state until the user press (click) on the screen next time.
 * for popups with buttons, if you want to close popup clicking anywhere outside button, button should not be included in background div to clearly separate when popup should be closed. if it is inside we can workaround with targeting more specifically and stop propagation `$('#letsdoit').click( function(e) { e.stopPropagation();});`
 * in rails-ujs click on links with remote:true is not efected with e.preventDefault()
+* get the user agent online [http://ifconfig.me/all](http://ifconfig.me/all)
 * detect browsers version
 
     function is_uiwebview(){
