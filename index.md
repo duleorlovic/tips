@@ -527,7 +527,7 @@ Rebase branches
      git rebase master # call this while you are on some feature branch
 Versioning [SEMVER](http://semver.org/)
 
-If there is two accounts on bitbucket or github with different keys use `.ssh/config` file
+If there is two accounts on bitbucket or github with different keys use `.ssh/config` file and put:
 
     Host secure.bitbucket.org
       Hostname bitbucket.org
@@ -540,7 +540,10 @@ If there is two accounts on bitbucket or github with different keys use `.ssh/co
 To see which username (-T) and wich key (-v) is using:
     
     ssh -T git@bitbucket.org
-    ssh -v git@bitbucket.org
+    ssh -v git@secure.bitbucket.org
+    
+If you want, you can generate id_rsa_secure with password, so it will asked each time you use git command.
+Heroku uses keys from `~/.netrc` which is created when you type `heroku login` (once is setup, it stays forever)
 
 If you want to ignore/reignore some files that are tracked (gitignore does not work on tracked files)
 
