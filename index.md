@@ -79,7 +79,7 @@ HTML, CSS, Javascript
     end                                                          
     
 * if you are using `window.location.replace('http://a.b');` then browser back button is not working as espected. Its better to use `window.location.assign('new_page');` because the page is stored in history
-* when user click back button previous page is reshown, and chrome reruns the javascript, but mozilla don't. 
+* when user click back button previous page is reshown, and chrome reruns the javascript, but mozilla don't. if you want in mozilla to run again, write `window.onunload = function(){};`
  
     
 * [enabling CORS](http://blog.jetthoughts.com/2010/12/22/allow-multiple-access-control-requests-for-rails/) add before filter:
