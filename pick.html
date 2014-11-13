@@ -108,7 +108,8 @@
       $('#sortable').append('<li class="ui-state-default">'+i+'</li>');
     }
     $( "#sortable" ).sortable({
-      items: "li"
+      items: "li",
+      update: update_order, 
     });
     $( "#sortable" ).disableSelection();
 
@@ -320,22 +321,26 @@
     var all = $('#sortable').children();
     var shuffled = shuffle(all);
     $('#sortable').html('').append(shuffled);
+    update_order(); 
+  }
+  function update_order() {
     var email_href="mailto:bazenishop@gmail.com?Subject=Narucivanje%20mozaika&Body=Naručujem%3A%0D%0D";
     $('#chosen_tiles').children().each(function() {
       email_href += $(this).children('input[name=quantity]').val();
       email_href += "%20x%20";
-      email_href += $(this).children('img').attr('title');
+      var img_path = $(this).children('img').attr('src');
+      email_href += img_path.substring(4,img_path.length-4);
       email_href += "%0D";
     });
-    all.each( function(index) { 
+    $('#sortable').children().each( function(index) { 
       if (index % N == 0)
       { 
         email_href += "%0D";
       }
-      email_href += $(this).children('img').attr('title') +"%2C";
+      var img_path = $(this).children('img').attr('src');
+      email_href += img_path.substring(4,img_path.length-4) +"%2C";
     });
     $('#send_email').prop('href',email_href);
-   
   }
   // http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
   function shuffle(array) {
