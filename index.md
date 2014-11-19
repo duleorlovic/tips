@@ -160,6 +160,7 @@ Commands
     :set tabstop=2 shiftwidth=2 expandtab # set configuration
     retab # this will actually reformat all source
     `"+y` copy visual selection to system clipboard, ubuntu should run `sudo apt-get install vim-gtk`
+    `vit` inner or `vat` outer visual select tag, jump with `o` more on `:help visual-operators` `:help v_it`
 
 Heroku 
 ===
