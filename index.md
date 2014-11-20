@@ -94,6 +94,17 @@ HTML, CSS, Javascript
     console.log("data="+JSON.stringify(data));
     
 * disable turbolinks `document.body.setAttribute('data-no-turbolink','true')`
+* turbolinks are good if some of page content is changed using ajax. Browser back button when turbolink is enabled shows last content (not first that was fatched). When turbolinks is disabled, you can force reshering the page with set_cache_buster before filter:
+
+  def set_cache_buster
+    response.headers["Cache-Control"] = "no-cache, no-store, max-age=0, must-revalidate"
+    response.headers["Pragma"] = "no-cache"
+    response.headers["Expires"] = "Fri, 01 Jan 1990 00:00:00 GMT"
+  end
+
+
+
+
 
 
 iSO android and other mobile phone
