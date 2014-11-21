@@ -274,6 +274,7 @@ Rspec
 Rails
 ===
 
+* when you want to create nested models on the same form, its nice to generate template on server and change id (rails cast)[https://github.com/ryanb/complex-form-examples/blob/master/app/helpers/application_helper.rb] (stack)[http://stackoverflow.com/questions/2879208/rails-fields-for-child-index-option-explanation] but its easier to just use hidden template with name that is the same as for nested model, for example `email_message[proposal_attributes][proposal_item_attributes][][price]`. Form need to be configured to send array instead of hash for nested parameters parameters, that is `child_index: ''`. Whay we need hash and ids ?
 * folders in app/assets/* are hidden when you are accessing files, for example: `localhost:3000/assets/file.txt` should be here `app/assets/javascript/file.txt` or `app/assets/img/file.txt` (last one overrides prev). In production files that are listed in application.css.erb would be served as part of application.css, but all other files are served as is on their locations. 
 * to undo `rails generate model survey` you can call `rails destroy model survey`
 * All files from assets are provided but not all are included in all layouts (default is `app/views/layouts/application.html.erb`)
