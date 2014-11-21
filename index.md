@@ -141,6 +141,8 @@ nnoremap gy :grep "<c-r>"" * --exclude-dir={log,public,tmp,vendor} -R -I<CR>
 set hlsearch
 " this is for tab completion , to stop cycle press CTRL+E than tab
 set wildmode=longest,list,full
+" search selected text, press // while in visual mode
+vnorem // y/<c-r>"<cr>
 ~~~
 
 vim
