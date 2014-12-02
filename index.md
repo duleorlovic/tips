@@ -42,6 +42,7 @@
 HTML, CSS, Javascript
 ===
 
+* scope of variable is from a moment of declaration to the end of function where it is declared (global context acts like one big function encompassing the code on the page), scope of a function is **entire** function where it is declared. block nesting like `if` statement, does not affect scope
 * [document ready](http://learn.jquery.com/using-jquery-core/document-ready/) can be detected in `$(document).ready(function(){})` or because ready can be used [only on current document](http://www.w3schools.com/jquery/event_ready.asp) selector is not needed `$(function(){});`
 * when `<a></a>` does not have href that it will not follow thelink so you do not need to preventDefault. Use this for toggling some part
 * `hover` on mobile devices does not work what is expected. It stays in hover state until the user press (click) on the screen next time.
