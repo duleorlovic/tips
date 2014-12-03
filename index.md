@@ -106,8 +106,15 @@ HTML, CSS, Javascript
 
 
 
+REGEX
+===
 
-
+* great source for regular expression explanation http://www.regexr.com/ http://regex101.com/
+* to extract url params (subject,body) from mailto href you can use URI to un-escape html characters: 
+    subject_match = mailto.match(/[?&]subject=([^&]+)[&$]/)[1]
+    if subject_match
+      subject_from_mailto = URI.unescape subject_match
+    end
 
 iSO android and other mobile phone
 ===
