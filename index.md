@@ -435,28 +435,23 @@ ActionView::Base.field_error_proc = Proc.new { |html_tag, instance|
 Gems
 ===
 
-performance:
-
-* Gem [miniprofiler](https://github.com/MiniProfiler/rack-mini-profiler) for analysing load time, disable with `http://mysite.com?pp=disable`
+* performance:
+** [miniprofiler](https://github.com/MiniProfiler/rack-mini-profiler) for analysing load time, disable with `http://mysite.com?pp=disable`
 * when using pagination on page where you have some activating/archiving [Kaminary gem](https://github.com/amatsuda/kaminari) with ajax does not know which params should be [black listed](https://github.com/amatsuda/kaminari/commit/2fd7d36b72af73d2506f8e2ab68704d804f70fc5) so use something like `paginate @jobs, params: { id: nil, action: 'index' }` in response index.js response file like this [ajax example](https://github.com/amatsuda/kaminari_example/tree/ajax)
+* get the country based on ip address:
+** [geocoder](https://github.com/alexreisner/geocoder), [geo_ip](http://rubygems.org/gems/geo_ip) [instructions](http://igotrailed.wordpress.com/2013/11/19/detecting-user-location-with-rails/), [geoip](http://rubygems.org/gems/geoip) which can be downloaded as database [geolite](http://dev.maxmind.com/geoip/legacy/geolite/) and have country code based on [iso3166](http://dev.maxmind.com/geoip/legacy/codes/iso3166/)
+** get locale based on country: [i18n_data](https://github.com/grosser/i18n_data)
+** country gem using currency gem to get currency [countries](https://github.com/hexorx/countries/)
+* [browser-timezone-rails](https://github.com/kbaum/browser-timezone-rails) is best gem to display local time withouht any calculation (using jsTimezoneDetect)
 
-get the country based on ip address:
-* https://github.com/alexreisner/geocoder, 
-* http://rubygems.org/gems/geo_ip (instructions http://igotrailed.wordpress.com/2013/11/19/detecting-user-location-with-rails/)
-* http://rubygems.org/gems/geoip (which can be downloaded as database http://dev.maxmind.com/geoip/legacy/geolite/) and have country code based on [iso3166](http://dev.maxmind.com/geoip/legacy/codes/iso3166/)
-* https://github.com/scottwater/detect_timezone_rails or https://github.com/kbaum/browser-timezone-rails using jsTimezoneDetect
-
-get locale based on country: https://github.com/grosser/i18n_data:
-
-* country gem using currency gem to get currency https://github.com/hexorx/countries/
-* Query perfomance analyser https://github.com/nesquena/query_reviewer
-
-=== CANCAN
+CANCAN
+===
 
  * if you set `can :manage, :all` in ability file, then after that you should define only what cannot. Only way that you need to define can after 'can :manage, :all' is for index, create or update actions, if you want to populate with hash, for example `can :index, Produc, { user: current_user }`, no block definitions for abilitity for managers since they can magane all!
  * for [load_and_authorize_resource](https://github.com/ryanb/cancan/wiki/Authorizing-controller-actions) for :index, if you define ability in a [block](https://github.com/ryanb/cancan/wiki/Defining-Abilities-with-Blocks) instead of hash, then [load_resource](https://github.com/ryanb/cancan/wiki/Authorizing-controller-actions#index-action) will not populate @products since it does not know how to do it. For :show, :edit, :update and :destroy it will fetch by params[:id], for :new and :create it will create new one if you define hash, and it will be overwritten with params[:class] attributes 
 
-== BACKGROUND WORKER
+BACKGROUND WORKER
+===
 
  * is your server need to use third party api, it is advisable to put it in background, so in case of traffic congestion (for example you and target api) user do not receive 'not responding page' since browsers have timeout 30 sec.
  * [SuckerPunch](https://github.com/brandonhilkert/sucker_punch) is done in the same thread and can be run on heroku on single dyno (drawback is that it is cleaned on each restart, deploy, even error with exception)
