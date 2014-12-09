@@ -39,7 +39,22 @@
 
 * http://www.w3.org/TR/selectors/
 
-HTML, CSS, Javascript
+HTML
+===
+
+* if option select is required, we usually prompt user with one more option "Please select", but it is bad to allow user to pick that option "Please select". You can disable option, and you should force selected on it if other option is not selected (http://jsfiddle.net/u8PWX/1/) 
+  
+  <select onchange="this.form.submit()">
+    <option selected="selected" disabled="true">--Please Select --</option>
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+  </select>
+
+In rails, you can use something like
+
+  <%= select_tag "job[job_type_id]",("<option #{ "selected='selected'".html_safe unless fjob.object.job_type_id } disabled='disabled'>Job Type</option>".html_safe+ options_from_collection_for_select(JobType.active.all, :id, :name,{selected: fjob.object.job_type_id})), { class: "e1" } %>
+
+Javascript
 ===
 
 * scope of variable is from a moment of declaration to the end of function where it is declared (global context acts like one big function encompassing the code on the page), scope of a function is **entire** function where it is declared. block nesting like in `if` statement, does not affect scope. Scope of inline function `var b=function a(){}` is only inside function
