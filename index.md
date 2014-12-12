@@ -37,7 +37,15 @@
   </div>
 </div>
 
-* http://www.w3.org/TR/selectors/
+Third party
+===
+
+* fundamentals [http://www.w3.org/TR/selectors/](http://www.w3.org/TR/selectors/)
+* opensource crowdsourcing
+  * [catarse](https://github.com/catarse/catarse) [tilt](https://github.com/crowdtilt/crowdtiltopen/)
+* jquery plugins
+  * [jbox](http://stephanwagner.me/jBox) notifications, popups ... 
+ 
 
 HTML
 ===
