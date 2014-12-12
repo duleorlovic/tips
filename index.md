@@ -37,15 +37,6 @@
   </div>
 </div>
 
-Third party
-===
-
-* fundamentals [http://www.w3.org/TR/selectors/](http://www.w3.org/TR/selectors/)
-* opensource crowdsourcing
-  * [catarse](https://github.com/catarse/catarse) [tilt](https://github.com/crowdtilt/crowdtiltopen/)
-* jquery plugins
-  * [jbox](http://stephanwagner.me/jBox) notifications, popups ... 
- 
 
 HTML
 ===
@@ -605,4 +596,15 @@ If you want to ignore/reignore some files that are tracked (gitignore does not w
     git update-index --[no]-assume-unchanged <file>
 
                                 
+Third party
+===
+
+* fundamentals
+  * [W3.org](http://www.w3.org/TR/selectors/)
+  * [OWASP](https://www.owasp.org/index.php/Category:Attack) nice examples of attack and vulnerability
+* opensource crowdsourcing
+  * [catarse](https://github.com/catarse/catarse) [tilt](https://github.com/crowdtilt/crowdtiltopen/)
+* jquery plugins
+  * [jbox](http://stephanwagner.me/jBox) notifications, popups ... 
+ 
 
