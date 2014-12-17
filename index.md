@@ -389,6 +389,7 @@ so in controller we can write `@users = User.order(sort_column+" "+sort_directio
       end
     end
 
+
 * its better to use `destroy` instead of `delete` since it will trigger [destroying associated models](http://api.rubyonrails.org/classes/ActiveRecord/Associations/ClassMethods.html#module-ActiveRecord::Associations::ClassMethods-label-Delete+or+destroy%3F) but its better not to remove anything since it is blocking operation
 * when you are adding new validations (for example title needs to be present) write also a migration file to make sure all items in database are valid. To check if some unvalid object exists in database you can run `Rails.application.eager_load!` and `e=ActiveRecord::Base.descendants.select { |c| c.all.select {|i| !i.save}.present? }.map {|c| c.all.select {|i| !i.save}.map { |i| i.save;puts c;i.errors} }`. 
 * [default_scope is appended to all queries][http://rails-bestpractices.com/posts/806-default_scope-is-evil], only way to remove it is `uncope`
