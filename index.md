@@ -378,15 +378,15 @@ so in controller we can write `@users = User.order(sort_column+" "+sort_directio
 
 * to make some fields private you can use [link](http://stackoverflow.com/questions/3764899/is-there-a-way-to-make-rails-activerecord-attributes-private)
 
-  class YourModel < ActiveRecord::Base
-  private
-    def my_private_attribute
-      self[:my_private_attribute]
+    class YourModel < ActiveRecord::Base
+    private
+      def my_private_attribute
+        self[:my_private_attribute]
+      end
+      def my_private_attribute=(val)
+        write_attribute :my_private_attribute, val
+      end
     end
-    def my_private_attribute=(val)
-      write_attribute :my_private_attribute, val
-    end
-  end
 
 * its better to use `destroy` instead of `delete` since it will trigger [destroying associated models](http://api.rubyonrails.org/classes/ActiveRecord/Associations/ClassMethods.html#module-ActiveRecord::Associations::ClassMethods-label-Delete+or+destroy%3F) but its better not to remove anything since it is blocking operation
 * when you are adding new validations (for example title needs to be present) write also a migration file to make sure all items in database are valid. To check if some unvalid object exists in database you can run `Rails.application.eager_load!` and `e=ActiveRecord::Base.descendants.select { |c| c.all.select {|i| !i.save}.present? }.map {|c| c.all.select {|i| !i.save}.map { |i| i.save;puts c;i.errors} }`. 
