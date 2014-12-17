@@ -378,6 +378,7 @@ so in controller we can write `@users = User.order(sort_column+" "+sort_directio
 
 * to make some fields private you can use [link](http://stackoverflow.com/questions/3764899/is-there-a-way-to-make-rails-activerecord-attributes-private)
 
+
     class YourModel < ActiveRecord::Base
     private
       def my_private_attribute
