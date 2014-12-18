@@ -620,6 +620,8 @@ Third party
 * opensource crowdsourcing
   * [catarse](https://github.com/catarse/catarse) [tilt](https://github.com/crowdtilt/crowdtiltopen/)
 * jquery plugins
-  * [jbox](http://stephanwagner.me/jBox) notifications, popups ... 
+  * [jbox](http://stephanwagner.me/jBox) notifications, popups ...
+  * "One minute ago" can be updated automatically in this [timeago](http://timeago.yarp.com/) plugin
+
  
 
