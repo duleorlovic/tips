@@ -471,6 +471,7 @@ Gems
   * get locale based on country: [i18n_data](https://github.com/grosser/i18n_data)
   * country gem using currency gem to get currency [countries](https://github.com/hexorx/countries/)
 * [browser-timezone-rails](https://github.com/kbaum/browser-timezone-rails) is best gem to display local time withouht any calculation (using jsTimezoneDetect)
+* pdf generator [wickedpdf](https://github.com/mileszs/wicked_pdf)
 
 CANCAN
 ===
@@ -618,10 +619,13 @@ Third party
   * [W3.org](http://www.w3.org/TR/selectors/)
   * [OWASP](https://www.owasp.org/index.php/Category:Attack) nice examples of attack and vulnerability
 * opensource crowdsourcing
-  * [catarse](https://github.com/catarse/catarse) [tilt](https://github.com/crowdtilt/crowdtiltopen/)
+  * [catarse](https://github.com/catarse/catarse)
+  * [tilt](https://github.com/crowdtilt/crowdtiltopen/) is not actually opensource, since their api should be used
 * jquery plugins
   * [jbox](http://stephanwagner.me/jBox) notifications, popups ...
   * "One minute ago" can be updated automatically in this [timeago](http://timeago.yarp.com/) plugin
+* javascript
+  * [jsPDF](https://github.com/MrRio/jsPDF) pdf generator [examples](http://mrrio.github.io/jsPDF/#) 
 
  
 
