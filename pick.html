@@ -11,6 +11,10 @@
   ul {
     list-style-type: none; 
   }
+  form input {
+    display: block;
+    margin: 10px;
+  }
   button {
     margin: 5px;
   }
@@ -92,6 +96,9 @@
   #help-text {
     clear: both;
   }
+  .order {
+    display: none;
+  }
   </style>
   <script>
 // http://api.jqueryui.com/menu/
@@ -124,7 +131,7 @@
 
 
     // create button
-    $( "button,#send_email" ).each(function() {
+    $( "button,input[type='submit']" ).each(function() {
       var button = $( this ).button({
         icons: {
           primary: $( this ).data( "icon" )
@@ -193,6 +200,7 @@
       }
       $('#chosen_tiles').append(new_row);
       $('#chosen_tiles input').first().trigger('change');
+      $('.order').show('highlight');
     });
 
     // remove one row
@@ -335,6 +343,7 @@
       email_href += img_path.substring(4,img_path.length-4);
       email_href += "%0D";
     });
+    email_href += "%0D";
     $('#sortable').children().each( function(index) { 
       if (index % N == 0)
       { 
@@ -343,7 +352,9 @@
       var img_path = $(this).children('img').attr('src');
       email_href += img_path.substring(4,img_path.length-4) +"%2C";
     });
+    var text_email = email_href.replace(/%2C/gi,',').replace(/%0D/gi,'\n').replace(/%20/gi,' ');
     $('#send_email').prop('href',email_href);
+    $('#send_email_form').val(text_email);
   }
   // http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
   function shuffle(array) {
@@ -386,7 +397,16 @@
     <button title="Ukloni ovu pločicu"  data-icon="ui-icon-circle-close"  class="remove">sifra</button>
   </li>
 </ul>
-<a href="mailto:bazenishop@gmail.com?Subject=Narucivanje%20mozaika&Body=Naručujuem%0D" data-icon="ui-icon-mail-closed" title="Pošalji email" id="send_email">Naruči</a>
+<div class="order">
+  <form action="//formspree.io/bazenishop@gmail.com" method="post">
+    <input type="text" name="name" placeholder="Vaše ime i prezime">
+    <input type="text" name="message" placeholder="Dodatna poruka">
+    <input type="email" name="_replyto" placeholder="Vaša imejl adresa">
+    <input type="hidden" name="table" value="sadsad" id="send_email_form">
+    <input type="submit" value="Naruči" data-icon="ui-icon-mail-closed" title="Naruči ovu kombinaciju" >
+  </form>
+  ili sam <a href="mailto:bazenishop@gmail.com?Subject=Narucivanje%20mozaika&Body=Naručujuem%0D" data-icon="ui-icon-mail-closed" title="Pošalji email sa ovom kombinacijom" id="send_email">pošalji email</a>
+</div>
 <p id="help-text">
 Iz opcije „Dodaj“ izabrati željene vrste mozaika za miksovanje.
 <br>
