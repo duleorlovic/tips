@@ -117,7 +117,7 @@
     $( "#sortable" ).disableSelection();
 
     // loading tiles
-    list_of_images = "20G12.jpg   20R10.jpg  20R56.jpg  B14.jpg   B335.jpg  B70.jpg   C62.jpg  E403.jpg  F931.jpg  KR3.jpg   L90.jpg    P08.jpg  P53.jpg  S05.jpg  S25.jpg  SL2.jpg  Z23.jpg  Z54.jpg   20G41.jpg   20R20.jpg  20R82.jpg  B32.jpg   B33.jpg   C131.jpg  C77.jpg  E521.jpg  GL1.jpg   L130.jpg  NE169.jpg  P30.jpg  P63.jpg  S06.jpg  S56.jpg  Z02.jpg  Z26.jpg  Z55.jpg   20G61.jpg   20R22.jpg  20R96.jpg  B331.jpg  B39.jpg   C434.jpg  C84.jpg  F530.jpg  GL2.jpg   L51.jpg   P01.jpg    P35.jpg  P64.jpg  S20.jpg  S57.jpg  Z10.jpg  Z28.jpg   20GY92.jpg  20R55.jpg  20Y22.jpg  B333.jpg  B69.jpg   C60.jpg   C94.jpg  F751.jpg  KR0.jpg   L73.jpg   P07.jpg    P37.jpg  S04.jpg  S22.jpg  SL1.jpg  Z15.jpg  Z32.jpg WA90.jpg WA91.jpg".match(/[^ ]+/g)
+    list_of_images = "S20.jpg   S22.jpg  S25.jpg   S57.jpg  S56.jpg  S06.jpg  S05.jpg  S04.jpg  S831.jpg P53.jpg   P07.jpg  P08.jpg   P30.jpg  P01.jpg  P35.jpg  P37.jpg  P64.jpg  P63.jpg  Z32.jpg   Z23.jpg  Z28.jpg   Z26.jpg  Z15.jpg  Z55.jpg  Z54.jpg  Z10.jpg  Z02.jpg B331.jpg  B70.jpg  B14.jpg   B69.jpg  B333.jpg  B32.jpg  B335.jpg B33.jpg  B39.jpg C131.jpg  C434.jpg  C77.jpg  C84.jpg  C60.jpg  C94.jpg   C62.jpg  WA91.jpg  WA90.jpg L130.jpg  F931.jpg  E521.jpg F751.jpg L90.jpg  L51.jpg  L73.jpg  20G61.jpg  20GY92.jpg 20G12.jpg E403.jpg NE169.jpg 20R82.jpg  F530.jpg 20Y22.jpg 20G41.jpg SL1.jpg SL2.jpg 20R10.jpg 20R20.jpg 20R22.jpg 20R56.jpg 20R96.jpg GL1.jpg GL2.jpg KR0.jpg KR3.jpg".match(/[^ ]+/g)
     list_of_images.forEach(function(img) { 
       $('#pick_tile').append('<li><img src="img/'+img+'" title="'+img.substring(0,img.length-4)+'"></li>');
     });
