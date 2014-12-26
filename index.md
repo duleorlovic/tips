@@ -301,6 +301,7 @@ Rspec
 Rails
 ===
 
+* [truncate_html](https://github.com/hgmnz/truncate_html) is when you want to truncate text inside html. When you are using `raw` than it is advisable to use [sanitize](http://api.rubyonrails.org/classes/ActionView/Helpers/SanitizeHelper.html#method-i-sanitize) 
 * target with `data-` attributes when you put some javascript on elements. When new markup come, you just need to copy data attributes. Also they can contain some real data: id or array of some id's. In rails do not use `data: { total_value: 0}` because its hard to search. It's better to use `"data-total-value" => 0` 
 * when form is submitted and when there are errors, scaffold rails render again :new action, but the browser url is changed to the requested url so if than user refresh the page, it is another template (usually it's a index action of the same controller, but could be another controller)
 * when you want to create nested models on the same form, its nice to generate template on server and change id (rails cast)[https://github.com/ryanb/complex-form-examples/blob/master/app/helpers/application_helper.rb] (stack)[http://stackoverflow.com/questions/2879208/rails-fields-for-child-index-option-explanation] but its easier to just use hidden template with name that is the same as for nested model, for example `email_message[proposal_attributes][proposal_item_attributes][][price]`. Form need to be configured to send array instead of hash for nested parameters parameters, that is `child_index: ''`. Whay we need hash and ids ?
