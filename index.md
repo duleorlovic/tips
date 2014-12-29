@@ -111,7 +111,7 @@ Javascript
     console.log("data="+JSON.stringify(data));
     
 * disable turbolinks `document.body.setAttribute('data-no-turbolink','true')`
-* turbolinks are good if some of page content is changed using ajax. Browser back button when turbolink is enabled shows last content (not first that was fatched). When turbolinks is disabled, you can force reshering the page with set_cache_buster before filter:
+* turbolinks are good if some of page content is changed using ajax. Browser back button when turbolink is enabled shows last content (not first that was fatched). When turbolinks is disabled, you can force refreshing the page with set_cache_buster before filter. Note that any input field stays populated (also hidden input field which you eventually populated in javascript):
 
   def set_cache_buster
     response.headers["Cache-Control"] = "no-cache, no-store, max-age=0, must-revalidate"
