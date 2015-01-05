@@ -147,9 +147,9 @@ mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 cd ~/.vim/bundle
-git clone git://github.com/tpope/vim-rails.git
-git clone git://github.com/tpope/vim-bundler.git
-git clone git://github.com/tpope/vim-fugitive.git
+git clone git://github.com/tpope/vim-rails.git # example: Rview
+git clone git://github.com/tpope/vim-bundler.git # Bopen
+git clone git://github.com/tpope/vim-fugitive.git # Gblame, Gbrowse
 vim -u NONE -c "helptags vim-fugitive/doc" -c q
 ~~~
 
@@ -175,36 +175,36 @@ set wildmode=longest,list,full
 vnorem // y/<c-r>"<cr>
 ~~~
 
-vim
+* usefull commands:
 
-Commands
-
-    dap}p switch two paragraph
-    Repeat last colon command  @:  and @@
-    :grep subject -R * --exclude-dir={log,spec,public,features,tmp,vendor,assets,db} -I
-    Ctrl+p  # in insert mode is completing the string
-    dE # removes to the End of the string
-    daw removes the inner word
-    yy
-    :%s/old/new/gc
-    mA then 'A jumb there, :marks gives the jump location, '' is last jump, '. jump and change
-    :tabe file  open file in new tab, gt switch between tabs
-    :vsp #1  vertically split window with file #1
-    :on or Ctrl+W+o #closes all windord except current
-    :buffers, :b1, :bun closes the buffer
-    q: shows history of commands
-    q/ shows history of searches
-    5G or :5 goes to the line 5
-    gg goes top, G goes bottom
-    :args app/*/*  to add all files to arg list
-    :argdo %s/foo/bar/ge | update   replace in all arg
-    find /home/bruno/old-friends -type f -exec sed -i 's/ugly/beautiful/g' {} \;
-    CTRL+^ (shift+6) jump to previous buffer  
-    :set tabstop=2 shiftwidth=2 expandtab # set configuration
-    retab # this will actually reformat all source
-    `"+y` copy visual selection to system clipboard, ubuntu should run `sudo apt-get install vim-gtk`
-    `vit` inner or `vat` outer visual select tag, jump with `o` more on `:help visual-operators` `:help v_it`
-    :help Ctrl-W_T open current buffer in new tab
+~~~
+dap}p switch two paragraph
+Repeat last colon command  @:  and @@
+:grep subject -R * --exclude-dir={log,spec,public,features,tmp,vendor,assets,db} -I
+Ctrl+p  # in insert mode is completing the string
+dE # removes to the End of the string
+daw removes the inner word
+yy
+:%s/old/new/gc
+mA then 'A jumb there, :marks gives the jump location, '' is last jump, '. jump and change
+:tabe file  open file in new tab, gt switch between tabs
+:vsp #1  vertically split window with file #1
+:on or Ctrl+W+o #closes all windord except current
+:buffers, :b1, :bun closes the buffer
+q: shows history of commands
+q/ shows history of searches
+5G or :5 goes to the line 5
+gg goes top, G goes bottom
+:args app/*/*  to add all files to arg list
+:argdo %s/foo/bar/ge | update   replace in all arg
+find /home/bruno/old-friends -type f -exec sed -i 's/ugly/beautiful/g' {} \;
+CTRL+^ (shift+6) jump to previous buffer  
+:set tabstop=2 shiftwidth=2 expandtab # set configuration
+retab # this will actually reformat all source
+`"+y` copy visual selection to system clipboard, ubuntu should run `sudo apt-get install vim-gtk`
+`vit` inner or `vat` outer visual select tag, jump with `o` more on `:help visual-operators` `:help v_it`
+:help Ctrl-W_T open current buffer in new tab
+~~~
 
 Heroku 
 ===
