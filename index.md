@@ -142,6 +142,7 @@ VIM
 
 * install [pathogen](https://github.com/tpope/vim-pathogen) and other interesting plugins:
  
+
     mkdir -p ~/.vim/autoload ~/.vim/bundle && \
     curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
     cd ~/.vim/bundle
