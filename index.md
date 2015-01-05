@@ -140,7 +140,8 @@ iSO android and other mobile phone
 VIM
 ===
 
-* install [pathogen](https://github.com/tpope/vim-pathogen) and other interesting plugings
+* install [pathogen](https://github.com/tpope/vim-pathogen) and other interesting plugins
+ 
 etc:
 
     mkdir -p ~/.vim/autoload ~/.vim/bundle && \
