@@ -501,6 +501,7 @@ For rvm put ```source ~/.bash_profile``` in your **~/.bashrc** file and you do n
 Ruby
 ===
 
+* default params for function could be set like `def f(a=1);end`, and default values for variables if not defined `if defined? var;var=true;end` (do not use `var||=true` since it will override `var=false`)
 * if you want to save output of ruby script `ruby a.rb |tee output` and want to see output in realtime you need to call flush after each puts `$stdout.flush` or you can set that for whole script `STDOUT.sync = true`
 * [rescue_from](http://api.rubyonrails.org/classes/ActiveSupport/Rescuable/ClassMethods.html) are searched from bootom to top.
 * break two nested loops (two levels)
