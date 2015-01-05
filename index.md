@@ -149,6 +149,8 @@ curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 cd ~/.vim/bundle
 git clone git://github.com/tpope/vim-rails.git
 git clone git://github.com/tpope/vim-bundler.git
+git clone git://github.com/tpope/vim-fugitive.git
+vim -u NONE -c "helptags vim-fugitive/doc" -c q
 ~~~
 
 * **.vimrc** should be copied from  <http://vim.wikia.com/wiki/Example_vimrc> with this addidional lines
