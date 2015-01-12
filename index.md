@@ -673,7 +673,8 @@ Third party
   * [jbox](http://stephanwagner.me/jBox) notifications, popups ...
   * "One minute ago" can be updated automatically in this [timeago](http://timeago.yarp.com/) plugin
 * javascript
-  * [jsPDF](https://github.com/MrRio/jsPDF) pdf generator [examples](http://mrrio.github.io/jsPDF/#) 
+  * [jsPDF](https://github.com/MrRio/jsPDF) pdf generator [examples](http://mrrio.github.io/jsPDF/#)
+  * [graphs gallery](https://github.com/mbostock/d3/wiki/Gallery)
 
  
 
