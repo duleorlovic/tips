@@ -125,6 +125,7 @@ REGEX
 ===
 
 * great source for regular expression explanation http://www.regexr.com/ http://regex101.com/
+* grep lines not containig word, you need to use param -P. Vim example find non disable buttons: `:grep -P "^.*button(?!.*disable.*)" app/views/* -R`
 * to extract url params (subject,body) from mailto href you can use URI to un-escape html characters: 
     subject_match = mailto.match(/[?&]subject=([^&]+)[&$]/)[1]
     if subject_match
