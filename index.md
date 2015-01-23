@@ -542,7 +542,7 @@ Ruby
 * if you want to see all methods for some object, you can `a.methods.grep /what/`. If you want to list all  instance methods, but not methods of superclass `a.class.instance_methods(false)`. To see where it is defined `a.method(:what).source_location`
 * if you want to return hash as result on some collection (map always return array), you can use `{ "x" => 1, "y" => 2, "z" => 3 }.each_with_object({}) {|(k,v),o| o[k.to_sym]=v }`
 * remove duplicate repettitive spaces from string `str.split.join(" ")`
-* default params for function could be set like `def f(a=1);end`, and default values for variables if not defined `if defined? var;var=true;end` (do not use `var||=true` since it will override `var=false`)
+* default params for function could be set like `def f(a=1);end`, and default values for variables if not defined `var = true unless defined? var` (do not use `var||=true` since it will override `var=false`)
 * if you want to save output of ruby script `ruby a.rb |tee output` and want to see output in realtime you need to call flush after each puts `$stdout.flush` or you can set that for whole script `STDOUT.sync = true`
 * [rescue_from](http://api.rubyonrails.org/classes/ActiveSupport/Rescuable/ClassMethods.html) are searched from bootom to top.
 * break two nested loops (two levels)
