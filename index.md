@@ -345,6 +345,7 @@ Rspec
 Rails
 ===
 
+* rails use cache for activerecord, and if you need to send query again and fetch fresh data, you can use `.reload`
 * [truncate_html](https://github.com/hgmnz/truncate_html) is when you want to truncate text inside html. When you are using `raw` than it is advisable to use [sanitize](http://api.rubyonrails.org/classes/ActionView/Helpers/SanitizeHelper.html#method-i-sanitize) 
 * target with `data-` attributes when you put some javascript on elements. When new markup come, you just need to copy data attributes. Also they can contain some real data: id or array of some id's. In rails do not use `data: { total_value: 0}` because its hard to search. It's better to use `"data-total-value" => 0` 
 * when form is submitted and when there are errors, scaffold rails render again :new action, but the browser url is changed to the requested url so if than user refresh the page, it is another template (usually it's a index action of the same controller, but could be another controller)
