@@ -347,8 +347,9 @@ Rails
 
 * params usually need to be striped, so you can use this code to get rid of all unnecessary spaces
 
-    params_contact_striped = params[:contact].each_with_object({}) { |(k,v),o| o[k] = v.split.join(" ") } # strip spaces
-
+~~~
+params_contact_striped = params[:contact].each_with_object({}) { |(k,v),o| o[k] = v.split.join(" ") } # strip spaces
+~~~
 
 * rails use cache for activerecord, and if you need to send query again and fetch fresh data, you can use `.reload`
 * [truncate_html](https://github.com/hgmnz/truncate_html) is when you want to truncate text inside html. When you are using `raw` than it is advisable to use [sanitize](http://api.rubyonrails.org/classes/ActionView/Helpers/SanitizeHelper.html#method-i-sanitize) 
