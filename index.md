@@ -547,7 +547,7 @@ Ruby
 ===
 
 * condition *if* or *? :* in parameters lists to check if function argument should be passed can be used in two ways for hash argumests: merge or conditional. Since hash argument need key/value pair you can not pass `a(b:2,{c:3}` since {c:3} is not pair.  note that we usually need extra () around conditions
-  * merge example `form_for @user, {}.merge((class: 'main' if @condition))` (key 'class' is not always passed in form)
+  * merge example `form_for @user, {}.merge( @contition ? {class: 'main'} : {} )` (key 'class' is not always passed in form), note that we have to pass hash to merge and we can not use `{class: 'main'} if @condition` since it will try to merge nil and raise exception if @condition == false
   * conditional `form_for @user, class: ('main' if @condition)`(key 'class' always exists as param, but value is nil unless @contidion). 
 * if you want to see all methods for some object, you can `a.methods.grep /what/`. If you want to list all  instance methods, but not methods of superclass `a.class.instance_methods(false)`. To see where it is defined `a.method(:what).source_location`
 * if you want to return hash as result on some collection (map always return array), you can use `{ "x" => 1, "y" => 2, "z" => 3 }.each_with_object({}) {|(k,v),o| o[k.to_sym]=v }`
