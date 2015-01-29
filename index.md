@@ -678,15 +678,15 @@ Third party
 * fundamentals
   * [W3.org](http://www.w3.org/TR/selectors/)
   * [OWASP](https://www.owasp.org/index.php/Category:Attack) nice examples of attack and vulnerability
-* opensource crowdsourcing
-  * [catarse](https://github.com/catarse/catarse)
-  * [tilt](https://github.com/crowdtilt/crowdtiltopen/) is not actually opensource, since their api should be used
+* opensource rails projects
+  * crowdsourcing [catarse](https://github.com/catarse/catarse) [tilt](https://github.com/crowdtilt/crowdtiltopen/) is not actually opensource, since their api should be used
 * jquery plugins
   * [jbox](http://stephanwagner.me/jBox) notifications, popups ...
   * "One minute ago" can be updated automatically in this [timeago](http://timeago.yarp.com/) plugin
 * javascript
   * [jsPDF](https://github.com/MrRio/jsPDF) pdf generator [examples](http://mrrio.github.io/jsPDF/#)
   * [graphs gallery](https://github.com/mbostock/d3/wiki/Gallery)
+  * nice js filter [bouncy content filter](http://codyhouse.co/demo/bouncy-content-filter/)
 
  
 
