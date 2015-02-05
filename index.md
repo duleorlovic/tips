@@ -449,21 +449,13 @@ so in controller we can write `@users = User.order(sort_column+" "+sort_directio
 * [default_scope is appended to all queries][http://rails-bestpractices.com/posts/806-default_scope-is-evil], only way to remove it is `uncope`
 * Assigning an object to a [belongs_to](http://guides.rubyonrails.org/association_basics.html#belongs-to-association-reference) association does not automatically save the object. It does not save the associated object either.
 * you can specify order for association: `has_many :educations, -> {order 'graduation_year DESC'}, :dependent => :destroy`
-* instead of `has_many :applied_jobs, through: :applications, source: :job` it is better to use `user.applications.map(&:job)` [link](https://coderwall.com/p/9xk6ra)
-* [N+1](http://guides.rubyonrails.org/active_record_querying.html#eager-loading-associations) problem is solved with `includes(:associated_table)` wich is actually LEFT OUTER JOINS, `joins(:associated_table)` is INNER JOIN. If model has_many :associated_table then `joins` will return multiple values because of multi values of :associated_table per item, or none is :associated_table does not exists for current item. `includes` will return the same number of items, with association objectloaded in memory.
-* new_record? does not work with associated count. It is beter to use length ie `survey.questions.length` 
-* [naming conventions](http://guides.rubyonrails.org/active_record_basics.html#convention-over-configuration-in-active-record) is to have `foreign_table_name_id` for associations (belongs_to :foreign_table_name), `type` for single table inheritance (class Firm < Company), `imageable_id` and `imageable_type` for polymorphic associations (belongs_to :imageable, polymorphic: true).
-* you can set any user in config/database.yml (even without password), but you need to change postgres config and create that user, simple:
-
-    has_many :attachments, as: :attachmentable, conditions: { is_image: false }
-    has_many :images, as: :attachmentable, class_name: 'Attachments', conditions: { is_image: true }
 
 * you can attach multiple polimorphic association with conditions:
 
     has_many :attachments, as: :attachmentable, conditions: { is_image: false }
     has_many :images, as: :attachmentable, class_name: 'Attachments', conditions: { is_image: true }
 * instead of `has_many :applied_jobs, through: :applications, source: :job` it is better to use `user.applications.map(&:job)` [link](https://coderwall.com/p/9xk6ra)
-* [N+1](http://guides.rubyonrails.org/active_record_querying.html#eager-loading-associations) problem is solved with `includes(:associated_table)` wich is actually LEFT OUTER JOINS, `joins(:associated_table)` is INNER JOIN. If model has_many :associated_table then `joins` will return multiple values because of multi values of :associated_table per item, or none is :associated_table does not exists for current item. `includes` will return the same number of items, with association objectloaded in memory.
+* [N+1](http://guides.rubyonrails.org/active_record_querying.html#eager-loading-associations) problem is solved with `includes(:associated_table)` wich is actually LEFT OUTER JOINS, `joins(:associated_table)` is INNER JOIN. If model has_many :associated_table then `joins` will return multiple values because of multi values of :associated_table per item, or none is :associated_table does not exists for current item. `includes` will return the same number of items, with association objectloaded in memory. nested joins `includes(jobs: [:user])`. `Message.joins(:job).where(user: d,job: a.jobs)`
 * new_record? does not work with associated count. It is beter to use length ie `survey.questions.length` 
 * [naming conventions](http://guides.rubyonrails.org/active_record_basics.html#convention-over-configuration-in-active-record) is to have `foreign_table_name_id` for associations (belongs_to :foreign_table_name), `type` for single table inheritance (class Firm < Company), `imageable_id` and `imageable_type` for polymorphic associations (belongs_to :imageable, polymorphic: true).
 * you can set any user in config/database.yml (even without password), but you need to change postgres config and create that user, simple:
