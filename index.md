@@ -636,11 +636,16 @@ See all the changed code
 Show file at specific revision
 
     git show HEAD~4:index.html
+
+Find bug using bisect on specific folder or file
+
+     git bisect start -- app/controllers/registration_controller.rb
     
 Rebase branches
 
      git pull --rebase # pull remote changes and rebase you local commits
      git rebase master # call this while you are on some feature branch
+     
 Versioning [SEMVER](http://semver.org/)
 
 If there is two accounts on bitbucket or github with different keys use `.ssh/config` file and put:
