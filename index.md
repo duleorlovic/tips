@@ -527,6 +527,17 @@ CANCAN
  * if you set `can :manage, :all` in ability file, then after that you should define only what cannot. Only way that you need to define can after 'can :manage, :all' is for index, create or update actions, if you want to populate with hash, for example `can :index, Produc, { user: current_user }`, no block definitions for abilitity for managers since they can magane all!
  * for [load_and_authorize_resource](https://github.com/ryanb/cancan/wiki/Authorizing-controller-actions) for :index, if you define ability in a [block](https://github.com/ryanb/cancan/wiki/Defining-Abilities-with-Blocks) instead of hash, then [load_resource](https://github.com/ryanb/cancan/wiki/Authorizing-controller-actions#index-action) will not populate @products since it does not know how to do it. For :show, :edit, :update and :destroy it will fetch by params[:id], for :new and :create it will create new one if you define hash, and it will be overwritten with params[:class] attributes 
 
+DEVISE
+===
+
+* you should not write `after_create :my_func` hook in User model, since devise `resource.save` will return true, but `resource.error` will contain some fanky error *Email can't be blank* [link](https://github.com/plataformatec/devise/issues/2841)
+* if you do not allow users do destroy accounts, in your `class RegistrationsController < Devise::RegistrationsController` you should overide destroy with something like ([notification](http://duleorlovic.github.io/blog/ruby-on-rails/exception-notification/2015/01/11/good-rails-exception-notification-better-than-tests/))
+    
+    def destroy
+        ExceptionNotifier.notify_exception(Exception.new('destroy user'), env: request.env, data: { current_user: current_user });
+    end
+
+
 BACKGROUND WORKER
 ===
 
