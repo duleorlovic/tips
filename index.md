@@ -671,9 +671,10 @@ If you want to ignore/reignore some files that are tracked (gitignore does not w
     git update-index --[no]-assume-unchanged <file>
 
                                 
-Third party
+Other
 ===
 
+* [blog](http://duleorlovic.github.io/blog/)
 * fundamentals
   * [W3.org](http://www.w3.org/TR/selectors/)
   * [OWASP](https://www.owasp.org/index.php/Category:Attack) nice examples of attack and vulnerability
