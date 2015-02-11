@@ -243,6 +243,7 @@ retab # this will actually reformat all source
 `"+y` copy visual selection to system clipboard, ubuntu should run `sudo apt-get install vim-gtk`
 `vit` inner or `vat` outer visual select tag, jump with `o` more on `:help visual-operators` `:help v_it`
 :help Ctrl-W_T open current buffer in new tab
+`%y+` copy all lines to clipboard
 ~~~
 
 Heroku 
