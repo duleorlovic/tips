@@ -246,7 +246,7 @@ retab # this will actually reformat all source
 `%y+` copy all lines to clipboard
 ~~~
 
-* using vim inside irb or rails console with gem [interactive_editor](https://github.com/jberkel/interactive_editor). You can write your code and insert byebug/debuger/pry in rails code, and start hunting for bugs 
+* using vim inside irb or rails console with gem [interactive_editor](https://github.com/jberkel/interactive_editor). Its usefull since you can paste only limited number of chars to irb line. Now you can write your input data in file/ruby code and insert byebug/debuger/pry in rails code, and start hunting for bugs 
 
 Heroku 
 ===
