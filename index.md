@@ -349,6 +349,15 @@ Rspec
 Rails
 ===
 
+* keys for test in *config/secrets.yml* or anyother yml file can be simplified using anchor (&) and reference (*). Ofcourse you can override them.
+~~~
+development: &default:
+  some_key: 123123
+test: *default
+production:
+  some_key: <%= ENV['SOME_KEY'] %>
+~~~
+
 * params usually need to be striped, so you can use this code to get rid of all unnecessary spaces
 
 ~~~
