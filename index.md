@@ -349,7 +349,8 @@ Rspec
 Rails
 ===
 
-* keys for test in *config/secrets.yml* or anyother yml file can be simplified using anchor (&) and reference (*). Ofcourse you can override them.
+* keys for test in *config/secrets.yml* or anyother yml file can be simplified using anchor (&) and reference (*). Drawback is that you can not override them.
+
 ~~~
 development: &default:
   some_key: 123123
