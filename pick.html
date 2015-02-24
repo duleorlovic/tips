@@ -398,13 +398,22 @@
   </li>
 </ul>
 <div class="order">
-  <form action="//formspree.io/bazenishop@gmail.com" method="post">
-    <input type="text" name="name" placeholder="Vaše ime i prezime">
-    <input type="text" name="message" placeholder="Dodatna poruka">
-    <input type="email" name="_replyto" placeholder="Vaša imejl adresa">
+  <form id='contact_form' action="//formspree.io/bazenishop@gmail.com" method="post">
+    <input type="text" id="contact_field" name="_replyto" placeholder="Vaša imejl adresa ili telefon">
+    <input type="text" name="first_name" placeholder="Vaše ime i prezime">
+    <input type="text" name="message" placeholder="Kvadratura i ostali podaci">
     <input type="hidden" name="table" value="sadsad" id="send_email_form">
     <input type="submit" value="Naruči" data-icon="ui-icon-mail-closed" title="Naruči ovu kombinaciju" >
   </form>
+  <script> 
+  $('#contact_form').submit(function(e) {
+      if ($('#contact_field').val() == "")
+      {
+        alert("Molim Vas da unesete kontakt podatke");
+        e.preventDefault();
+      }
+    });
+  </script>
   ili sam <a href="mailto:bazenishop@gmail.com?Subject=Narucivanje%20mozaika&Body=Naručujuem%0D" data-icon="ui-icon-mail-closed" title="Pošalji email sa ovom kombinacijom" id="send_email">pošalji email</a>
 </div>
 <p id="help-text">
