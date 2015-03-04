@@ -678,13 +678,13 @@ Versioning [SEMVER](http://semver.org/)
 
 If there is two accounts on bitbucket or github with different keys use `.ssh/config` file and put:
 
-    Host secure.bitbucket.org
+    Host newbitbucket.org
       Hostname bitbucket.org
-      IdentityFile ~/.ssh/id_rsa_secure
+      IdentityFile ~/.ssh/id_rsa_new
 
-    Host test.bitbucket.org
+    Host bitbucket.org
       Hostname bitbucket.org
-      IdentityFile ~/.ssh/id_rsa_test
+      IdentityFile ~/.ssh/id_rsa
 
 To see which username (-T) and wich key (-v) is using:
     
