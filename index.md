@@ -126,6 +126,8 @@ Javascript
 REGEX
 ===
 
+* `(a|b)` when you want to match a OR b
+* `.*?` when you want to force minimum rather than maximum match
 * great source for regular expression explanation http://www.regexr.com/ http://regex101.com/
 * grep lines not containig word, you need to use param -P. Vim example find non disable buttons: `:grep -P "^.*button(?!.*disable.*)" app/views/* -R`
 * to extract url params (subject,body) from mailto href you can use URI to un-escape html characters: 
@@ -569,6 +571,7 @@ For rvm put ```source ~/.bash_profile``` in your **~/.bashrc** file and you do n
 Ruby
 ===
 
+* dummy ruby objects [OpenStruct](http://ruby-doc.org/stdlib-2.0/libdoc/ostruct/rdoc/OpenStruct.html)
 * condition *if* or *? :* in parameters lists to check if function argument should be passed can be used in two ways for hash argumests: merge or conditional. Since hash argument need key/value pair you can not pass `a(b:2,{c:3}` since {c:3} is not pair.  note that we usually need extra () around conditions
   * merge example `form_for @user, {}.merge( @contition ? {class: 'main'} : {} )` (key 'class' is not always passed in form), note that we have to pass hash to merge and we can not use `{class: 'main'} if @condition` since it will try to merge nil and raise exception if @condition == false
   * conditional `form_for @user, class: ('main' if @condition)`(key 'class' always exists as param, but value is nil unless @contidion). 
