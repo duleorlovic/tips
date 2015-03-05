@@ -57,6 +57,7 @@ In rails, you can use something like
 Javascript
 ===
 
+* select elements by data attribute `$('a[data-color=true]')` or `$('a:data(collor)');`
 * to check if element(s) exists `if( $('#selector').length ) `
 * scope of variable is from a moment of declaration to the end of function where it is declared (global context acts like one big function encompassing the code on the page), scope of a function is **entire** function where it is declared. block nesting like in `if` statement, does not affect scope. Scope of inline function `var b=function a(){}` is only inside function
 * function context (*this* variable) is *window* for invocation as function `a()`, current object for invocation as method `b={};b.a=a;b.a()`. Invocation as contructor `var n=new A();` creates new object and passed to function as *this*, and if not return statements, it returns that object (they usually change new objects and are written Uppcase). Invocation with a.apply(b,[1,2]) and a.call(b,1,2) set manually the context `b` of a function (apply and call are function methods).
