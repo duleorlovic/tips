@@ -449,6 +449,11 @@ so in controller we can write `@users = User.order(sort_column+" "+sort_directio
 
 ## Active record
 
+* dump database from production for local inspection, you can download from heroku dump file and import in database
+
+    sudo su postgres
+    pg_restore -d Scuddle_app_development --clean --no-acl --no-owner -h localhost a216.dump
+
 * when you add validation `validate_presence_of :username` which you generate, you should also write migration for existing users and `before_create` hook to populate that field, update seed file
 * `accept_nested_attributes :jobs` is needed if you want to use `f.fields_for :jobs do |fjob|` for `user.jobs.new` nested form. you should add validations in jobs model `validates :user, presence: true` and you need to insert funky **inverse_of** in user model `has_many :messages, :dependent => :destroy, inverse_of: :user` if you want this validation to pass for nested attributes
 * to make some fields private you can use [link](http://stackoverflow.com/questions/3764899/is-there-a-way-to-make-rails-activerecord-attributes-private)
