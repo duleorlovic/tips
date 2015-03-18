@@ -352,6 +352,7 @@ Rspec
 Rails
 ===
 
+* when using username: first_name.last_name instead of id `resources :users, :constraints => { :id => /[^\/]+(?=\.html\z|\.json\z)|[^\/]+/ }, except: :new do`, users with first_name in ['new','edit','show'] will not be able to work properly
 * keys in locale files for i18n can be relative to current file: [lazy lookup](http://guides.rubyonrails.org/i18n.html#lazy-lookup) `<%= t '.title' %>` in *app/views/books/index.html.erb* is the same as `<%= t 'books.index.title' %>`. Also works for partials (skip leading _). Template could use locale extension *sr.html* for example: *app/views/books/index.sr.html.erb*. List of locale files on [i18n](https://github.com/svenfuchs/rails-i18n/tree/master/rails/locale) gem.
 * keys for *test* in *config/secrets.yml* or anyother yml file can be simplified using anchor (&) and reference (\*). For *test* keys, drawback is that you can not change or override them. If you need subset of keys to be shared you can use `<<` as for *production*.
 
