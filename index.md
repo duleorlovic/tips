@@ -452,6 +452,7 @@ so in controller we can write `@users = User.order(sort_column+" "+sort_directio
 
 ## Active record
 
+* enabling hstore [link](https://gist.github.com/terryjray/3296171) `sudo psql -d Scuddle_app_development -U orlovic` and `CREATE EXTENSION hstore;`
 * dump database from production for local inspection, you can download from heroku dump file and import in database
 
     sudo su postgres
@@ -730,11 +731,12 @@ Other
   * [jsPDF](https://github.com/MrRio/jsPDF) pdf generator [examples](http://mrrio.github.io/jsPDF/#)
   * [graphs gallery](https://github.com/mbostock/d3/wiki/Gallery) and [http://bl.ocks.org/mbostock](http://bl.ocks.org/mbostock)
   * nice js filter [bouncy content filter](http://codyhouse.co/demo/bouncy-content-filter/)
+  * javascript input filter [http://digitalbush.com/projects/masked-input-plugin/](http://digitalbush.com/projects/masked-input-plugin/)
 * ruby
   * [yml_gtranslate](https://github.com/zenchief/yml_gtranslate) automatic generate translated yml locale files for rails localisations using google translate `for f in $(find config/locales/ -type d);do yml_gt en rs $f;done`. Also usefull when want to grep only en.yml `grep -i catar config/locales --include *.en.yml -R`
   * [memory_profiler](https://github.com/SamSaffron/memory_profiler)  
 * 3th party
-    * [formspree](http://formspree.io/) sending emails in javascript 
+    * [formspree](http://formspree.io/) sending emails in javascript
 
  
 
