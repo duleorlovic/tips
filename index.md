@@ -57,6 +57,7 @@ In rails, you can use something like
 Javascript
 ===
 
+* to detect jQuery and load if needed  [follow this](https://docs.shopify.com/api/unlinked/using-javascript-responsibly) (you can put check onload `window.onload = function(e) { it (type jQuery == 'undefined')...}`) so you can wait for eventual later on page jQuery include
 * select elements by data attribute `$('a[data-color=true]')` or `$('a:data(collor)');`
 * to check if element(s) exists `if( $('#selector').length ) `
 * scope of variable is from a moment of declaration to the end of function where it is declared (global context acts like one big function encompassing the code on the page), scope of a function is **entire** function where it is declared. block nesting like in `if` statement, does not affect scope. Scope of inline function `var b=function a(){}` is only inside function
