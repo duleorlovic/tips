@@ -221,6 +221,7 @@ let g:netrw_liststyle=3
 * usefull commands:
 
 ~~~
++ and - move on the first letter up and down, { and } move on paragraph
 dap}p switch two paragraph
 Repeat last colon command  @:  and @@
 :grep subject -R * --exclude-dir={log,spec,public,features,tmp,vendor,assets,db} -I
@@ -229,7 +230,7 @@ dE # removes to the End of the string
 daw removes the inner word
 yy
 :%s/old/new/gc
-mA then 'A jumb there, :marks gives the jump location, '' is last jump, '. jump and change
+mA then 'A jump there (downcase letter a can jump only on current buffer), :marks gives the jump location, '' is jump back, '. jump to last change
 :tabe file  open file in new tab, gt switch between tabs
 :vsp #1  vertically split window with file #1
 :on or Ctrl+W+o #closes all windord except current
@@ -238,6 +239,7 @@ q: shows history of commands
 q/ shows history of searches
 5G or :5 goes to the line 5
 gg goes top, G goes bottom
+g, and g; jump to next/prev change on current buffer
 :args app/*/*  to add all files to arg list
 :argdo %s/foo/bar/ge | update   replace in all arg
 find /home/bruno/old-friends -type f -exec sed -i 's/ugly/beautiful/g' {} \;
