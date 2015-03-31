@@ -156,6 +156,7 @@ cd ~/.vim/bundle
 git clone git://github.com/tpope/vim-rails.git # example: Rview
 git clone git://github.com/tpope/vim-bundler.git # Bopen
 git clone git://github.com/tpope/vim-fugitive.git # Gblame, Gbrowse
+git clone git://github.com/tpope/vim-sensible.git # search before enter
 vim -u NONE -c "helptags vim-fugitive/doc" -c q
 ~~~
 
