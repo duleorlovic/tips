@@ -57,6 +57,7 @@ In rails, you can use something like
 Javascript
 ===
 
+* if element is hidden, some older browser security restrictions do not allow it to trigger a click with `$("#test").click();`. So it is better to show element but move it out of visible area `style="position:absolute; top:-100px;"` [link](http://stackoverflow.com/questions/793014/jquery-trigger-file-input).
 * to detect jQuery and load if needed  [follow this](https://docs.shopify.com/api/unlinked/using-javascript-responsibly) (you can put check onload `window.onload = function(e) { it (type jQuery == 'undefined')...}`) so you can wait for eventual later on page jQuery include
 * select elements by data attribute `$('a[data-color=true]')` or `$('a:data(collor)');`
 * to check if element(s) exists `if( $('#selector').length ) `
