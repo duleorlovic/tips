@@ -377,6 +377,13 @@ production:
 params_contact_striped = params[:contact].each_with_object({}) { |(k,v),o| o[k] = v.split.join(" ") } # strip spaces
 ~~~
 
+* also if you want to replace '\n' new lines in text area with <br> so it looks the same when displaying it. Example is with nested associated elements:
+
+~~~
+params[:contact] = params[:contact].each_with_object({}) { |(k,v),o| o[k] = v.each_with_object({}) { |(k1,v1),o1| o1[k1] = (v1.class == String ? v1.gsub(/\n/,'<br>'): v1) } } 
+
+~~~
+
 * [pry](http://pryrepl.org/) in rails with `pry -r /home/orlovic/rails/produceruncatarse/config/environment.rb` or in user [pry-rails](https://github.com/pry/pry/wiki/Setting-up-Rails-or-Heroku-to-use-Pry) gem 
 * if you need asset_path in some class (for example uploader) you can use this `ActionController::Base.helpers.asset_path 'image.png' `
 * rails use cache for activerecord, and if you need to send query again and fetch fresh data, you can use `.reload`
