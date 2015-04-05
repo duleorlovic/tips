@@ -182,7 +182,9 @@ set wildmode=longest,list,full
 " search selected text, press // while in visual mode
 vnorem // y/<c-r>"<cr>
 " change paste toggle key to F12 since F11 is maximize
-set pastetoggle=<F12>   
+set pastetoggle=<F12>
+" using leader (default is '\') to save file 
+noremap <Leader>w :w<CR>
 ~~~
 
 ~~~
