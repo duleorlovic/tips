@@ -745,7 +745,7 @@ Other
   * "One minute ago" can be updated automatically in this [timeago](http://timeago.yarp.com/) plugin
 * javascript
   * [jsPDF](https://github.com/MrRio/jsPDF) pdf generator [examples](http://mrrio.github.io/jsPDF/#)
-  * [graphs gallery](https://github.com/mbostock/d3/wiki/Gallery) and [http://bl.ocks.org/mbostock](http://bl.ocks.org/mbostock) [slider](http://square.github.io/crossfilter/) [people](http://www.findtheconversation.com/concept-map/#population)
+  * [graphs gallery](https://github.com/mbostock/d3/wiki/Gallery) and [http://bl.ocks.org/mbostock](http://bl.ocks.org/mbostock) [slider](http://square.github.io/crossfilter/) [people](http://www.findtheconversation.com/concept-map/#population) [parallel](http://exposedata.com/parallel/)
   * nice js filter [bouncy content filter](http://codyhouse.co/demo/bouncy-content-filter/)
   * javascript input filter [http://digitalbush.com/projects/masked-input-plugin/](http://digitalbush.com/projects/masked-input-plugin/)
 * ruby
