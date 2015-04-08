@@ -574,6 +574,7 @@ CANCAN
 DEVISE
 ===
 
+* in facebook omniauth callbacks params do not see actuall param my_param in `user_omniauth_authorize_path(:facebook, my_param: 1)`. You can access it in `request.env['omniauth.params']['my_param']`
 * you should not write `after_create :my_func` hook in User model, since devise `resource.save` will return true, but `resource.error` will contain some fanky error *Email can't be blank* [link](https://github.com/plataformatec/devise/issues/2841)
 * if you do not allow users do destroy accounts, in your `class RegistrationsController < Devise::RegistrationsController` you should overide destroy with something like ([notification](http://duleorlovic.github.io/blog/ruby-on-rails/exception-notification/2015/01/11/good-rails-exception-notification-better-than-tests/))
     
