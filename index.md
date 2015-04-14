@@ -754,7 +754,9 @@ Other
 * ruby
   * [yml_gtranslate](https://github.com/zenchief/yml_gtranslate) automatic generate translated yml locale files for rails localisations using google translate `for f in $(find config/locales/ -type d);do yml_gt en rs $f;done`. Also usefull when want to grep only en.yml `grep -i catar config/locales --include *.en.yml -R`
   * [memory_profiler](https://github.com/SamSaffron/memory_profiler)  
-* 3th party
+* chrome plugins and firefox extensions
+  * [user agent switcher](https://github.com/chrispederick/user-agent-switcher/) 
+* some services
     * [formspree](http://formspree.io/) sending emails in javascript
 
  
