@@ -742,10 +742,11 @@ Other
   * [OWASP](https://www.owasp.org/index.php/Category:Attack) nice examples of attack and vulnerability
 * opensource rails projects
   * crowdsourcing [catarse](https://github.com/catarse/catarse) [tilt](https://github.com/crowdtilt/crowdtiltopen/) is not actually opensource, since their api should be used
-* jquery plugins
+* javascript and jquery plugins
   * [jbox](http://stephanwagner.me/jBox) notifications, popups ...
   * "One minute ago" can be updated automatically in this [timeago](http://timeago.yarp.com/) plugin
-* javascript
+  * [zeroclipboard](https://github.com/zeroclipboard/zeroclipboard) to copy some text on click
+  * [tokenize](http://zellerda.com/projects/jquery/tokenize) for tags, preselecting items
   * [jsPDF](https://github.com/MrRio/jsPDF) pdf generator [examples](http://mrrio.github.io/jsPDF/#)
   * [graphs gallery](https://github.com/mbostock/d3/wiki/Gallery) and [http://bl.ocks.org/mbostock](http://bl.ocks.org/mbostock) [slider](http://square.github.io/crossfilter/) [people](http://www.findtheconversation.com/concept-map/#population) [parallel](http://exposedata.com/parallel/)
   * nice js filter [bouncy content filter](http://codyhouse.co/demo/bouncy-content-filter/)
