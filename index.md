@@ -57,6 +57,47 @@ In rails, you can use something like
 Javascript
 ===
 
+* to check if element is visible and to scroll into view
+
+~~~
+
+function check_if_in_view($element, options) {
+  // https://developer.mozilla.org/en-US/docs/Web/API/Element.scrollIntoView
+  // use options parameter to force scrolling even element is visible on current view
+  // if options == true/false, the top of the element will be aligned to the top/bottom of the visible area of the scrollable ancestor.
+  if (typeof document.getElementsByTagName('body')[0].scrollIntoView == 'undefined')
+  {
+    console.log("scrollIntoView not defined");
+    return true;
+  }
+  else if (typeof options != 'undefined')
+  {
+    console.log("ckeckIfInView "+options);
+    $element[0].scrollIntoView(options);
+  }
+  else
+  {
+    // check if visible
+    var offset = $element.offset().top - $(window).scrollTop();
+    if(offset < 0){
+        console.log("alignWithTop=true");
+        $element[0].scrollIntoView();
+        return false;
+    }
+    else if (offset > window.innerHeight){
+        console.log("alignWithTop=false");
+        $element[0].scrollIntoView(false);
+        return false;
+    }
+    else
+    {
+      console.log("no scroll, its visible");
+      return true;
+    }
+  }
+}
+~~~
+
 * if element is hidden, some older browser security restrictions do not allow it to trigger a click with `$("#test").click();`. So it is better to show element but move it out of visible area `style="position:absolute; top:-100px;"` [link](http://stackoverflow.com/questions/793014/jquery-trigger-file-input).
 * to detect jQuery and load if needed  [follow this](https://docs.shopify.com/api/unlinked/using-javascript-responsibly) (you can put check onload `window.onload = function(e) { it (type jQuery == 'undefined')...}`) so you can wait for eventual later on page jQuery include
 * select elements by data attribute `$('a[data-color=true]')` or `$('a:data(collor)');`
