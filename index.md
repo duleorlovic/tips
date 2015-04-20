@@ -612,6 +612,7 @@ HTTPARTY
 ===
 
 * examples [https://github.com/jnunemaker/httparty/tree/master/examples](https://github.com/jnunemaker/httparty/tree/master/examples)
+* in irb `response = HTTParty.post(url, :body => some_data.to_json, :basic_auth => auth, :headers => {"X-Custom" => "foo"}, :debug_output => $stdout)`
 
 CANCAN
 ===
