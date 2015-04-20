@@ -608,6 +608,11 @@ Gems
 * [browser-timezone-rails](https://github.com/kbaum/browser-timezone-rails) is best gem to display local time withouht any calculation (using jsTimezoneDetect)
 * pdf generator [wickedpdf](https://github.com/mileszs/wicked_pdf)
 
+HTTPARTY
+===
+
+* examples [https://github.com/jnunemaker/httparty/tree/master/examples](https://github.com/jnunemaker/httparty/tree/master/examples)
+
 CANCAN
 ===
 
