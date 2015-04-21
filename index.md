@@ -807,6 +807,10 @@ Other
   * [user agent switcher](https://github.com/chrispederick/user-agent-switcher/) 
 * some services
     * [formspree](http://formspree.io/) sending emails in javascript
+* payment
+  * https://www.braintreepayments.com/
+  * https://www.paddle.co/
+  * https://www.payola.io/
 
  
 
