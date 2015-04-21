@@ -169,6 +169,10 @@ function check_if_in_view($element, options) {
     response.headers["Expires"] = "Fri, 01 Jan 1990 00:00:00 GMT"
   end
 
+SQL
+===
+
+* `PG::InvalidColumnReference: ERROR:  SELECT DISTINCT ON expressions must match initial ORDER BY expressions` is a problem when you do not include column `a` for which you want to order, so it should be `SELECT DINSTINCT ON (dinstinct,a)...`
 
 
 REGEX
