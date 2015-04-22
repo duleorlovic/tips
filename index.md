@@ -802,6 +802,8 @@ Other
 * fundamentals
   * [W3.org](http://www.w3.org/TR/selectors/)
   * [OWASP](https://www.owasp.org/index.php/Category:Attack) nice examples of attack and vulnerability
+* css tools
+  * [autoprefixer](https://github.com/ai/autoprefixer-rails) 
 * opensource rails projects
   * crowdsourcing [catarse](https://github.com/catarse/catarse) [tilt](https://github.com/crowdtilt/crowdtiltopen/) is not actually opensource, since their api should be used
 * javascript and jquery plugins
