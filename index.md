@@ -42,6 +42,10 @@
 HTML
 ===
 
+* **inline**: *<span>*, *<em>*, *<strong>*, *<img>*. Inline elements do not cause transitions to a new line, but will be displayed one next to the other horizontally.
+* **block-level**: *<div>*, *<p>*, *<article>*. Block elements are set like blocks that stack on top of each other and will never display next to one another horizontally
+* **inline-block**: *<label>*, *<input>*, and *<textarea>*. Inline blocks will act as inline elements (elements are displayed next to each other), but differ in that they can be for instance resized. For example, the <textarea> field can be displayed as a large rectangle, but it can take up space beyond a single line of text.
+* to make <li> horizontal, change its style to display inline, or float: left
 * if option select is required, we usually prompt user with one more option "Please select", but it is bad to allow user to pick that option "Please select". You can disable option, and you should force selected on it if other option is not selected [demo](http://jsfiddle.net/u8PWX/1/)
   
     <select onchange="this.form.submit()">
@@ -821,6 +825,8 @@ Other
   * https://www.braintreepayments.com/
   * https://www.paddle.co/
   * https://www.payola.io/
+* interesting css
+  * http://www.echoesoftsunami.com/ 
 
  
 
