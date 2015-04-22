@@ -816,6 +816,7 @@ Other
   * [user agent switcher](https://github.com/chrispederick/user-agent-switcher/) 
 * some services
     * [formspree](http://formspree.io/) sending emails in javascript
+    * [caniuse.com](http://caniuse.com/) to see what is supported and what is not in modern browsers
 * payment
   * https://www.braintreepayments.com/
   * https://www.paddle.co/
