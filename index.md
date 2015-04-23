@@ -182,6 +182,13 @@ SQL
 REGEX
 ===
 
+* to regex email in text stream 
+
+~~~
+r = Regexp.new(/\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}\b/)     
+emails = content.scan(r).uniq  
+~~~
+
 * `(a|b)` when you want to match a OR b
 * `.*?` when you want to force minimum rather than maximum match
 * great source for regular expression explanation http://www.regexr.com/ http://regex101.com/
