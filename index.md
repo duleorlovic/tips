@@ -42,7 +42,7 @@
 HTML
 ===
 
-* **inline**: *<span>*, *<em>*, *<strong>*, *<img>*. Inline elements do not cause transitions to a new line, but will be displayed one next to the other horizontally.
+* **inline**: <span>, <em>, <strong>, <img>. Inline elements do not cause transitions to a new line, but will be displayed one next to the other horizontally.
 * **block-level**: *<div>*, *<p>*, *<article>*. Block elements are set like blocks that stack on top of each other and will never display next to one another horizontally
 * **inline-block**: *<label>*, *<input>*, and *<textarea>*. Inline blocks will act as inline elements (elements are displayed next to each other), but differ in that they can be for instance resized. For example, the <textarea> field can be displayed as a large rectangle, but it can take up space beyond a single line of text.
 * to make <li> horizontal, change its style to display inline, or float: left
@@ -536,6 +536,7 @@ sudo su postgres
 pg_restore -d Scuddle_app_development --clean --no-acl --no-owner -h localhost a216.dump
 ~~~
 
+* validate with if contition `validates_presence_of :user_id, if: Proc.new{ |u| u.active? }`
 * when you add validation `validate_presence_of :username` which you generate, you should also write migration for existing users and `before_create` hook to populate that field, update seed file
 * `accept_nested_attributes :jobs` is needed if you want to use `f.fields_for :jobs do |fjob|` for `user.jobs.new` nested form. Usually you add validations in jobs model, for example `validates :user, presence: true`, but than you need to insert funky **inverse_of** in user model `has_many :jobs, :dependent => :destroy, inverse_of: :user` if you want this validation to pass for nested attributes
 * to make some fields private you can use [link](http://stackoverflow.com/questions/3764899/is-there-a-way-to-make-rails-activerecord-attributes-private)
