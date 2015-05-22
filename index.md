@@ -18,6 +18,7 @@
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li><a href="http://duleorlovic.github.io/tips">Home</a></li>
+        <li><a href="#nodejs">Node.js</a></li>
         <li><a href="#javascript">Javascript</a></li>
         <li><a href="#vim">Vim</a></li>
         <li><a href="#heroku">Heroku</a></li>
@@ -38,6 +39,10 @@
   </div>
 </div>
 
+Node.js
+===
+
+* `npm config set prefix '~/.npm-packages'` and `export PATH="$PATH:$HOME/.npm-packages/bin"`
 
 HTML
 ===
@@ -814,7 +819,8 @@ Other
   * [W3.org](http://www.w3.org/TR/selectors/)
   * [OWASP](https://www.owasp.org/index.php/Category:Attack) nice examples of attack and vulnerability
 * css tools
-  * [autoprefixer](https://github.com/ai/autoprefixer-rails) 
+  * [autoprefixer](https://github.com/ai/autoprefixer-rails)
+  * [http://www.browsersync.io/](http://www.browsersync.io/)
 * opensource rails projects
   * crowdsourcing [catarse](https://github.com/catarse/catarse) [tilt](https://github.com/crowdtilt/crowdtiltopen/) is not actually opensource, since their api should be used
 * javascript and jquery plugins
