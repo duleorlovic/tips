@@ -211,7 +211,8 @@ iSO android and other mobile phone
 ===
 
 * fadein and fadeout does not work well on mobilephone iOS android, its better to use display: block, display: none
-* click event [does not work on iOS](http://stackoverflow.com/questions/3705937/document-click-not-working-correctly-on-iphone-jquery) and element is not clicable. simple solution is to add style: "cursor: pointer".
+* click event [does not work on iOS](http://stackoverflow.com/questions/3705937/document-click-not-working-correctly-on-iphone-jquery) when element is not clicable. simple solution is to add style: "cursor: pointer".
+* on android when input is not visible, it can not be interacted with, better is to use `style="left:1000px"`
 
 VIM
 ===
