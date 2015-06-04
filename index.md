@@ -536,6 +536,7 @@ so in controller we can write `@users = User.order(sort_column+" "+sort_directio
 
 ## Active record
 
+* if question mark is used in activerecord query `scope :customers, -> { where('role = ?', ROLE_EMPLOYER)}` than you should use table name because in joins some other table could have role column `scope :customers, -> { where('users.role = ?', ROLE_EMPLOYER)}`, but the best is if you use hash `scope :customers, -> { where( role: ROLE_EMPLOYER)}` (you can even build new customer with `User.customers.build`
 * [has_and_belongs_to_many](http://guides.rubyonrails.org/association_basics.html#the-has-and-belongs-to-many-association) needs a table model1_model2 (where model1 name is less than model2 in alphabet)
 * enabling hstore [link](https://gist.github.com/terryjray/3296171) `sudo psql -d Scuddle_app_development -U orlovic` and `CREATE EXTENSION hstore;`
 * dump database from production for local inspection, you can download from heroku dump file and import in database
