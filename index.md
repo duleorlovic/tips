@@ -551,6 +551,7 @@ so in controller we can write `@users = User.order(sort_column+" "+sort_directio
 * [has_and_belongs_to_many](http://guides.rubyonrails.org/association_basics.html#the-has-and-belongs-to-many-association) needs a table model1_model2 (where model1 name is less than model2 in alphabet)
 * for HABTM you can use f.collection_check_boxes :job_type_ids, JobType.active.all, :id, :name`. Trick here is to use *job_type_ids*. That _ids is provides for all has_many association
 * you can join several tables,just use their name: Job <-> MinQualitication <-> User
+
 ~~~
 class Job
   def suggested_jobseekers
@@ -558,7 +559,9 @@ class Job
   end
 end
 ~~~
-* enabling hstore [link](https://gist.github.com/terryjray/3296171) `sudo psql -d Scuddle_app_development -U orlovic` and `CREATE EXTENSION hstore;`
+
+* enabling hstore [link](https://gist.github.com/terryjray/3296171) `sudo psql -d Scuddle_app_development -U orlovic` and `CREATE EXTENSION hstore;` or in one command: `sudo su postgres -c "psql Scuddle_app_test -c 'CREATE EXTENSION hstore;'"` also for both test and development database [link](https://github.com/diogob/activerecord-postgres-hstore/issues/99)
+
 * dump database from production for local inspection, you can download from heroku dump file and import in database
 
 ~~~
