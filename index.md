@@ -617,9 +617,9 @@ pg_restore -d Scuddle_app_development --clean --no-acl --no-owner -h localhost a
 
 Migrations:
 
-* if we call Products.update_all :fuzz => 'fuzzy' in migration, it will probably break in the future, because Products will be validated for something that we did not planned. Better is to create local **class Product < ActiveRecord::Base;end**, and call **Product.reset_column_information**
+* if we call `Products.update_all :fuzz => 'fuzzy'` in migration, it will probably break in the future, because *Products* will be validated for something that we did not know on that time. Better is to create local `class Product < ActiveRecord::Base;end` and call `Product.reset_column_information`
 * to change type from string to integer (using cast)
-```
+~~~
 class ChangeScoreTypeInFilledAnswers < ActiveRecord::Migration 
   def up 
     change_column :filled_answers, :score, 'integer USING CAST(score AS integer)'
@@ -628,9 +628,8 @@ class ChangeScoreTypeInFilledAnswers < ActiveRecord::Migration
     change_column :filled_answers, :score, :string 
   end 
 end
-~    
-* use db/seed.rb to add some working data (users, products) that should not go to production. add data to migration file if something needs to be in db (select box, customer plans) and use `rake db:migrate:reset & rake db:seed` instead of `rake db:setup` so migrations are actually perfomed
-```
+~~~  
+* use *db/seed.rb* to add some working data (users, products) that should not go to production. add data to migration file if something needs to be in db (select box, customer plans) and use `rake db:migrate:reset & rake db:seed` instead of `rake db:setup` so migrations are actually perfomed
 * To change class **fields_with_error** you can override ActionView::Base.field_error_proc in any controller
  
 ~~~
