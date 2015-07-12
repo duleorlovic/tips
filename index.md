@@ -480,9 +480,23 @@ params[:contact] = params[:contact].each_with_object({}) { |(k,v),o| o[k] = v.ea
    rails c production
    
 * you can use `raw` or `.html_safe` but it is advised to use [`sanitize`](http://apidock.com/rails/ActionView/Helpers/SanitizeHelper/sanitize) with it to strip script tags
-* for ajax actions (links with remote:true) it should be implemented both, JS and  HTML version, since user can use right click on in new tab for that links
-* if you have ajax links, it is advisable to implement notification in case of error since ajax error tends to be silent.
+* for ajax actions (links with `remote:true`) it should be implemented both, JS and  HTML version, since user can use right click on in new tab for that links. It can be `respond to` `format.html`, or in before filter `before_action :reload_on_html_request, only: [ :active, :pause]` and
+~~~
+  def reload_on_html_request
+    # we have ajax link (not buttons) that can be opened in new window which causes an error... we redirect them to back (referrer)
+    # http://api.rubyonrails.org/classes/ActionController/Redirecting.html
+    # http://stackoverflow.com/questions/771656/correctly-doing-redirect-to-back-in-ruby-on-rails-when-referrer-is-not-availabl
+    if ! request.xhr?
+      redirect_to :back # that is the same as request.env["HTTP_REFERER"]
+    end
+  rescue ActionController::RedirectBackError
+    redirect_to root_path
+  end
+~~~
 
+* if you have ajax links, it is advisable to implement notification in case of error since ajax error tends to be silent:
+ 
+~~~
     // ajax error handling, currently only for debugging                                        
     LOG && $(document).on('ajax:error', '[data-remote]', function(e, xhr, status, error) {      
       LOG && console.log("ajax:error [data-remote] e.target="+e.target+" status="+status+" error="+error);
@@ -490,6 +504,7 @@ params[:contact] = params[:contact].each_with_object({}) { |(k,v),o| o[k] = v.ea
       $('.active').removeClass('active');
       flash_alert("Please refresh the page. Server responds with: \"" +status+ " " + error + "\".");
     });
+~~~
 
 * [turbolinks](https://github.com/rails/turbolinks) loads new page, replaces body and title, and use pushState. Any javascript is run after replacement so you can reference all elements in <script> tags on the beggining of the page (if you really want to). [Execution order](http://stackoverflow.com/questions/8996852/load-and-execute-order-of-scripts) of non dymanically ([defer or async](http://www.w3schools.com/tags/att_script_async.asp)) script are the same as they appear on the page (inline script is halted until external is loaded).  But with turbolinks, as with other dynamic loading where you can not know the order, execution is done after replacing, but before external script is loaded, so you probably can not have javascript_include_tag inside a view, because the code it provides will be available after all script on a page is done, and if you have several includes, the order is not preserved since the shortest one can be executed before all others. So the solution is to render all javascript inside the template with `<%= render 'app/assets/javascript/custom_script', formats: [:js] %>`
 * accessing helper functions in controller can be done using `view_context` (including ApplicationHelper is not generally a good idea)
