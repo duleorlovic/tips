@@ -506,6 +506,41 @@ params[:contact] = params[:contact].each_with_object({}) { |(k,v),o| o[k] = v.ea
     });
 ~~~
 
+* `data-disable-with` is provided with [rails-ujs](https://github.com/rails/jquery-ujs/blob/master/src/rails.js#L335) and if you want to manually send ajax requests than you need to manually fire up `ajax:complete` events. For example ` $(this).trigger("ajax:complete");` in:
+
+~~~
+  $(document).on('click', '[data-check-if-in-editing-mode]', checkIfInEditingMode);
+  function checkIfInEditingMode(e) {
+    LOG && console.log("checkIfInEditingMode");
+    e.preventDefault();
+    // do not submit automatically
+    // if there are open questions title or description, warn the user
+    if ($(this).data('check-if-in-editing-mode') != "ignore" && $('[data-in-editing-mode]').length )
+    {
+      $('[data-in-editing-mode]').first().each( function() {
+        checkIfInView($(this));
+        alert($(this).data('in-editing-mode'));
+      });
+      $(this).trigger("ajax:complete");
+    }
+    else
+    {
+      $.ajax({
+        url: $(e.target).attr('href'),
+        type: 'put',
+        dataType: 'script',
+        error: function(jqXHR, textStatus, errorThrown) {
+          flash_alert("Please refresh the page. Server responds with: \"" +textStatus+ " " + errorThrown + "\".");
+          $('[data-check-if-in-editing-mode]').trigger("ajax:complete");
+        },
+        success: function( data, textStatus, jqXHR ) {
+          $('[data-check-if-in-editing-mode]').trigger("ajax:complete");
+        },
+      });
+    }
+  }
+~~~
+
 * [turbolinks](https://github.com/rails/turbolinks) loads new page, replaces body and title, and use pushState. Any javascript is run after replacement so you can reference all elements in <script> tags on the beggining of the page (if you really want to). [Execution order](http://stackoverflow.com/questions/8996852/load-and-execute-order-of-scripts) of non dymanically ([defer or async](http://www.w3schools.com/tags/att_script_async.asp)) script are the same as they appear on the page (inline script is halted until external is loaded).  But with turbolinks, as with other dynamic loading where you can not know the order, execution is done after replacing, but before external script is loaded, so you probably can not have javascript_include_tag inside a view, because the code it provides will be available after all script on a page is done, and if you have several includes, the order is not preserved since the shortest one can be executed before all others. So the solution is to render all javascript inside the template with `<%= render 'app/assets/javascript/custom_script', formats: [:js] %>`
 * accessing helper functions in controller can be done using `view_context` (including ApplicationHelper is not generally a good idea)
 
