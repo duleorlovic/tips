@@ -890,6 +890,7 @@ Other
 * [blog](http://duleorlovic.github.io/blog/)
 * linux
   * [port forwarding](https://help.ubuntu.com/community/SSH/OpenSSH/PortForwarding) socks tunel `ssh -C -D 1080 server` gui `ssh -X server` remote `ssh -R 5900:localhost:5900 guest@joes-pc` local
+  * [v4l2loopback](https://github.com/umlaeute/v4l2loopback/wiki/Mplayer), after `sudo make install` and `sudo modprobe v4l2loopback` we can stream some video file to device `while true; do gst-launch-0.10 filesrc location=~/Desktop/buck.ogv ! decodebin ! v4l2sink device=/dev/video1;done`
 * fundamentals
   * [W3.org](http://www.w3.org/TR/selectors/)
   * [OWASP](https://www.owasp.org/index.php/Category:Attack) nice examples of attack and vulnerability
