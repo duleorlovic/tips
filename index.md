@@ -665,6 +665,8 @@ pg_restore -d Scuddle_app_development --clean --no-acl --no-owner -h localhost a
     # or 
     pgadmin3 # login as postgres without password and chage it to Dusan
 
+* you can use production database locally with url from heroku config env variable `HEROKU_POSTGRESQL_CRIMSON_URL:    postgres://flvmstxfdk:3fo9O62B-Q4BZ7EP8N4YU@ec2-107-20-191-205.compute-1.amazonaws.com:5432/d5ttgvqpjs1ftb` and put it inside `config/database.yml` under `development` under `url: postgres://asd.asd@asd.com:123/asd` item
+
 Migrations:
 
 * if we call `Products.update_all :fuzz => 'fuzzy'` in migration, it will probably break in the future, because *Products* will be validated for something that we did not know on that time. Better is to create local `class Product < ActiveRecord::Base;end` and call `Product.reset_column_information`
