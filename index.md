@@ -228,6 +228,7 @@ git clone git://github.com/tpope/vim-rails.git # example: Rview
 git clone git://github.com/tpope/vim-bundler.git # Bopen
 git clone git://github.com/tpope/vim-fugitive.git # Gblame, Gbrowse
 git clone git://github.com/tpope/vim-sensible.git # search before enter
+git clone git@github.com:Valloric/YouCompleteMe.git && cd YouCompleteMe && ./install.sh && cd -
 vim -u NONE -c "helptags vim-fugitive/doc" -c q
 ~~~
 
