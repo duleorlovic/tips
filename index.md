@@ -65,6 +65,11 @@ In rails, you can use something like
 
     <%= select_tag "job[job_type_id]",("<option #{ "selected='selected'".html_safe unless fjob.object.job_type_id } disabled='disabled'>Job Type</option>".html_safe+ options_from_collection_for_select(JobType.active.all, :id, :name,{selected: fjob.object.job_type_id})), { class: "e1" } %>
 
+XPATH
+===
+
+* [usefull selectors](http://ejohn.org/blog/xpath-css-selectors/)
+
 CSS
 ===
 
