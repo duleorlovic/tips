@@ -736,9 +736,11 @@ CANCAN
 CARRIERWAVE
 ===
 
-* when you want to update remote url, or create object with mount_uploader, you can use [`remote_NAME_url` field](https://github.com/carrierwaveuploader/carrierwave#uploading-files-from-a-remote-location)
+* when you want to update remote url, or create object with mount_uploader, you can use [`remote_avatar_url` field](https://github.com/carrierwaveuploader/carrierwave#uploading-files-from-a-remote-location)
 
 > If you're using ActiveRecord, CarrierWave will indicate invalid URLs and download failures automatically with attribute validation errors. If you aren't, or you disable CarrierWave's validate_download option, you'll need to handle those errors yourself.
+
+* another way is to use `key` attribute, for example: `user.key` or `user.avatar.key = 'http://asd.asd'`
 
 
 DEVISE
