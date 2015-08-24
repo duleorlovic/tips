@@ -733,6 +733,14 @@ CANCAN
  * if you set `can :manage, :all` in ability file, then after that you should define only what cannot. Only way that you need to define can after 'can :manage, :all' is for index, create or update actions, if you want to populate with hash, for example `can :index, Produc, { user: current_user }`, no block definitions for abilitity for managers since they can magane all!
  * for [load_and_authorize_resource](https://github.com/ryanb/cancan/wiki/Authorizing-controller-actions) for :index, if you define ability in a [block](https://github.com/ryanb/cancan/wiki/Defining-Abilities-with-Blocks) instead of hash, then [load_resource](https://github.com/ryanb/cancan/wiki/Authorizing-controller-actions#index-action) will not populate @products since it does not know how to do it. For :show, :edit, :update and :destroy it will fetch by params[:id], for :new and :create it will create new one if you define hash, and it will be overwritten with params[:class] attributes 
 
+CARRIERWAVE
+===
+
+* when you want to update remote url, or create object with mount_uploader, you can use [`remote_NAME_url` field](https://github.com/carrierwaveuploader/carrierwave#uploading-files-from-a-remote-location)
+
+> If you're using ActiveRecord, CarrierWave will indicate invalid URLs and download failures automatically with attribute validation errors. If you aren't, or you disable CarrierWave's validate_download option, you'll need to handle those errors yourself.
+
+
 DEVISE
 ===
 
