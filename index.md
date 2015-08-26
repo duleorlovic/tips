@@ -941,7 +941,7 @@ Other
 * some services
     * [formspree](http://formspree.io/) sending emails in javascript
     * [caniuse.com](http://caniuse.com/) to see what is supported and what is not in modern browsers
-    * optimization for speed [google insights](https://developers.google.com/speed/pagespeed/insights/)
+    * optimization for speed [google insights](https://developers.google.com/speed/pagespeed/insights/) [gtmetrix](https://gtmetrix.com/reports/www.scuddle.com/zP3xxAuZ)
 * payment
   * https://www.braintreepayments.com/
   * https://www.paddle.co/
