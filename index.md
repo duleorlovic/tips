@@ -829,7 +829,7 @@ Interesting plugins:
 BASH
 ===
 
-* start windows bottom `gnome-terminal --geometry=180x24+0-0 -e vi` . If negative is used, than it is bottom alligned. try also with [wmctrl](http://helpdeskgeek.com/linux-tips/resize-a-window-to-a-specific-size-in-ubuntu/)
+* start windows bottom `gnome-terminal --geometry=200x24+0-0 -e 'sh -c "vi;exec bash"';gnome-terminal --geometry=80x24-0+0 -e 'sh -c "git pull;rake db:migrate;rails s;exec bash"';gnome-terminal --geometry=80x24+50+0 -e 'sh -c "gitk;exec bash"'` . If negative is used, than it is bottom alligned. try also with [wmctrl](http://helpdeskgeek.com/linux-tips/resize-a-window-to-a-specific-size-in-ubuntu/)
 * find and remove files
     find . -type f -name "FILE-TO-FIND" -exec rm -f {} \;
 * test the speed, download: `curl -o /dev/null http://speedtest.qsc.de/1GB.qsc`, crate big files `fallocate -l 1G gentoo_root.img` and use scp to test upload link
