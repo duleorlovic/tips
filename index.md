@@ -829,7 +829,12 @@ Interesting plugins:
 BASH
 ===
 
-* start windows bottom `alias s="gnome-terminal --geometry=200x24+0-0 -e 'sh -c \"vi;exec bash\"';gnome-terminal --geometry=80x24-0+0 -e 'sh -c \"git pull;rake db:migrate;rails s;exec bash\"';gnome-terminal --geometry=80x24+50+0 -e 'sh -c \"gitk;exec bash\"'"` . If negative is used, than it is bottom alligned. try also with [wmctrl](http://helpdeskgeek.com/linux-tips/resize-a-window-to-a-specific-size-in-ubuntu/)
+* start windows, in gnome-terminal if negative is used, than it is bottom alligned. try also with [wmctrl](http://helpdeskgeek.com/linux-tips/resize-a-window-to-a-specific-size-in-ubuntu/)
+
+~~~
+alias s="gnome-terminal -e 'google-chrome http://localhost:3000';gnome-terminal --geometry=200x24+0-0 -e 'sh -c \"vi;exec bash\"';gnome-terminal --geometry=80x24-0+0 -e 'sh -c \"git pull;rake db:migrate;rails s;exec bash\"';
+~~~
+
 * find and remove files
     find . -type f -name "FILE-TO-FIND" -exec rm -f {} \;
 * test the speed, download: `curl -o /dev/null http://speedtest.qsc.de/1GB.qsc`, crate big files `fallocate -l 1G gentoo_root.img` and use scp to test upload link
