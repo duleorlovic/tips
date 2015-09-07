@@ -839,7 +839,7 @@ BASH
 * start windows, in gnome-terminal if negative is used, than it is bottom alligned. try also with [wmctrl](http://helpdeskgeek.com/linux-tips/resize-a-window-to-a-specific-size-in-ubuntu/)
 
 ~~~
-alias s="wmctrl -e 1,340,100,-1,-1 -r orlovic;gnome-terminal -e 'google-chrome http://localhost:3000';gnome-terminal --geometry=300x24+0-0 -e 'sh -c \"vi;exec bash\"';gnome-terminal --geometry=80x24-0+0 -e 'sh -c \"git pull;rake db:migrate;rails s;exec bash\"';"
+alias s="wmctrl -e 1,340,100,-1,-1 -r orlovic;google-chrome http://localhost:3000\&;gnome-terminal --geometry=300x24+0-0 -e 'sh -c \"vi;exec bash\"';gnome-terminal --geometry=80x24-0+0 -e 'sh -c \"git pull;rake db:migrate;rails s;exec bash\"';"
 ~~~
 
 * find and remove files
