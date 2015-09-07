@@ -605,7 +605,14 @@ so in controller we can write `@users = User.order(sort_column+" "+sort_directio
 ~~~
 * if question mark is used in activerecord query `scope :customers, -> { where('role = ?', ROLE_EMPLOYER)}` than you should use table name because in joins some other table could have role column `scope :customers, -> { where('users.role = ?', ROLE_EMPLOYER)}`, but the best is if you use hash `scope :customers, -> { where( role: ROLE_EMPLOYER)}` (you can even build new customer with `User.customers.build`
 * [has_and_belongs_to_many](http://guides.rubyonrails.org/association_basics.html#the-has-and-belongs-to-many-association) needs a table model1_model2 (where model1 name is less than model2 in alphabet)
-* for HABTM you can use f.collection_check_boxes :job_type_ids, JobType.active.all, :id, :name`. Trick here is to use *job_type_ids*. That _ids is provides for all has_many association
+* for HABTM you can use `f.collection_check_boxes :min_qualification_ids, MinQualification.active.all, :id, :name`. Trick here is to use *min_qualification_ids*. That *_ids* is provided for all has_many association. In controller you need just to update parent record and all has_many_and_belongs associated records mapping will be updated (here is table min_qualifications_users)
+
+~~~
+min_qualifications_params = params.require(:user).permit( min_qualification_ids: [])
+non_empty_min_qualifications_params = min_qualifications_params.each_with_object({}) { |(k,v),o| o[k] = v.reject &:blank? }
+@user.update!(non_empty_min_qualifications_params)
+~~~
+
 * you can join several tables,just use their name: Job <-> MinQualitication <-> User
 
 ~~~
