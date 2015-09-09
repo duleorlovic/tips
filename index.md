@@ -74,6 +74,7 @@ CSS
 ===
 
 * to overwrite `!important` write another rule with *Simply add another CSS rule with !important, and either give the selector a higher specificity (adding an additional tag, id or class to the selector), or add a CSS rule with the same selector at a later point than the existing one (in a tie, the last one defined wins).*
+* cascade rules are [http://www.w3.org/TR/2011/REC-CSS2-20110607/cascade.html#cascade](http://www.w3.org/TR/2011/REC-CSS2-20110607/cascade.html#cascade)
 
 Javascript
 ===
