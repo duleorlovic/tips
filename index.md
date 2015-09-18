@@ -605,6 +605,9 @@ and this two methods:
 
 so in controller we can write `@users = User.order(sort_column+" "+sort_direction) 
 
+## Rails console
+
+* `puts Readline::HISTORY.entries.split("exit").last[0..-2].join("\n")` show last commands so you can copy and paste to some code
 
 ## Active record
 
