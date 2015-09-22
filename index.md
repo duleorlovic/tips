@@ -855,14 +855,14 @@ Interesting plugins:
 BASH
 ===
 
+* *top* command for memory and cpu usage on linux. To sort by memory press `f` and move up/down and than exist `q`
 * start windows, in gnome-terminal if negative is used, than it is bottom alligned. try also with [wmctrl](http://helpdeskgeek.com/linux-tips/resize-a-window-to-a-specific-size-in-ubuntu/)
 
 ~~~
 alias s="wmctrl -e 1,340,100,-1,-1 -r orlovic;google-chrome http://localhost:3000\&;gnome-terminal --geometry=300x24+0-0 -e 'sh -c \"vi;exec bash\"';gnome-terminal --geometry=80x24-0+0 -e 'sh -c \"git pull;rake db:migrate;rails s;exec bash\"';"
 ~~~
 
-* find and remove files
-    find . -type f -name "FILE-TO-FIND" -exec rm -f {} \;
+* find and remove files `find . -type f -name "FILE-TO-FIND" -exec rm -f {} \;`
 * test the speed, download: `curl -o /dev/null http://speedtest.qsc.de/1GB.qsc`, crate big files `fallocate -l 1G gentoo_root.img` and use scp to test upload link
 * you can put any shell (vim, rails s) to suspend state with `Control + z`. Than you can put it in background `bg` if needed. You can use that shell for inspection other things. When you are finished, you can switch back to vim, or rails s, with foreground `fg`
 
