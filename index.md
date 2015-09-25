@@ -653,8 +653,9 @@ sudo su postgres -c "psql `rails runner 'puts ActiveRecord::Base.configurations[
 * dump database from production for local inspection, you can download from heroku dump file and import in database
 
 ~~~
-sudo su postgres
-pg_restore -d Scuddle_app_development --clean --no-acl --no-owner -h localhost a216.dump
+RAILS_ENV=production rake db:create
+chmod a+r a.dump
+sudo su postgres -c 'pg_restore -d Scuddle_app_development --clean --no-acl --no-owner -h localhost a.dump'
 ~~~
 
 * validate with if contition `validates_presence_of :user_id, if: Proc.new{ |u| u.active? }`
