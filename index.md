@@ -862,6 +862,9 @@ Interesting plugins:
 BASH
 ===
 
+* you can run command as another user in two ways
+  * `sudo -u deplyer whoami` pros: simpler, no need for quotes
+  * `su deployer -c 'whoami` pros: can add login `-l` option `su -l deployer -c 'rvm list'` that is required for rvm
 * *top* command for memory and cpu usage on linux. To sort by memory press `f` and move up/down and than exist `q`
 * start windows, in gnome-terminal if negative is used, than it is bottom alligned. try also with [wmctrl](http://helpdeskgeek.com/linux-tips/resize-a-window-to-a-specific-size-in-ubuntu/)
 
