@@ -863,8 +863,8 @@ BASH
 ===
 
 * you can run command as another user in two ways
-  * `sudo -u deplyer whoami` pros: simpler, no need for quotes
-  * `su deployer -c 'whoami` pros: can add login `-l` option `su -l deployer -c 'rvm list'` that is required for rvm
+  * `su deployer -c 'whoami` can add login `-l` option `su -l deployer -c 'rvm list'` so PATH is extended with `~/.rvm/bin/` and rvm script works
+  * `sudo -u deployer whoami` simpler, no need for quotes. Add option `-i` or `--login` to run as login shell. Wrap command inside `bash` to properly load XDG_RUNTIME_DIR for rails c or other ruby commands: `sudo -i -u deployer /bin/bash -c "cd /vagrant && rails c"`
 * *top* command for memory and cpu usage on linux. To sort by memory press `f` and move up/down and than exist `q`
 * start windows, in gnome-terminal if negative is used, than it is bottom alligned. try also with [wmctrl](http://helpdeskgeek.com/linux-tips/resize-a-window-to-a-specific-size-in-ubuntu/)
 
