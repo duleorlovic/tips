@@ -366,8 +366,21 @@ task :dyno_ping do
   uri = URI("http://time-tracklng.herokuapp.com/");
   Net::HTTP.get_response(uri)
 end
-
 ```
+
+Vagrant
+===
+
+* if you get a problem with SSL  certificate
+
+~~~
+SSL certificate problem: unable to get local issuer certificate
+More details here: http://curl.haxx.se/docs/sslcerts.html
+~~~
+
+solution is to `sudo cp /etc/ssl/certs/ca-certificates.crt /opt/vagrant/embedded/cacert.pem` [link](https://github.com/mitchellh/vagrant/issues/5001)
+
+
 Cucumber
 ===
 
