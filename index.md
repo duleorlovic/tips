@@ -374,11 +374,15 @@ Vagrant
 * if you get a problem with SSL  certificate
 
 ~~~
+An error occurred while downloading the remote file. The error
+message, if any, is reproduced below. Please fix this error and try
+again.
+
 SSL certificate problem: unable to get local issuer certificate
 More details here: http://curl.haxx.se/docs/sslcerts.html
 ~~~
 
-solution is to `sudo cp /etc/ssl/certs/ca-certificates.crt /opt/vagrant/embedded/cacert.pem` [link](https://github.com/mitchellh/vagrant/issues/5001)
+solution is to `sudo cp /etc/ssl/certs/ca-certificates.crt /opt/vagrant/embedded/cacert.pem` [link](https://github.com/mitchellh/vagrant/issues/5001) or to add `config.vm.box_download_insecure = true` to Vagrantfile [link](http://stackoverflow.com/questions/27878131/solved-how-to-vagrant-up-with-puphpet-on-windows-7-x64-with-vagrant-1-7-2)
 
 
 Cucumber
