@@ -1015,7 +1015,7 @@ Other
   * [zeroclipboard](https://github.com/zeroclipboard/zeroclipboard) to copy some text on click
   * [tokenize](http://zellerda.com/projects/jquery/tokenize) for tags, preselecting items
   * [jsPDF](https://github.com/MrRio/jsPDF) pdf generator [examples](http://mrrio.github.io/jsPDF/#)
-  * [graphs gallery](https://github.com/mbostock/d3/wiki/Gallery) and [http://bl.ocks.org/mbostock](http://bl.ocks.org/mbostock) [slider](http://square.github.io/crossfilter/) [people](http://www.findtheconversation.com/concept-map/#population) [parallel](http://exposedata.com/parallel/)
+  * [graphs gallery](https://github.com/mbostock/d3/wiki/Gallery) and [http://bl.ocks.org/mbostock](http://bl.ocks.org/mbostock) [slider](http://square.github.io/crossfilter/) [people](http://www.findtheconversation.com/concept-map/#population) [parallel](http://exposedata.com/parallel/) and the best is [grafana](http://play.grafana.org/)
   * nice js filter [bouncy content filter](http://codyhouse.co/demo/bouncy-content-filter/)
   * javascript input filter [http://digitalbush.com/projects/masked-input-plugin/](http://digitalbush.com/projects/masked-input-plugin/)
   * [selectize](http://brianreavis.github.io/selectize.js/) and [selectize-rails](https://github.com/manuelvanrijn/selectize-rails)
