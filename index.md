@@ -914,6 +914,15 @@ alias s="wmctrl -e 1,340,100,-1,-1 -r orlovic;google-chrome http://localhost:300
 * you can put any shell (vim, rails s) to suspend state with `Control + z`. Than you can put it in background `bg` if needed. You can use that shell for inspection other things. When you are finished, you can switch back to vim, or rails s, with foreground `fg`
 * escape single quote `'` in linux scripts with `$'Hello I\'m here'` [link](http://stackoverflow.com/questions/8254120/how-to-escape-a-single-quote-in-single-quote-string-in-bash)
 
+HACK
+===
+
+* html escaping is [not easy](https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet) . for example
+
+~~~
+<IMG SRC=/ onerror="console.log('cao. bolje da filtrirate sadrzaj za js code');location.assign('http://www.iznajmljivanjeprojektoranovisad.in.rs')"></img>
+~~~
+
 GIT
 ===
 
