@@ -770,6 +770,7 @@ ActionView::Base.field_error_proc = Proc.new { |html_tag, instance|
 Gems
 ===
 
+* paper clip: default image path in assets pipeline is using helper in controller `ActionController::Base.helpers.asset_path('missing_:style.png')`
 * performance:
   * [miniprofiler](https://github.com/MiniProfiler/rack-mini-profiler) for analysing load time, disable with `http://mysite.com?pp=disable`
 * when using pagination on page where you have some activating/archiving [Kaminary gem](https://github.com/amatsuda/kaminari) with ajax does not know which params should be [black listed](https://github.com/amatsuda/kaminari/commit/2fd7d36b72af73d2506f8e2ab68704d804f70fc5) so use something like `paginate @jobs, params: { id: nil, action: 'index' }` in response index.js response file like this [ajax example](https://github.com/amatsuda/kaminari_example/tree/ajax)
