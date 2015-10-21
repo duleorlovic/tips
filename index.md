@@ -999,20 +999,12 @@ Other
 * aws s3
   * create a bucket in USA **duleorlovic-test1**
   * create user and download credentials
-  * create inline [policy](http://blogs.aws.amazon.com/security/post/Tx3VRSWZ6B3SHAV/Writing-IAM-Policies-How-to-grant-access-to-an-Amazon-S3-bucket) with name for example **full_access_to_duleorlovic_test1** . Keep in mind that underscore _ is not equal hyphen - .
+  * create inline [policy](http://blogs.aws.amazon.com/security/post/Tx3VRSWZ6B3SHAV/Writing-IAM-Policies-How-to-grant-access-to-an-Amazon-S3-bucket) with name for example **full_access_to_duleorlovic_test1** . Keep in mind that underscore _ is not equal hyphen - . Paperclip need something more than put, get and delete, so I use `s3:*`
 
 ~~~
 {
   "Version": "2012-10-17",
   "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": [
-        "s3:GetBucketLocation",
-        "s3:ListAllMyBuckets"
-      ],
-      "Resource": "arn:aws:s3:::*"
-    },
     {
       "Effect": "Allow",
       "Action": ["s3:ListBucket"],
@@ -1023,7 +1015,8 @@ Other
       "Action": [
         "s3:PutObject",
         "s3:GetObject",
-        "s3:DeleteObject"
+        "s3:DeleteObject",
+        "s3:*"
       ],
       "Resource": ["arn:aws:s3:::duleorlovic-test1/*"]
     }
