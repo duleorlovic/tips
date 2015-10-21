@@ -997,9 +997,9 @@ Other
 
 * [blog](http://duleorlovic.github.io/blog/)
 * aws s3
-  * create a bucket in USA **duleorlovic_test1**
+  * create a bucket in USA **duleorlovic-test1**
   * create user and download credentials
-  * create inline [policy](http://blogs.aws.amazon.com/security/post/Tx3VRSWZ6B3SHAV/Writing-IAM-Policies-How-to-grant-access-to-an-Amazon-S3-bucket) with name for example **full_access_to_duleorlovic_test1**
+  * create inline [policy](http://blogs.aws.amazon.com/security/post/Tx3VRSWZ6B3SHAV/Writing-IAM-Policies-How-to-grant-access-to-an-Amazon-S3-bucket) with name for example **full_access_to_duleorlovic_test1** . Keep in mind that underscore _ is not equal hyphen - .
 
 ~~~
 {
@@ -1007,8 +1007,16 @@ Other
   "Statement": [
     {
       "Effect": "Allow",
+      "Action": [
+        "s3:GetBucketLocation",
+        "s3:ListAllMyBuckets"
+      ],
+      "Resource": "arn:aws:s3:::*"
+    },
+    {
+      "Effect": "Allow",
       "Action": ["s3:ListBucket"],
-      "Resource": ["arn:aws:s3:::duleorlovic_test1"]
+      "Resource": ["arn:aws:s3:::duleorlovic-test1"]
     },
     {
       "Effect": "Allow",
@@ -1017,7 +1025,7 @@ Other
         "s3:GetObject",
         "s3:DeleteObject"
       ],
-      "Resource": ["arn:aws:s3:::duleorlovic_test1/*"]
+      "Resource": ["arn:aws:s3:::duleorlovic-test1/*"]
     }
   ]
 }
