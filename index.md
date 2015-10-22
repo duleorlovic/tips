@@ -72,6 +72,7 @@ XPATH
 CSS
 ===
 
+* `border: 1px` needs to be defined before `border-style: solid` or `border-color: red`
 * to overwrite `!important` write another rule with *Simply add another CSS rule with !important, and either give the selector a higher specificity (adding an additional tag, id or class to the selector), or add a CSS rule with the same selector at a later point than the existing one (in a tie, the last one defined wins).*
 * cascade rules are [http://www.w3.org/TR/2011/REC-CSS2-20110607/cascade.html#cascade](http://www.w3.org/TR/2011/REC-CSS2-20110607/cascade.html#cascade)
 * position element in center [link](https://css-tricks.com/quick-css-trick-how-to-center-an-object-exactly-in-the-center/)
@@ -86,6 +87,21 @@ CSS
   /* if you know the size
   margin-top: -50px;
   margin-left: -100px; */
+}
+~~~
+
+## SASS
+
+* [parent selector reference](http://thesassway.com/intermediate/referencing-parent-selectors-using-ampersand) parent is not direct parrent, its parrent of whole sequence !
+
+~~~
+h3 {
+  font-size: 20px;
+  div {
+    .some-parent-selector & { // this will compile to .some-parent-selector h3 div { font-size: 24px }
+      font-size: 24px;
+    }
+  }
 }
 ~~~
 
