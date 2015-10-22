@@ -312,7 +312,7 @@ let g:netrw_liststyle=3
 " set autochdir
 ~~~
 
-## Running ruby in vim
+## Running ruby in vim and show in separate window
 
 [link](http://vim.wikia.com/wiki/Preview_output_from_interpreter_in_new_window)
 Press `F7` to run selected or all code. Shift + F7 close the window.
@@ -338,6 +338,29 @@ imap <silent> <F7> <Esc><F7>a
 map <silent> <S-F7> <C-W>l:bw<CR>
 imap <silent> <S-F7> <Esc><S-F7>a
 ~~~
+
+## Show ruby return values
+
+Install [seeing_is_believing](https://github.com/JoshCheek/seeing_is_believing) with `gem install seeing_is_believing` and add plugin `cd ~/.vim/bundle && git clone https://github.com/hwartig/vim-seeing-is-believing` and add mappins:
+`F4` mark, `F5` run (not in visual) and `enter` mark and run (not in insert mode)
+
+~~~
+" .vimrc Enable seeing-is-believing mappings only for Ruby
+augroup seeingIsBelievingSettings
+  autocmd!
+
+  autocmd FileType ruby nmap <buffer> <Enter> <Plug>(seeing-is-believing-mark-and-run)
+  autocmd FileType ruby xmap <buffer> <Enter> <Plug>(seeing-is-believing-mark-and-run)
+
+  autocmd FileType ruby nmap <buffer> <F4> <Plug>(seeing-is-believing-mark)
+  autocmd FileType ruby xmap <buffer> <F4> <Plug>(seeing-is-believing-mark)
+  autocmd FileType ruby imap <buffer> <F4> <Plug>(seeing-is-believing-mark)
+
+  autocmd FileType ruby nmap <buffer> <F5> <Plug>(seeing-is-believing-run)
+  autocmd FileType ruby imap <buffer> <F5> <Plug>(seeing-is-believing-run)
+augroup END
+~~~
+
 
 
 * usefull commands:
