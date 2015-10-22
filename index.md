@@ -74,6 +74,20 @@ CSS
 
 * to overwrite `!important` write another rule with *Simply add another CSS rule with !important, and either give the selector a higher specificity (adding an additional tag, id or class to the selector), or add a CSS rule with the same selector at a later point than the existing one (in a tie, the last one defined wins).*
 * cascade rules are [http://www.w3.org/TR/2011/REC-CSS2-20110607/cascade.html#cascade](http://www.w3.org/TR/2011/REC-CSS2-20110607/cascade.html#cascade)
+* position element in center [link](https://css-tricks.com/quick-css-trick-how-to-center-an-object-exactly-in-the-center/)
+
+~~~
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* if you don't know the size... bring your own prefixes */
+  transform: translate(-50%, -50%);
+  /* if you know the size
+  margin-top: -50px;
+  margin-left: -100px; */
+}
+~~~
 
 Javascript
 ===
