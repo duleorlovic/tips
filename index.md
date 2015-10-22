@@ -836,8 +836,9 @@ Ruby
 # puts Time.now.to_s :myapp_time
 # puts Date.today.to_time :myapp_time # Date object need to be type casted to Time
 # puts Time.now.to_date :myapp_date # Time object to Date if we want myapp_date
-Time::DATE_FORMATS[:myapp_time] = lambda { |date| date.strftime("%b %e, %Y @ %l:%M %p") }
+Time::DATE_FORMATS[:myapp_time] = lambda { |time| time.strftime("%b %e, %Y @ %l:%M %p") }
 Date::DATE_FORMATS[:myapp_date] = lambda { |date| date.strftime("%b %e, %Y") }
+Date::DATE_FORMATS[:myapp_date_ordinalize] = lambda { |date| date.strftime("#{date.day.ordinalize} %b %Y") }
 ~~~
 
 * write long string in multiple lines with `%()`, for example:
