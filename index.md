@@ -312,6 +312,34 @@ let g:netrw_liststyle=3
 " set autochdir
 ~~~
 
+## Running ruby in vim
+
+[link](http://vim.wikia.com/wiki/Preview_output_from_interpreter_in_new_window)
+Press `F7` to run selected or all code. Shift + F7 close the window.
+
+~~~
+"save code, run ruby, show output in preview window
+function! Ruby_eval_vsplit() range
+  let src = tempname()
+  let dst = tempname()
+  execute ": " . a:firstline . "," . a:lastline . "w " . src
+  execute ":silent ! ruby " . src . " > " . dst . " 2>&1 "
+  execute ":pclose!"
+  execute ":redraw!"
+  execute ":vsplit"
+  execute "normal \<C-W>l"
+  execute ":e! " . dst
+  execute ":set pvw"
+  execute "normal \<C-W>h"
+endfunction
+vmap <silent> <F7> :call Ruby_eval_vsplit()<CR>
+nmap <silent> <F7> mzggVG<F7>`z
+imap <silent> <F7> <Esc><F7>a
+map <silent> <S-F7> <C-W>l:bw<CR>
+imap <silent> <S-F7> <Esc><S-F7>a
+~~~
+
+
 * usefull commands:
 
 ~~~
