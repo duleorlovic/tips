@@ -829,6 +829,15 @@ For rvm put ```source ~/.bash_profile``` in your **~/.bashrc** file and you do n
 Ruby
 ===
 
+* write datetime in specific format
+~~~
+# config/initializers/mytime_formats.rb
+# puts user.updated_at.to_s :myapp_time
+# puts Date.today.to_time :myapp_date # Date object need to be type casted to time
+Time::DATE_FORMATS[:myapp_time] = lambda { |date| date.strftime("%b %e, %Y @ %l:%M %p") }
+Time::DATE_FORMATS[:myapp_date] = lambda { |date| date.strftime("%b %e, %Y") }
+~~~
+
 * write long string in multiple lines with `%()`, for example:
 
 ~~~
