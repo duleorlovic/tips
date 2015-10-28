@@ -1059,6 +1059,12 @@ Rebase branches
 
      git pull --rebase # pull remote changes and rebase you local commits
      git rebase master # call this while you are on some feature branch
+
+Push to all remote repositories
+
+    git remote add all git@github.com:duleorlovic/tips.git
+    git remote set-url  --add all git@heroku.com:duleorlovic_tips.git
+    git push all --all
      
 Versioning [SEMVER](http://semver.org/)
 
