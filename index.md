@@ -1064,7 +1064,7 @@ Push to all remote repositories
 
     git remote add all git@github.com:duleorlovic/tips.git
     git remote set-url  --add all git@heroku.com:duleorlovic_tips.git
-    git push all --all
+    git push all
      
 Versioning [SEMVER](http://semver.org/)
 
