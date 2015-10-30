@@ -586,7 +586,8 @@ params[:contact] = params[:contact].each_with_object({}) { |(k,v),o| o[k] = v.ea
 ~~~
 
 * [pry](http://pryrepl.org/) in rails with `pry -r /home/orlovic/rails/produceruncatarse/config/environment.rb` or in user [pry-rails](https://github.com/pry/pry/wiki/Setting-up-Rails-or-Heroku-to-use-Pry) gem 
-* if you need asset_path in some class (for example uploader) you can use this `ActionController::Base.helpers.asset_path 'image.png' `
+* if you need asset_path in some class (for example uploader) you can use this `ActionController::Base.helpers.asset_path 'image.png'`
+* access url route helpers in model `Rails.application.routes.url_helpers.menu_url(link)` and define host with `Rails.application.routes.default_url_options[:host] = Rails.application.secrets.default_url_options`
 * rails use cache for activerecord, and if you need to send query again and fetch fresh data, you can use `.reload`
 * [truncate_html](https://github.com/hgmnz/truncate_html) is when you want to truncate text inside html. When you are using `raw` than it is advisable to use [sanitize](http://api.rubyonrails.org/classes/ActionView/Helpers/SanitizeHelper.html#method-i-sanitize) 
 * target with `data-` attributes when you put some javascript on elements. When new markup come, you just need to copy data attributes. Also they can contain some real data: id or array of some id's. In rails do not use `data: { total_value: 0}` because its hard to search. It's better to use `"data-total-value" => 0` 
