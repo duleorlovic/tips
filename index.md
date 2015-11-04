@@ -296,6 +296,7 @@ set history=1000
 nnoremap gr :grep <cword> * -I -R --exclude-dir={log,spec,public,features,tmp,vendor,assets,db}<CR>
 " grep yanked word
 nnoremap gy :grep "<c-r>"" * --exclude-dir={log,public,tmp,vendor} -R -I<CR>
+" to clear search - stop highlight press <Ctrl-l> redraws the screen and removes any search highlighting.
 set hlsearch
 " this is for tab completion , to stop cycle press CTRL+E than tab
 set wildmode=longest,list,full
