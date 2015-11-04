@@ -343,6 +343,9 @@ let g:netrw_liststyle=3
 
 " http://vim.wikia.com/wiki/Saving_a_file
 noremap <Leader>s :update<CR>
+noremap <Leader>q :q<CR>
+"map <Esc><Esc> :w<CR> this move to insert move when I press up down arrows
+
 nmap <c-s> :w<CR>
 vmap <c-s> <Esc><c-s>gv
 imap <c-s> <Esc><c-s>
@@ -350,7 +353,6 @@ imap <c-s> <Esc><c-s>
 nmap <F2> :update<CR>
 vmap <F2> <Esc><F2>gv
 imap <F2> <c-o><F2>
-
 ~~~
 
 ## Running ruby in vim and show in separate window
