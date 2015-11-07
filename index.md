@@ -1142,7 +1142,21 @@ Other
 * linux
   * [port forwarding](https://help.ubuntu.com/community/SSH/OpenSSH/PortForwarding) socks tunel `ssh -C -D 1080 server` gui `ssh -X server` remote `ssh -R 5900:localhost:5900 guest@joes-pc` local
   * [v4l2loopback](https://github.com/umlaeute/v4l2loopback/wiki/Mplayer), after `sudo make install` and `sudo modprobe v4l2loopback` we can stream some video file to device `while true; do gst-launch-0.10 filesrc location=~/Desktop/buck.ogv ! decodebin ! v4l2sink device=/dev/video1;done`
-  * dimm screen adjust brightness `xrandr -q | grep " connected"` to find the name, for example *DFP1*, than `xrandr --output DFP1 --brightness 0.5`
+  * dim screen adjust brightness `xrandr -q | grep " connected"` to find the name, for example *DFP1*, than `xrandr --output DFP1 --brightness 0.5`. Here is what I use `d 0.8`
+
+~~~
+# ~/.bashrc
+function d {
+  if [  -z $1 ]
+  then
+    echo Default is middle value: d 0.5
+  fi
+  xrandr --output DFP1 --brightness ${1:-0.5}
+}
+alias dim=d
+
+~~~
+ 
   * dos attacks: 
     * `sudo hping3 -c 10000 -d 120 -S -w 64 -p 21 --flood --rand-source scuddle-staging.herokuapp.com`
     * `siege scuddle-staging.herokuapp.com -c25 -t1M`
