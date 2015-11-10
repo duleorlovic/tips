@@ -279,8 +279,8 @@ git clone git://github.com/tpope/vim-bundler.git # Bopen
 git clone git://github.com/tpope/vim-fugitive.git # Gblame, Gbrowse
 git clone git://github.com/tpope/vim-sensible.git # search before enter
 git clone git://github.com/tpope/vim-cucumber.git # cucumber syntax highlight
-git clone https://github.com/thoughtbot/vim-rspec.git # rspec shortcuts <leader>l or :RunSpec
-# http://vimawesome.com/plugin/vim-rspec-sad-beautiful-tragic
+git clone https://github.com/thoughtbot/vim-rspec.git # rspec shortcuts <Leader>tsla
+# http://vimawesome.com/plugin/vim-rspec-sad-beautiful-tragic # :RunSpec
 git clone git@github.com:Valloric/YouCompleteMe.git && cd YouCompleteMe && ./install.sh && cd -
 vim -u NONE -c "helptags vim-fugitive/doc" -c q
 ~~~
@@ -358,6 +358,13 @@ imap <c-s> <Esc><c-s>
 nmap <F2> :update<CR>
 vmap <F2> <Esc><F2>gv
 imap <F2> <c-o><F2>
+
+" https://github.com/thoughtbot/vim-rspec
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
 ~~~
 
 ## Running ruby in vim and show in separate window
