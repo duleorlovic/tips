@@ -310,6 +310,34 @@ vnorem // y/<c-r>"<cr>
 set pastetoggle=<F12>
 " using leader (default is '\') to save file 
 noremap <Leader>w :w<CR>
+
+" some tips from https://github.com/thoughtbot/dotfiles/blob/master/vimrc
+set autowrite " Automatically write before running commands
+
+" Display extra whitespace
+set list listchars=tab:»·,trail:·,nbsp:·
+
+" Switch between the last two files
+nnoremap <leader><leader> <c-^>
+
+" Get off my lawn
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
+
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
 ~~~
 
 ~~~
