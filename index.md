@@ -280,6 +280,7 @@ git clone git://github.com/tpope/vim-fugitive.git # Gblame, Gbrowse
 git clone git://github.com/tpope/vim-sensible.git # search before enter
 git clone git://github.com/tpope/vim-cucumber.git # cucumber syntax highlight
 git clone https://github.com/thoughtbot/vim-rspec.git # rspec shortcuts <Leader>tsla
+git clone git://github.com/tpope/vim-endwise.git # automatically insert end keyword
 # http://vimawesome.com/plugin/vim-rspec-sad-beautiful-tragic # :RunSpec
 git clone git@github.com:Valloric/YouCompleteMe.git && cd YouCompleteMe && ./install.sh && cd -
 vim -u NONE -c "helptags vim-fugitive/doc" -c q
