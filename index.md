@@ -447,7 +447,7 @@ augroup END
 
 
 
-* usefull commands:
+* usefull commands [quick reference card](http://tnerual.eriogerg.free.fr/vimqrc.html)
 
 ~~~
 + and - move on the first letter up and down, { and } move on paragraph
