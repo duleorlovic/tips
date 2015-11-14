@@ -1077,6 +1077,10 @@ HACK
 GIT
 ===
 
+Add and commit in one command 
+
+    git config --global alias.add-commit '!git add -A && git commit'
+  
 track remote branch if we did not have this branch already
 
     git checkout -t origin/branch
