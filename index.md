@@ -390,6 +390,7 @@ imap <c-s> <Esc><c-s>
 
 nmap <F2> :update<CR>
 vmap <F2> <Esc><F2>gv
+" does not work in PASTE mode
 imap <F2> <c-o><F2>
 
 " https://github.com/thoughtbot/vim-rspec
