@@ -863,17 +863,19 @@ sudo su postgres -c 'pg_restore -d Scuddle_app_development --clean --no-acl --no
 * new_record? does not work with associated count. It is beter to use length ie `survey.questions.length` 
 * you can set any user in config/database.yml (even without password), but you need to change postgres config and create that user, simple:
 
+~~~
+sudo vi /etc/postgresql/9.1/main/pg_hba.conf 
+# change all this words [md5, ident, peer] to trust 
+sudo /etc/init.d/postgresql restart 
 
-    sudo vi /etc/postgresql/9.1/main/pg_hba.conf 
-    # change all this words [md5, ident, peer] to trust 
-    sudo /etc/init.d/postgresql restart 
-    psql postgres 
-    CREATE USER "Dusan" CREATEDB ; 
-    \q 
-    # if it does not work because previous command created `dusan` instead of `Dusan` 
-    ALTER ROLE dusan RENAME TO "Dusan"; 
-    # or 
-    pgadmin3 # login as postgres without password and chage it to Dusan
+psql postgres 
+CREATE USER "Dusan" CREATEDB ;
+\q
+# if it does not work because previous command created `dusan` instead of `Dusan` 
+ALTER ROLE dusan RENAME TO "Dusan"; 
+# or 
+pgadmin3 # login as postgres without password and chage it to Dusan
+~~~
 
 * you can use production database locally with url from heroku config env variable `HEROKU_POSTGRESQL_CRIMSON_URL:    postgres://flvmstxfdk:3fo9O62B-Q4BZ7EP8N4YU@ec2-107-20-191-205.compute-1.amazonaws.com:5432/d5ttgvqpjs1ftb` and put it inside `config/database.yml` under `development` under `url: postgres://asd.asd@asd.com:123/asd` item
 
