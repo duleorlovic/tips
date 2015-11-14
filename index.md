@@ -863,6 +863,7 @@ sudo su postgres -c 'pg_restore -d Scuddle_app_development --clean --no-acl --no
 * new_record? does not work with associated count. It is beter to use length ie `survey.questions.length` 
 * you can set any user in config/database.yml (even without password), but you need to change postgres config and create that user, simple:
 
+
     sudo vi /etc/postgresql/9.1/main/pg_hba.conf 
     # change all this words [md5, ident, peer] to trust 
     sudo /etc/init.d/postgresql restart 
