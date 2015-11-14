@@ -281,8 +281,10 @@ git clone git://github.com/tpope/vim-sensible.git # search before enter
 git clone git://github.com/tpope/vim-cucumber.git # cucumber syntax highlight
 git clone https://github.com/thoughtbot/vim-rspec.git # rspec shortcuts <Leader>tsla
 git clone git://github.com/tpope/vim-endwise.git # auto insert end keyword
-git clone https://github.com/alvan/vim-closetag.git # auto insert closing tag( follow with > for new line)
+git clone https://github.com/alvan/vim-closetag.git # auto insert closing html tag( follow with > for new line)
 git clone git://github.com/tpope/vim-surround.git # add tag `ysiw<em>` change `cst"` delete `ds"`. `S` in visual
+git clone git://github.com/Townk/vim-autoclose # add closing `) } "`, in visual `<Leader>a(`
+
 # http://vimawesome.com/plugin/vim-rspec-sad-beautiful-tragic # :RunSpec
 git clone git@github.com:Valloric/YouCompleteMe.git && cd YouCompleteMe && ./install.sh && cd -
 vim -u NONE -c "helptags vim-fugitive/doc" -c q
