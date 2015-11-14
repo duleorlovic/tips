@@ -284,7 +284,7 @@ git clone git://github.com/tpope/vim-endwise.git # auto insert end keyword
 git clone https://github.com/alvan/vim-closetag.git # auto insert closing html tag( follow with > for new line)
 git clone git://github.com/tpope/vim-surround.git # add tag `ysiw<em>` change `cst"` delete `ds"`. `S` in visual
 git clone git://github.com/Townk/vim-autoclose # add closing `) } "`, in visual `<Leader>a(`
-
+git clone https://github.com/kchmck/vim-coffee-script.git # coffe files
 # http://vimawesome.com/plugin/vim-rspec-sad-beautiful-tragic # :RunSpec
 git clone git@github.com:Valloric/YouCompleteMe.git && cd YouCompleteMe && ./install.sh && cd -
 vim -u NONE -c "helptags vim-fugitive/doc" -c q
@@ -343,6 +343,8 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
+" closetag.vim should recognize erb files as well
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.html.erb"
 ~~~
 
 ~~~
