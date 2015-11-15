@@ -326,7 +326,7 @@ set list listchars=tab:»·,trail:·,nbsp:·
 nnoremap <leader><leader> <c-^>
 
 " Get off my lawn
-" For linux shell use CTRL+p and CTRL+n
+" For linux shell you can use: CTRL+ p n a e b f
 " or set -o vi, and ESC, than move as usuall: b w e ^ $
 " for chromium use vimium plugin
 nnoremap <Left> :echoe "Use h"<CR>
