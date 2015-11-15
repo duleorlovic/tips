@@ -325,7 +325,7 @@ set list listchars=tab:»·,trail:·,nbsp:·
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
 
-" Get off my lawn
+" Get off my lawn. For linux shell use CTRL+p and CTRL+n
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
