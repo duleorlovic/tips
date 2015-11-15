@@ -327,6 +327,7 @@ nnoremap <leader><leader> <c-^>
 
 " Get off my lawn
 " For linux shell use CTRL+p and CTRL+n
+" or set -o vi, and ESC, than move as usuall: b w e ^ $
 " for chromium use vimium plugin
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
