@@ -979,6 +979,7 @@ Ruby
 ===
 
 * write datetime in specific format
+
 ~~~
 # config/initializers/mytime_formats.rb
 # puts user.updated_at.to_s :myapp_time
