@@ -72,6 +72,14 @@ XPATH
 CSS
 ===
 
+* when you want to have different child of first element, you can with
+
+~~~
+.target-parent li:first-child .target-child {
+  display: none;
+}
+~~~
+
 * z-index only works on positioned elements (position:absolute, position:relative, or position:fixed).
 * `border: 1px` needs to be defined before `border-style: solid` or `border-color: red`
 * to overwrite `!important` write another rule with *Simply add another CSS rule with !important, and either give the selector a higher specificity (adding an additional tag, id or class to the selector), or add a CSS rule with the same selector at a later point than the existing one (in a tie, the last one defined wins).*
