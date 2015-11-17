@@ -468,6 +468,7 @@ augroup END
 * usefull commands [quick reference card](http://tnerual.eriogerg.free.fr/vimqrc.html)
 
 ~~~
+`gv` to select previous selected visual area
 + and - move on the first letter up and down, { and } move on paragraph
 dap}p switch two paragraph
 Repeat last colon command  @:  and @@
