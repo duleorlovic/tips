@@ -829,7 +829,23 @@ end
 sudo su postgres -c "psql `rails runner 'puts ActiveRecord::Base.configurations["production"]["database"]'` -c 'CREATE EXTENSION hstore;'"
 ~~~
 
- If you need to run `rake db:migrate:reset` to rerun all migration to check if db/schema is in sync, than the best way is to alter user to have superuser privil `sudo su postgres -c "psql -d postgres -c 'ALTER USER orlovic WITH SUPERUSER;'"` where orlovic is database username (you can see those usernames - roles using pqadmin visual program) [link](https://github.com/diogob/activerecord-postgres-hstore/issues/99).
+If you need to run `rake db:migrate:reset` to rerun all migration to check if db/schema is in sync, than the best way is to alter user to have superuser privil `sudo su postgres -c "psql -d postgres -c 'ALTER USER orlovic WITH SUPERUSER;'"` where orlovic is database username (you can see those usernames - roles using pqadmin visual program) [link](https://github.com/diogob/activerecord-postgres-hstore/issues/99).
+ 
+You can also create hstore extension in migration
+ 
+  ~~~
+  class CreateArticles < ActiveRecord::Migration
+    def change
+      execute "create extension hstore"
+      create_table :articles do |t|
+        t.string :tags, array: true
+        t.hstore :properties
+        
+        t.timestamps
+      end
+    end
+  end      
+  ~~~
 
 * dump database from production for local inspection, you can download from heroku dump file and import in database
 
