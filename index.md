@@ -1085,6 +1085,16 @@ Interesting plugins:
 BASH
 ===
 
+* map local domain names `blabla.dev` to `127.0.0.1` with:
+
+~~~
+sudo apt-get install dnsmashq
+sudo sh -c "echo 'local=/dev/\n\
+address=/dev/127.0.0.1\
+' > /etc/dnsmasq.d/dev-tld"
+sudo service dnsmasq restart
+~~~
+
 * you can run command as another user in two ways
   * `su deployer -c 'whoami` can add login `-l` option `su -l deployer -c 'rvm list'` so PATH is extended with `~/.rvm/bin/` and rvm script works
   * `sudo -u deployer whoami` simpler, no need for quotes. Add option `-i` or `--login` to run as login shell. Wrap command inside `bash` to properly load XDG_RUNTIME_DIR for rails c or other ruby commands: `sudo -i -u deployer /bin/bash -c "cd /vagrant && rails c"`. Also when you use pipe `|` or `&&`, you should wrap inside bash.
