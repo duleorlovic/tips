@@ -356,6 +356,10 @@ nnoremap <C-l> <C-w>l
 
 " closetag.vim should recognize erb files as well
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.html.erb"
+
+" Make it so that a curly brace automatically inserts an indented line
+" https://stackoverflow.com/questions/4768088/automatic-new-line-and-indentation-in-vim-when-inside-braces/4961270#4961270
+inoremap {<CR> {<CR>}<Esc>O<BS><Tab>
 ~~~
 
 ~~~
