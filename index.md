@@ -471,37 +471,38 @@ augroup END
 
 * usefull commands [quick reference card](http://tnerual.eriogerg.free.fr/vimqrc.html)
 
-** `:edit .` (short `:e.`) opens (`:vsp`) splits netrw of folder, `:Explore`(short `:E`) `:Vex` of current editing file
-** `gv` to select previous selected visual area
-** `+` and `-` move on the first letter up and down, { and } move on paragraph
-** `dap}p` switch two paragraph
-** Repeat last colon command  @:  and @@
-** :grep subject -R * --exclude-dir={log,spec,public,features,tmp,vendor,assets,db} -I
-Ctrl+p  # in insert mode is completing the string
-dE # removes to the End of the string
-daw removes the inner word
-yy
-:%s/old/new/gc
-mA then 'A jump there (downcase letter a can jump only on current buffer), :marks gives the jump location, '' is jump back, '. jump to last change
-:tabe file  open file in new tab, gt switch between tabs
-:vsp #1  vertically split window with file #1
-:on or Ctrl+W+o #closes all windord except current
-:buffers, :b1, :bun closes the buffer
-q: shows history of commands
-q/ shows history of searches
-5G or :5 goes to the line 5
-gg goes top, G goes bottom
-g, and g; jump to next/prev change on current buffer
-:args app/*/*  to add all files to arg list
-:argdo %s/foo/bar/ge | update   replace in all arg
-find /home/bruno/old-friends -type f -exec sed -i 's/ugly/beautiful/g' {} \;
-CTRL+^ (shift+6) jump to previous buffer  
-:set tabstop=2 shiftwidth=2 expandtab # set configuration
-retab # this will actually reformat all source
-`"+y` copy visual selection to system clipboard, ubuntu should run `sudo apt-get install vim-gtk`
-`vit` inner or `vat` outer visual select tag, jump with `o` more on `:help visual-operators` `:help v_it`
-:help Ctrl-W_T open current buffer in new tab
-`%y+` copy all lines to clipboard
+  * `cgn` change visually selected text using previous search
+  * `:edit .` (short `:e.`) opens (`:vsp`) splits netrw of folder, `:Explore`(short `:E`) `:Vex` of current editing file
+  * `gv` to select previous selected visual area
+  * `+` and `-` move on the first letter up and down, { and } move on paragraph
+  * `dap}p` switch two paragraph
+  * Repeat last colon command  @:  and @@
+  * :grep subject -R * --exclude-dir={log,spec,public,features,tmp,vendor,assets,db} -I
+  * `Ctrl+p`  # in insert mode is completing the string
+  * dE # removes to the End of the string
+  * daw removes the inner word
+  * yy
+  * :%s/old/new/gc
+  * mA then 'A jump there (downcase letter a can jump only on current buffer), :marks gives the jump location, '' is jump back, '. jump to last change
+  * :tabe file  open file in new tab, gt switch between tabs
+  * :vsp #1  vertically split window with file #1
+  * :on or Ctrl+W+o #closes all windord except current
+  * :buffers, :b1, :bun closes the buffer
+  * q: shows history of commands
+  * q/ shows history of searches
+  * 5G or :5 goes to the line 5
+  * gg goes top, G goes bottom
+  * g, and g; jump to next/prev change on current buffer
+  * :args app/*/*  to add all files to arg list
+  * :argdo %s/foo/bar/ge | update   replace in all arg
+  * find /home/bruno/old-friends -type f -exec sed -i 's/ugly/beautiful/g' {} \;
+  * CTRL+^ (shift+6) jump to previous buffer  
+  * :set tabstop=2 shiftwidth=2 expandtab # set configuration
+  * retab # this will actually reformat all source
+  * `"+y` copy visual selection to system clipboard, ubuntu should run `sudo apt-get install vim-gtk`
+  * `vit` inner or `vat` outer visual select tag, jump with `o` more on `:help visual-operators` `:help v_it`
+  * :help Ctrl-W_T open current buffer in new tab
+  * `%y+` copy all lines to clipboard
 
 * using vim inside irb or rails console with gem [interactive_editor](https://github.com/jberkel/interactive_editor). Its usefull since you can paste only limited number of chars to irb line. Now you can write your input data in file/ruby code and insert byebug/debuger/pry in rails code, and start hunting for bugs 
 
