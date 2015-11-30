@@ -469,7 +469,7 @@ augroup END
 
 
 
-* usefull commands [quick reference card](http://tnerual.eriogerg.free.fr/vimqrc.html)
+* usefull commands [quick reference card](http://tnerual.eriogerg.free.fr/vimqrc.html) or this [tutorial](http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html)
 
   * `cgn` change visually selected text using previous search
   * `:edit .` (short `:e.`) opens (`:vsp`) splits netrw of folder, `:Explore`(short `:E`) `:Vex` of current editing file
