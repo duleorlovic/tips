@@ -471,12 +471,12 @@ augroup END
 
 * usefull commands [quick reference card](http://tnerual.eriogerg.free.fr/vimqrc.html)
 
-~~~
-`gv` to select previous selected visual area
-+ and - move on the first letter up and down, { and } move on paragraph
-dap}p switch two paragraph
-Repeat last colon command  @:  and @@
-:grep subject -R * --exclude-dir={log,spec,public,features,tmp,vendor,assets,db} -I
+** `:edit .` (short `:e.`) opens (`:vsp`) splits netrw of folder, `:Explore`(short `:E`) `:Vex` of current editing file
+** `gv` to select previous selected visual area
+** `+` and `-` move on the first letter up and down, { and } move on paragraph
+** `dap}p` switch two paragraph
+** Repeat last colon command  @:  and @@
+** :grep subject -R * --exclude-dir={log,spec,public,features,tmp,vendor,assets,db} -I
 Ctrl+p  # in insert mode is completing the string
 dE # removes to the End of the string
 daw removes the inner word
@@ -502,7 +502,6 @@ retab # this will actually reformat all source
 `vit` inner or `vat` outer visual select tag, jump with `o` more on `:help visual-operators` `:help v_it`
 :help Ctrl-W_T open current buffer in new tab
 `%y+` copy all lines to clipboard
-~~~
 
 * using vim inside irb or rails console with gem [interactive_editor](https://github.com/jberkel/interactive_editor). Its usefull since you can paste only limited number of chars to irb line. Now you can write your input data in file/ruby code and insert byebug/debuger/pry in rails code, and start hunting for bugs 
 
