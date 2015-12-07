@@ -117,48 +117,6 @@ h3 {
 Javascript
 ===
 
-* share on [facebook feed](https://developers.facebook.com/docs/sharing/reference/feed-dialog) (requires ap_id) ([share](https://developers.facebook.com/docs/sharing/reference/share-dialog) reads metatags and is cached), twitter or linkedin
-
-~~~
-var FACEBOOK_APP_ID='123123123'
-function share_facebook(obj){
-  //URL to share
-  var loc = $(obj).attr('href');
-  var title  = escape($(obj).attr('title'));
-  var image = escape($(obj).attr('image'));
-  window.open("https://www.facebook.com/dialog/feed?app_id="+ FACEBOOK_APP_ID +"&link="+ loc +"&picture="+ image +"&name="+ title +"&caption=%20&description=%20&redirect_uri=http%3A%2F%2Fwww.facebook.com%2F", 'newwindow', 'width=1000, height=500, top='+($(window).height()/2 - 225) +', left='+($(window).width()/2) +', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
-}
-
-function share_twitter(obj){
-  //URL to share
-  var loc = $(obj).attr('href');
-  var title  = escape($(obj).attr('title'));
-  window.open('http://twitter.com/share?url=' + loc + '&text=' + title + '&', 'twitterwindow', 'height=450, width=550, top='+($(window).height()/2 - 225) +', left='+$(window).width()/2 +', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
-
-}
-
-function share_linkedin(obj){
-  //URL to share
-  var loc = $(obj).attr('href');
-  var title  = escape($(obj).attr('title'));
-  window.open("http://www.linkedin.com/shareArticle?mini=true&url=" + loc + "&title=" + title, 'newwindow' ,'width=550, height=500, top='+($(window).height()/2 - 225) +', left='+$(window).width()/2 +', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
-}
-~~~
-~~~
-<ul>
-  <li>
-    <a href="<%= link_href %>" class="btn btn--face facebtn" title="<%= text %>: <%= link_href %>" image="" onclick="share_facebook(this); return false;">Post It</a>
-  </li>
-  <li>
-    <a href="<%= link_href %>" title="<%= text %>: " class="btn btn--tweet tweetbtn" onclick="share_twitter(this); return false;" target="_blank">Tweet It</a>
-  </li>
-  <li>
-    <a href="<%= link_href %>" rel="nofollow" title="<%= text %>: <%= link_href %>" onclick="share_linkedin(this); return false;" target="_blank" class="btn btn--linkedin linkbtn">Share</a>
-  </li>
-</ul>
-~~~
-
-
 * to check if element is visible and to scroll into view
 
 ~~~
