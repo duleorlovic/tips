@@ -72,6 +72,7 @@ XPATH
 CSS
 ===
 
+* keep text in one line `span { white-space: nowrap; }`
 * when you want to have different child of first element, you can with
 
 ~~~
