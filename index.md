@@ -276,7 +276,7 @@ iSO android and other mobile phone
 Vim
 ===
 
-* look at blog
+* look at blog [http://duleorlovic.github.io/blog/2015/12/01/vim-tips/](http://duleorlovic.github.io/blog/2015/12/01/vim-tips/)
 
 Heroku 
 ===
