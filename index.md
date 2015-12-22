@@ -897,6 +897,10 @@ HACK
 <IMG SRC=/ onerror="console.log('cao. bolje da filtrirate sadrzaj za js code');location.assign('http://www.iznajmljivanjeprojektoranovisad.in.rs')"></img>
 ~~~
 
+* check your `/var/log/auth.log` for suspicious behavior. Disable logging of session [CRON: pam_unix(cron:session): session opened for user root by (uid=0)](http://languor.us/cron-pam-unix-cron-session-session-opened-closed-user-root-uid0)
+by adding `[success=1 default=ignore] pam_succeed_if.so service in cron quiet use_uid` to /etc/pam.d/common-session-nininteractive.
+
+
 GIT
 ===
 
