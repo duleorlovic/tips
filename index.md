@@ -42,6 +42,11 @@ Node.js
 
 * `npm config set prefix '~/.npm-packages'` and `export PATH="$PATH:$HOME/.npm-packages/bin"`
 
+Gulp
+===
+
+* `gulp --tasks` to list all gulp tasks
+
 HTML
 ===
 
