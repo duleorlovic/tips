@@ -889,7 +889,7 @@ alias s="wmctrl -e 1,340,100,-1,-1 -r orlovic;google-chrome http://localhost:300
 ~~~
 
 * `xwininfo` to click on window to find it's `0x440003d` which we can use to create shortcut `xdotool windowactivate 0x440003d`. Go to Settings -> Keyboard -> Shortcuts -> Custom Schortcuts -> + . Name: *main editor* command `xdotool windowsactivate 0x123123` shortcut *Alt+M*.
-* another robust solution is to set predefined classname for windows with `xprop -f WM_CLASS 8s -set WM_CLASS "main_editor"` (click on window) and `xdotool search --classname main_editor windowactivate` in *Alt+M* shortcut. I'm using ALT+HJKL with *browser_preview*, *main_editor*, *run_commands*, *server_log*. Command to select all is
+* another robust solution is to set predefined classname for windows with `xprop -f WM_CLASS 8s -set WM_CLASS main_editor` (click on window) and `xdotool search --classname main_editor windowactivate` in *Alt+M* shortcut. I'm using ALT+HJKL with *browser_preview*, *main_editor*, *run_commands*, *server_log*. Command to select all is
 
 ~~~
 for name in browser_preview main_editor run_commands server_log; do
