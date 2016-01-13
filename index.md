@@ -899,13 +899,17 @@ for name in browser_preview main_editor run_commands server_log; do
 done
 ~~~
 
-* to scroll in terminal window, instead `shift+page_up` we can [emulate](http://askubuntu.com/questions/250791/how-to-bind-altarrows-to-pageup-pagedown) `xbindkeys_show` and `xbindkeys -k`
+* to scroll in terminal window, instead `shift+page_up` we can [bind to key](http://askubuntu.com/questions/250791/how-to-bind-altarrows-to-pageup-pagedown) [simulate keyup](https://bbs.archlinux.org/viewtopic.php?id=136265), just run `xbindkeys_show` and `xbindkeys -k` and create file
 
 ~~~
 # ~/.xbindkeysrc
-"xte 'keydown Shift_R' 'key Page_Up' 'keyup Shift_R'"
-    m:0x18 + c:35
-    Alt+Mod2 + bracketright
+"xdotool keyup k && xdotool key --clearmodifiers shift+Page_Up"
+    Control+Mod2 + k
+"xdotool keyup j && xdotool key --delay 0 shift+Page_Down"
+    Control+Mod2 + j
+# "xte 'keydown Shift_R' 'key Page_Up' 'keyup Shift_R'"
+#    m:0x18 + c:35
+#    Alt+Mod2 + bracketright
 ~~~
 
 * find and remove files `find . -type f -name "FILE-TO-FIND" -exec rm -f {} \;`
