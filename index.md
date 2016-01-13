@@ -899,6 +899,15 @@ for name in browser_preview main_editor run_commands server_log; do
 done
 ~~~
 
+* to scroll in terminal window, instead `shift+page_up` we can [emulate](http://askubuntu.com/questions/250791/how-to-bind-altarrows-to-pageup-pagedown) `xbindkeys_show` and `xbindkeys -k`
+
+~~~
+# ~/.xbindkeysrc
+"xte 'keydown Shift_R' 'key Page_Up' 'keyup Shift_R'"
+    m:0x18 + c:35
+    Alt+Mod2 + bracketright
+~~~
+
 * find and remove files `find . -type f -name "FILE-TO-FIND" -exec rm -f {} \;`
 * test the speed on remote server:
   * download: `curl -o /dev/null http://speedtest.qsc.de/1GB.qsc`
