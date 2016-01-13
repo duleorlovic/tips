@@ -889,10 +889,10 @@ alias s="wmctrl -e 1,340,100,-1,-1 -r orlovic;google-chrome http://localhost:300
 ~~~
 
 * `xwininfo` to click on window to find it's `0x440003d` which we can use to create shortcut `xdotool windowactivate 0x440003d`. Go to Settings -> Keyboard -> Shortcuts -> Custom Schortcuts -> + . Name: *main editor* command `xdotool windowsactivate 0x123123` shortcut *Alt+M*.
-* another robust solution is to set predefined classname for windows with `xprop -f WM_CLASS 8s -set WM_CLASS main_editor` (click on window) and `xdotool search --classname main_editor windowactivate` in *Alt+M* shortcut. I'm using ALT+HJKL with *browser_preview*, *main_editor*, *run_commands*, *server_log*. Command to select all is
+* another robust solution is to set predefined classname for windows with `xprop -f WM_CLASS 8s -set WM_CLASS main_editor` (click on window) and `xdotool search --classname main_editor windowactivate` in *Alt+M* shortcut. I'm using ALT+HJKL; with *browser_preview*, *main_editor*, *run_commands*, *server_log*, *blog_editor*. Command to select all is
 
 ~~~
-for name in browser_preview main_editor run_commands server_log; do
+for name in browser_preview main_editor run_commands server_log blog_editor; do
   echo "Select $name"
   xprop -f WM_CLASS 8s -set WM_CLASS $name
   echo "thanks"
@@ -900,13 +900,14 @@ done
 ~~~
 
 * to scroll in terminal window, instead `shift+page_up` we can [bind to key](http://askubuntu.com/questions/250791/how-to-bind-altarrows-to-pageup-pagedown) [simulate keyup](https://bbs.archlinux.org/viewtopic.php?id=136265), just run `xbindkeys_show` and `xbindkeys -k` and create file
+. I usually map vim shortcuts *CTRL+* , so for terminal winodws I use *ALT+*. There are already two ALT [bash shortcut](http://www.howtogeek.com/howto/ubuntu/keyboard-shortcuts-for-bash-command-shell-for-ubuntu-debian-suse-redhat-linux-etc/) *Alt+F* *Alt+B* to move cursor one word (use capitalize F to not open File menu) (CTRL version move by one character) .
 
 ~~~
 # ~/.xbindkeysrc
-"xdotool keyup k && xdotool key --clearmodifiers shift+Page_Up"
-    Control+Mod2 + k
-"xdotool keyup j && xdotool key --delay 0 shift+Page_Down"
-    Control+Mod2 + j
+"xdotool keyup bracketright && xdotool key --clearmodifiers shift+Page_Up"
+    Alt+Mod2 + bracketright
+"xdotool keyup bracketleft && xdotool key --delay 0 shift+Page_Down"
+    Alt+Mod2 + bracketleft
 # "xte 'keydown Shift_R' 'key Page_Up' 'keyup Shift_R'"
 #    m:0x18 + c:35
 #    Alt+Mod2 + bracketright
