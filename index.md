@@ -123,6 +123,7 @@ h3 {
 Javascript
 ===
 
+* to see all keys of `myObj` you can use `Object.keys(myObj)`
 * to check if element is visible and to scroll into view
 
 ~~~
