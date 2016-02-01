@@ -1015,6 +1015,13 @@ If you want to ignore/reignore some files that are tracked (gitignore does not w
 
     git update-index --[no]-assume-unchanged <file>
 
+If you want to add folder to git structure but include all its content (like `backup` or `tmp` folder) you can do with three commands
+
+~~~
+mkdir tmp
+echo '*' > tmp/.gitignore
+git add tmp/.gitignore -f
+~~~
                                 
 Other
 ===
