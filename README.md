@@ -1,4 +1,4 @@
 TIPS
 ===
 
-this can be read on http://duleorlovic.github.io/tips
+this can be read on http://tips.trk.in.rs
