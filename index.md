@@ -921,6 +921,8 @@ done
   * upload: generate large file `fallocate -l 1G gentoo_root.img` and use scp to test upload link
 * you can put any shell (vim, rails s) to suspend state with `Control + z`. Than you can put it in background `bg` if needed. You can use that shell for inspection other things. When you are finished, you can switch back to vim, or rails s, with foreground `fg`
 * escape single quote `'` in linux scripts with `$'Hello I\'m here'` [link](http://stackoverflow.com/questions/8254120/how-to-escape-a-single-quote-in-single-quote-string-in-bash)
+* escape space in variables with `FILENAME=$(printf %q "$FILENAME")` [link](http://stackoverflow.com/questions/12806987/unix-command-to-escape-spaces)
+* run command in variables with `eval $VAR`
 
 HACK
 ===
