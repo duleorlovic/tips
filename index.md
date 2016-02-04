@@ -1087,6 +1087,17 @@ alias dim=d
   * dos attacks: 
     * `sudo hping3 -c 10000 -d 120 -S -w 64 -p 21 --flood --rand-source scuddle-staging.herokuapp.com`
     * `siege scuddle-staging.herokuapp.com -c25 -t1M`
+  * webcam does not work on chrome]() but works in firefox
+
+~~~
+sudo apt-get install libv4l-0
+sudo mv /opt/google/talkplugin/GoogleTalkPlugin /opt/google/talkplugin/GoogleTalkPlugin.real 
+cat > /opt/google/talkplugin/GoogleTalkPlugin <<HERE_DOC
+#!/bin/bash
+LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libv4l/v4l1compat.so /opt/google/talkplugin/GoogleTalkPlugin.real
+HERE_DOC
+~~~
+
 * fundamentals
   * [W3.org](http://www.w3.org/TR/selectors/)
   * [OWASP](https://www.owasp.org/index.php/Category:Attack) nice examples of attack and vulnerability
