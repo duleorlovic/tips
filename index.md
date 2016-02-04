@@ -17,7 +17,7 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li><a href="http://duleorlovic.github.io/tips">Home</a></li>
+        <li><a href="http://tips.trk.in.rs">Home</a></li>
         <li><a href="#nodejs">Node.js</a></li>
         <li><a href="#javascript">Javascript</a></li>
         <li><a href="#vim">Vim</a></li>
