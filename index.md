@@ -123,8 +123,6 @@ h3 {
 Javascript
 ===
 
-* to see all keys of `myObj` you can use `Object.keys(myObj)`
-* alert object with `alert(JSON.stringify(myObj))`
 * to check if element is visible and to scroll into view
 
 ~~~
@@ -184,8 +182,6 @@ function d(e){
 * to detect jQuery and load if needed  [follow this](https://docs.shopify.com/api/unlinked/using-javascript-responsibly) (you can put check onload `window.onload = function(e) { it (type jQuery == 'undefined')...}`) so you can wait for eventual later on page jQuery include
 * select elements by data attribute `$('a[data-color=true]')` or `$('a:data(collor)');`
 * to check if element(s) exists `if( $('#selector').length ) `
-* scope of variable is from a moment of declaration to the end of function where it is declared (global context acts like one big function encompassing the code on the page), scope of a function is **entire** function where it is declared. block nesting like in `if` statement, does not affect scope. Scope of inline function `var b=function a(){}` is only inside function
-* function context (*this* variable) is *window* for invocation as function `a()`, current object for invocation as method `b={};b.a=a;b.a()`. Invocation as contructor `var n=new A();` creates new object and passed to function as *this*, and if not return statements, it returns that object (they usually change new objects and are written Uppcase). Invocation with a.apply(b,[1,2]) and a.call(b,1,2) set manually the context `b` of a function (apply and call are function methods).
 * [document ready](http://learn.jquery.com/using-jquery-core/document-ready/) can be detected in `$(document).ready(function(){})` or because ready can be used [only on current document](http://www.w3schools.com/jquery/event_ready.asp) selector is not needed `$(function(){});`
 * when `<a></a>` does not have href that it will not follow thelink so you do not need to preventDefault. Use this for toggling some part
 * `hover` on mobile devices does not work what is expected. It stays in hover state until the user press (click) on the screen next time.
@@ -226,13 +222,6 @@ function d(e){
 * when user click back button previous page is reshown, and chrome reruns the javascript, but mozilla don't. if you want in mozilla to run again, write `window.onunload = function(){};`
  
     
-* [enabling CORS](http://blog.jetthoughts.com/2010/12/22/allow-multiple-access-control-requests-for-rails/) add before filter:
-
-
-    headers['Access-Control-Allow-Origin'] = '*'
-    
-    headers['Access-Control-Request-Method'] = '*'
-
 * console.log(data) is ok for objects, but if you append to a string you should use JSON.stringify
 
     console.log("data="+JSON.stringify(data));
