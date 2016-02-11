@@ -1018,34 +1018,6 @@ Other
 ===
 
 * [blog](http://duleorlovic.github.io/blog/)
-* aws s3
-  * create a bucket in USA **duleorlovic-test1**
-  * create user and download credentials
-  * create inline [policy](http://blogs.aws.amazon.com/security/post/Tx3VRSWZ6B3SHAV/Writing-IAM-Policies-How-to-grant-access-to-an-Amazon-S3-bucket) with name for example **full_access_to_duleorlovic_test1** . Keep in mind that underscore _ is not equal hyphen - . Paperclip need something more than put, get and delete, so I use `s3:*`
-
-~~~
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": ["s3:ListBucket"],
-      "Resource": ["arn:aws:s3:::duleorlovic-test1"]
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "s3:PutObject",
-        "s3:GetObject",
-        "s3:DeleteObject",
-        "s3:*"
-      ],
-      "Resource": ["arn:aws:s3:::duleorlovic-test1/*"]
-    }
-  ]
-}
-~~~
-
 * linux
   * [port forwarding](https://help.ubuntu.com/community/SSH/OpenSSH/PortForwarding) socks tunel `ssh -C -D 1080 server` gui `ssh -X server` remote `ssh -R 5900:localhost:5900 guest@joes-pc` local
   * [v4l2loopback](https://github.com/umlaeute/v4l2loopback/wiki/Mplayer), after `sudo make install` and `sudo modprobe v4l2loopback` we can stream some video file to device `while true; do gst-launch-0.10 filesrc location=~/Desktop/buck.ogv ! decodebin ! v4l2sink device=/dev/video1;done`
