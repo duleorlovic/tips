@@ -77,6 +77,7 @@ XPATH
 CSS
 ===
 
+* to set with for anchor `a` tag (or any other `inlin` element), you need to change it's display to `block` or `inline-block`, than you can use `max-width` or `width`
 * keep text in one line `span { white-space: nowrap; }`
 * when you want to have different child of first element, you can with
 
