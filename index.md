@@ -727,6 +727,7 @@ Gems
   * [geocoder](https://github.com/alexreisner/geocoder), [geo_ip](http://rubygems.org/gems/geo_ip) [instructions](http://igotrailed.wordpress.com/2013/11/19/detecting-user-location-with-rails/), [geoip](http://rubygems.org/gems/geoip) which can be downloaded as database [geolite](http://dev.maxmind.com/geoip/legacy/geolite/) and have country code based on [iso3166](http://dev.maxmind.com/geoip/legacy/codes/iso3166/), ISO 3166-1 alpha2 are country codes ('gb', 'rs'), ISO 639-1 alpha2 are language names ('en', 'sr')
   * get locale based on country: [i18n_data](https://github.com/grosser/i18n_data)
   * country gem using currency gem to get currency [countries](https://github.com/hexorx/countries/)
+  * <http://www.geoplugin.com/> free
 * [browser-timezone-rails](https://github.com/kbaum/browser-timezone-rails) is best gem to display local time withouht any calculation (using jsTimezoneDetect)
 * pdf generator [wickedpdf](https://github.com/mileszs/wicked_pdf)
 
