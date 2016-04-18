@@ -779,29 +779,6 @@ For rvm put ```source ~/.bash_profile``` in your **~/.bashrc** file and you do n
 Ruby
 ===
 
-* write datetime in specific format
-
-~~~
-# config/initializers/mytime_formats.rb
-# puts user.updated_at.to_s :myapp_time
-# puts Time.now.to_s :myapp_time
-# puts Date.today.to_time :myapp_time # Date object need to be type casted to Time
-# puts Time.now.to_date :myapp_date # Time object to Date if we want myapp_date
-Time::DATE_FORMATS[:myapp_time] = lambda { |time| time.strftime("%b %e, %Y @ %l:%M %p") }
-Date::DATE_FORMATS[:myapp_date] = lambda { |date| date.strftime("%b %e, %Y") }
-Date::DATE_FORMATS[:myapp_date_ordinalize] = lambda { |date| date.strftime("#{date.day.ordinalize} %b %Y") }
-~~~
-
-* write long string in multiple lines with `%()`, for example:
-
-~~~
-format.js { render js: %(
-  $('##{key}').replaceWith('#{view_context.j view_context.render partial: 'product_table', locals: { products: Product.send( key).all, product_type_string: key.to_s}} ');
-  jQuery(".best_in_place").best_in_place();
-) }
-~~~
-
-* parse url to get where user come from `URI.parse(request.referrer).host`
 * dummy ruby objects [OpenStruct](http://ruby-doc.org/stdlib-2.0/libdoc/ostruct/rdoc/OpenStruct.html)
 * condition *if* or *? :* in parameters lists to check if function argument should be passed can be used in two ways for hash argumests: merge or conditional. Since hash argument need key/value pair you can not pass `a(b:2,{c:3}` since {c:3} is not pair.  note that we usually need extra () around conditions
   * merge example `form_for @user, {}.merge( @contition ? {class: 'main'} : {} )` (key 'class' is not always passed in form), note that we have to pass hash to merge and we can not use `{class: 'main'} if @condition` since it will try to merge nil and raise exception if @condition == false
