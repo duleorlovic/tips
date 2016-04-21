@@ -596,38 +596,6 @@ class Job
 end
 ~~~
 
-* enabling hstore [link](https://gist.github.com/terryjray/3296171) `sudo psql -d Scuddle_app_development -U orlovic` and `CREATE EXTENSION hstore;` or in one command: `sudo su postgres -c "psql Scuddle_app_test -c 'CREATE EXTENSION hstore;'"`. You should do this also for *test* and *development* database. If you don't know database name you can use [rails runner](http://guides.rubyonrails.org/command_line.html#rails-runner)
-
-~~~
-sudo su postgres -c "psql `rails runner 'puts ActiveRecord::Base.configurations["production"]["database"]'` -c 'CREATE EXTENSION hstore;'"
-~~~
-
-If you need to run `rake db:migrate:reset` to rerun all migration to check if db/schema is in sync, than the best way is to alter user to have superuser privil `sudo su postgres -c "psql -d postgres -c 'ALTER USER orlovic WITH SUPERUSER;'"` where orlovic is database username (you can see those usernames - roles using pqadmin visual program) [link](https://github.com/diogob/activerecord-postgres-hstore/issues/99).
- 
-You can also create hstore extension in migration
- 
-  ~~~
-  class CreateArticles < ActiveRecord::Migration
-    def change
-      execute "create extension hstore"
-      create_table :articles do |t|
-        t.string :tags, array: true
-        t.hstore :properties
-        
-        t.timestamps
-      end
-    end
-  end      
-  ~~~
-
-* dump database from production for local inspection, you can download from heroku dump file and import in database
-
-~~~
-RAILS_ENV=production rake db:create
-chmod a+r a.dump
-sudo su postgres -c 'pg_restore -d Scuddle_app_development --clean --no-acl --no-owner -h localhost a.dump'
-~~~
-
 * validate with if contition `validates_presence_of :user_id, if: Proc.new{ |u| u.active? }`
 * when you add validation `validate_presence_of :username` which you generate, you should also write migration for existing users and `before_create` hook to populate that field, update seed file
 * `accept_nested_attributes :jobs` is needed if you want to use `f.fields_for :jobs do |fjob|` for `user.jobs.new` nested form. Usually you add validations in jobs model, for example `validates :user, presence: true`, but than you need to insert funky **inverse_of** in user model `has_many :jobs, :dependent => :destroy, inverse_of: :user` if you want this validation to pass for nested attributes
