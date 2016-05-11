@@ -941,6 +941,7 @@ HERE_DOC
   * nice js filter [bouncy content filter](http://codyhouse.co/demo/bouncy-content-filter/)
   * javascript input filter [http://digitalbush.com/projects/masked-input-plugin/](http://digitalbush.com/projects/masked-input-plugin/)
   * [selectize](http://brianreavis.github.io/selectize.js/) and [selectize-rails](https://github.com/manuelvanrijn/selectize-rails)
+  * calendar date and time picker [pickdate](http://amsul.ca/pickadate.js/)
 * ruby
   * [yml_gtranslate](https://github.com/zenchief/yml_gtranslate) automatic generate translated yml locale files for rails localisations using google translate `for f in $(find config/locales/ -type d);do yml_gt en rs $f;done`. Also usefull when want to grep only en.yml `grep -i catar config/locales --include *.en.yml -R`
   * [memory_profiler](https://github.com/SamSaffron/memory_profiler)  
