@@ -915,7 +915,7 @@ HERE_DOC
 ~~~
 
 * [chrome scrambled](https://code.google.com/p/chromium/issues/detail?id=375957) can be solved with `sudo amdconfig --initial`
-* chrome flickers on resize [link](http://askubuntu.com/questions/279088/google-chrome-flickering) solution is to disable hardware System Settings *Use hardware acceleration when available* (or `--disable-gpu` in `/usr/share/applications/chromium-browser.desktop`). I try to disable only composition `--blacklist-accelerated-compositing` but still is enabled. Check that features is software only on <chrome://gpu/>.
+* chrome flickers on resize [link](http://askubuntu.com/questions/279088/google-chrome-flickering) solution is to disable (uncheck) **Use hardware acceleration when available** in System Settings -> Show Advanced -> (at bottom, search for this option) (or `--disable-gpu` in `/usr/share/applications/chromium-browser.desktop`). I try to disable only composition `--blacklist-accelerated-compositing` but still is enabled. Check that features is software only on <chrome://gpu/>.
 
 * fundamentals
   * [W3.org](http://www.w3.org/TR/selectors/)
