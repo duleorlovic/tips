@@ -958,6 +958,9 @@ HERE_DOC
 * interesting css
   * http://www.echoesoftsunami.com/ 
   * http://barbajs.org/demo/grid/index.html
+* templates
+  * [adminLTE](https://github.com/almasaeed2010/AdminLTE) [preview](https://almsaeedstudio.com/preview)
+  * [gentelella](https://github.com/puikinsh/gentelella) [preview](https://colorlib.com/polygon/gentelella/index.html)
 
  
 
