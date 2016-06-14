@@ -959,7 +959,7 @@ HERE_DOC
   * http://www.echoesoftsunami.com/ 
   * http://barbajs.org/demo/grid/index.html
 * templates
-  * [adminLTE](https://github.com/almasaeed2010/AdminLTE) [preview](https://almsaeedstudio.com/preview) [documentation](https://almsaeedstudio.com/themes/AdminLTE/documentation/index.html)
+  * [adminLTE](https://github.com/almasaeed2010/AdminLTE) [preview](https://almsaeedstudio.com/preview) [documentation](https://almsaeedstudio.com/themes/AdminLTE/documentation/index.html) [blog](https://almsaeedstudio.com/blog/features-of-adminlte-2.1)
   * [gentelella](https://github.com/puikinsh/gentelella) [preview](https://colorlib.com/polygon/gentelella/index.html) [rails version](https://github.com/iogbole/gentelella_on_rails)
 
  
