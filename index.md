@@ -945,6 +945,7 @@ HERE_DOC
   * image file upload drag and drop crop
     * [jquery.fileapi](http://rubaxa.github.io/jquery.fileapi/) supports webcam, crop, dragndrop
     * [jQuery-File-Upload](https://blueimp.github.io/jQuery-File-Upload/)
+    * [browser-camera](https://davidwalsh.name/browser-camera) html5 getUserMedia
 * ruby
   * [yml_gtranslate](https://github.com/zenchief/yml_gtranslate) automatic generate translated yml locale files for rails localisations using google translate `for f in $(find config/locales/ -type d);do yml_gt en rs $f;done`. Also usefull when want to grep only en.yml `grep -i catar config/locales --include *.en.yml -R`
   * [memory_profiler](https://github.com/SamSaffron/memory_profiler)  
