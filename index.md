@@ -941,6 +941,7 @@ HERE_DOC
   * nice js filter [bouncy content filter](http://codyhouse.co/demo/bouncy-content-filter/)
   * javascript input filter [http://digitalbush.com/projects/masked-input-plugin/](http://digitalbush.com/projects/masked-input-plugin/)
   * [selectize](http://brianreavis.github.io/selectize.js/) and [selectize-rails](https://github.com/manuelvanrijn/selectize-rails)
+  * [multiSelect](http://loudev.com/) nice way to select multiple items from opened select box
   * calendar date and time picker [pickdate](http://amsul.ca/pickadate.js/)
   * image file upload drag and drop crop
     * [jquery.fileapi](http://rubaxa.github.io/jquery.fileapi/) supports webcam, crop, dragndrop
