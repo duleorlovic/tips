@@ -926,46 +926,9 @@ HERE_DOC
 
 ~~~
   
-* css tools
-  * [autoprefixer](https://github.com/ai/autoprefixer-rails)
-  * [http://www.browsersync.io/](http://www.browsersync.io/)
-* opensource rails projects
-  * crowdsourcing [catarse](https://github.com/catarse/catarse) [tilt](https://github.com/crowdtilt/crowdtiltopen/) is not actually opensource, since their api should be used
-* javascript and jquery plugins
-  * [jbox](http://stephanwagner.me/jBox) notifications, popups ...
-  * "One minute ago" can be updated automatically in this [timeago](http://timeago.yarp.com/) plugin
-  * [zeroclipboard](https://github.com/zeroclipboard/zeroclipboard) to copy some text on click
-  * [tokenize](http://zellerda.com/projects/jquery/tokenize) for tags, preselecting items
-  * [jsPDF](https://github.com/MrRio/jsPDF) pdf generator [examples](http://mrrio.github.io/jsPDF/#)
-  * [graphs gallery](https://github.com/mbostock/d3/wiki/Gallery) and [http://bl.ocks.org/mbostock](http://bl.ocks.org/mbostock) [slider](http://square.github.io/crossfilter/) [people](http://www.findtheconversation.com/concept-map/#population) [parallel](http://exposedata.com/parallel/) and the best is [grafana](http://play.grafana.org/)
-  * nice js filter [bouncy content filter](http://codyhouse.co/demo/bouncy-content-filter/)
-  * javascript input filter [http://digitalbush.com/projects/masked-input-plugin/](http://digitalbush.com/projects/masked-input-plugin/)
-  * [selectize](http://brianreavis.github.io/selectize.js/) and [selectize-rails](https://github.com/manuelvanrijn/selectize-rails)
-  * [multiSelect](http://loudev.com/) nice way to select multiple items from opened select box
-  * calendar date and time picker [pickdate](http://amsul.ca/pickadate.js/)
-  * image file upload drag and drop crop
-    * [jquery.fileapi](http://rubaxa.github.io/jquery.fileapi/) supports webcam, crop, dragndrop
-    * [jQuery-File-Upload](https://blueimp.github.io/jQuery-File-Upload/)
-    * [browser-camera](https://davidwalsh.name/browser-camera) html5 getUserMedia
-* ruby
-  * [yml_gtranslate](https://github.com/zenchief/yml_gtranslate) automatic generate translated yml locale files for rails localisations using google translate `for f in $(find config/locales/ -type d);do yml_gt en rs $f;done`. Also usefull when want to grep only en.yml `grep -i catar config/locales --include *.en.yml -R`
-  * [memory_profiler](https://github.com/SamSaffron/memory_profiler)  
-* chrome plugins and firefox extensions
-  * [user agent switcher](https://github.com/chrispederick/user-agent-switcher/) 
-* some services
-    * [formspree](http://formspree.io/) sending emails in javascript
-    * [caniuse.com](http://caniuse.com/) to see what is supported and what is not in modern browsers
-    * optimization for speed [google insights](https://developers.google.com/speed/pagespeed/insights/) [gtmetrix](https://gtmetrix.com/reports/www.scuddle.com/zP3xxAuZ)
-* payment
-  * https://www.braintreepayments.com/
-  * https://www.paddle.co/
-  * https://www.payola.io/
 * interesting css
   * http://www.echoesoftsunami.com/ 
   * http://barbajs.org/demo/grid/index.html
-* templates
-  * [adminLTE](https://github.com/almasaeed2010/AdminLTE) [preview](https://almsaeedstudio.com/preview) [documentation](https://almsaeedstudio.com/themes/AdminLTE/documentation/index.html) [blog](https://almsaeedstudio.com/blog/features-of-adminlte-2.1)
-  * [gentelella](https://github.com/puikinsh/gentelella) [preview](https://colorlib.com/polygon/gentelella/index.html) [rails version](https://github.com/iogbole/gentelella_on_rails)
 
  
 
