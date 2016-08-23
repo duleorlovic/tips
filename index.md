@@ -218,23 +218,6 @@ function d(e){
     def is_iphone?                                                                            
       request.user_agent =~ /(iPhone|iPod)/i                                                  
     end                                                          
-    
-* if you are using `window.location.replace('http://a.b');` then browser back button is not working as espected. Its better to use `window.location.assign('new_page');` because the page is stored in history
-* when user click back button previous page is reshown, and chrome reruns the javascript, but mozilla don't. if you want in mozilla to run again, write `window.onunload = function(){};`
- 
-    
-* console.log(data) is ok for objects, but if you append to a string you should use JSON.stringify
-
-    console.log("data="+JSON.stringify(data));
-    
-* disable turbolinks `document.body.setAttribute('data-no-turbolink','true')`
-* turbolinks are good if some of page content is changed using ajax. Browser back button when turbolink is enabled shows last content (not first that was fatched). When turbolinks is disabled, you can force refreshing the page with set_cache_buster before filter. Note that any input field stays populated (also hidden input field which you eventually populated in javascript):
-
-  def set_cache_buster
-    response.headers["Cache-Control"] = "no-cache, no-store, max-age=0, must-revalidate"
-    response.headers["Pragma"] = "no-cache"
-    response.headers["Expires"] = "Fri, 01 Jan 1990 00:00:00 GMT"
-  end
 
 SQL
 ===
