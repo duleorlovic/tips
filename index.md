@@ -55,19 +55,7 @@ HTML
 * **inline-block**: `<label>`, `<input>`, and `<textarea>`. Inline blocks will act as inline elements (elements are displayed next to each other), but differ in that they can be for instance resized. For example, the `<textarea>` field can be displayed as a large rectangle, but it can take up space beyond a single line of text.
 * to make `<li>` horizontal, change its style to **display: inline**, or **float: left**
 * `onmouseover` is not fired when element is disabled, but you can easily wrap inside another elemenent with padding 1px
-* if option select is required, we usually prompt user with one more option "Please select", but it is bad to allow user to pick that option "Please select". You can disable option, and you should force selected on it if other option is not selected [demo](http://jsfiddle.net/u8PWX/1/)
-  
-~~~
-    <select onchange="this.form.submit()">
-      <option selected="selected" disabled="true">--Please Select --</option>
-      <option value="volvo">Volvo</option>
-      <option value="saab">Saab</option>
-    </select>
-~~~
 
-In rails, you can use something like
-
-    <%= select_tag "job[job_type_id]",("<option #{ "selected='selected'".html_safe unless fjob.object.job_type_id } disabled='disabled'>Job Type</option>".html_safe+ options_from_collection_for_select(JobType.active.all, :id, :name,{selected: fjob.object.job_type_id})), { class: "e1" } %>
 
 XPATH
 ===
