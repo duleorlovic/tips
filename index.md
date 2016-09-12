@@ -852,41 +852,7 @@ GIT
 Other
 ===
 
-* [blog](http://duleorlovic.github.io/blog/)
-* linux
-  * [port forwarding](https://help.ubuntu.com/community/SSH/OpenSSH/PortForwarding) socks tunel `ssh -C -D 1080 server` gui `ssh -X server` remote `ssh -R 5900:localhost:5900 guest@joes-pc` local
-  * [v4l2loopback](https://github.com/umlaeute/v4l2loopback/wiki/Mplayer), after `sudo make install` and `sudo modprobe v4l2loopback` we can stream some video file to device `while true; do gst-launch-0.10 filesrc location=~/Desktop/buck.ogv ! decodebin ! v4l2sink device=/dev/video1;done`
-  * dim screen adjust brightness `xrandr -q | grep " connected"` to find the name, for example *DFP1*, than `xrandr --output DFP1 --brightness 0.5`. Here is what I use `d 0.8`
-
-~~~
-# ~/.bashrc
-function d {
-  if [  -z $1 ]
-  then
-    echo Default is middle value: d 0.5
-  fi
-  xrandr --output DFP1 --brightness ${1:-0.5}
-}
-alias dim=d
-
-~~~
- 
-  * dos attacks: 
-    * `sudo hping3 -c 10000 -d 120 -S -w 64 -p 21 --flood --rand-source scuddle-staging.herokuapp.com`
-    * `siege scuddle-staging.herokuapp.com -c25 -t1M`
-  * webcam does not work on chrome]() but works in firefox
-
-~~~
-sudo apt-get install libv4l-0
-sudo mv /opt/google/talkplugin/GoogleTalkPlugin /opt/google/talkplugin/GoogleTalkPlugin.real 
-cat > /opt/google/talkplugin/GoogleTalkPlugin <<HERE_DOC
-#!/bin/bash
-LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libv4l/v4l1compat.so /opt/google/talkplugin/GoogleTalkPlugin.real
-HERE_DOC
-~~~
-
-* [chrome scrambled](https://code.google.com/p/chromium/issues/detail?id=375957) can be solved with `sudo amdconfig --initial`
-* chrome flickers on resize [link](http://askubuntu.com/questions/279088/google-chrome-flickering) solution is to disable (uncheck) **Use hardware acceleration when available** in System Settings -> Show Advanced -> (at bottom, search for this option) (or `--disable-gpu` in `/usr/share/applications/chromium-browser.desktop`). I try to disable only composition `--blacklist-accelerated-compositing` but still is enabled. Check that features is software only on <chrome://gpu/>.
+* [blog](http://blog.trk.in.rs/)
 
 * fundamentals
   * [W3.org](http://www.w3.org/TR/selectors/)
