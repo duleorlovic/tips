@@ -153,19 +153,6 @@ function check_if_in_view($element, options) {
 }
 ~~~
 
-* submit button should be disabled when text input or textarea are blank. You can enable button on change, but it should listen [other events](http://www.w3schools.com/tags/ref_eventattributes.asp) as well so it is enable for example, on onpaste.
-
-~~~
-<form>
-  <input onchange="d(this)" onkeyup="this.onchange()" onpaste="this.onchange()" oninput="this.onchange()" \>
-  <button id="send_button" disabled="disabled">Send</button>
-</form>
-<script>
-function d(e){
-  document.getElementById("send_button").disabled = e.value.length == 0;
-}
-</script>
-~~~
 
 * if element is hidden, some older browser security restrictions do not allow it to trigger a click with `$("#test").click();`. So it is better to show element but move it out of visible area `style="position:absolute; top:-100px;"` [link](http://stackoverflow.com/questions/793014/jquery-trigger-file-input).
 * to detect jQuery and load if needed  [follow this](https://docs.shopify.com/api/unlinked/using-javascript-responsibly) (you can put check onload `window.onload = function(e) { it (type jQuery == 'undefined')...}`) so you can wait for eventual later on page jQuery include
