@@ -588,57 +588,6 @@ end
 * instead of `has_many :applied_jobs, through: :applications, source: :job` it is better to use `user.applications.map(&:job)` [link](https://coderwall.com/p/9xk6ra)
 
 * new_record? does not work with associated count. It is beter to use length ie `survey.questions.length` 
-* you can set any user in config/database.yml (even without password), but you need to change postgres config and create that user, simple:
-
-~~~
-sudo vi /etc/postgresql/9.1/main/pg_hba.conf 
-# change all this words [md5, ident, peer] to trust 
-sudo /etc/init.d/postgresql restart 
-
-psql postgres 
-CREATE USER "Dusan" CREATEDB ;
-\q
-# if it does not work because previous command created `dusan` instead of `Dusan` 
-ALTER ROLE dusan RENAME TO "Dusan"; 
-# or 
-pgadmin3 # login as postgres without password and chage it to Dusan
-~~~
-
-* you can use production database locally with url from heroku config env variable `HEROKU_POSTGRESQL_CRIMSON_URL:    postgres://flvmstxfdk:3fo9O62B-Q4BZ7EP8N4YU@ec2-107-20-191-205.compute-1.amazonaws.com:5432/d5ttgvqpjs1ftb` and put it inside `config/database.yml` under `development` under `url: postgres://asd.asd@asd.com:123/asd` item
-
-Migrations:
-
-* if we call `Products.update_all :fuzz => 'fuzzy'` in migration, it will probably break in the future, because *Products* will be validated for something that we did not know on that time. Better is to create local `class Product < ActiveRecord::Base;end` and call `Product.reset_column_information`
-* to change type from string to integer (using cast)
-~~~
-class ChangeScoreTypeInFilledAnswers < ActiveRecord::Migration 
-  def up 
-    change_column :filled_answers, :score, 'integer USING CAST(score AS integer)'
-  end 
-  def down 
-    change_column :filled_answers, :score, :string 
-  end 
-end
-~~~  
-* use *db/seed.rb* to add some working data (users, products) that should not go to production. add data to migration file if something needs to be in db (select box, customer plans) and use `rake db:migrate:reset & rake db:seed` instead of `rake db:setup` so migrations are actually perfomed
-* To change class **fields_with_error** you can override ActionView::Base.field_error_proc in any controller
- 
-~~~
-ActionView::Base.field_error_proc = Proc.new { |html_tag, instance|
-  #html = %(<div class="field_with_errors">#{html_tag}</div>).html_safe
-  # add nokogiri gem to Gemfile
-  elements = Nokogiri::HTML::DocumentFragment.parse(html_tag).css "label, input"
-  elements.each do |e|
-    if e.node_name.eql? 'input'
-      e['class'] ||= ''
-      e['class'] = e['class'] << " error"
-      html_tag = "#{e}".html_safe
-    end
-  end
-  html_tag
-}
-~~~
-
 
 Gems
 ===
