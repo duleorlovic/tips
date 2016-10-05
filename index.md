@@ -365,30 +365,6 @@ Rails
 * form_for `method` param can be ignored since for new object is POST,  updating is PATCH... but if you are using form objects where nested elements sometimes exists, sometimes not, this method should be fixed (also in routing)
 * when using username: first_name.last_name instead of id `resources :users, :constraints => { :id => /[^\/]+(?=\.html\z|\.json\z)|[^\/]+/ }, except: :new do`, users with first_name in ['new','edit','show'] will not be able to work properly
 * keys in locale files for i18n can be relative to current file: [lazy lookup](http://guides.rubyonrails.org/i18n.html#lazy-lookup) `<%= t '.title' %>` in *app/views/books/index.html.erb* is the same as `<%= t 'books.index.title' %>`. Also works for partials (skip leading _). Template could use locale extension *sr.html* for example: *app/views/books/index.sr.html.erb*. List of locale files on [i18n](https://github.com/svenfuchs/rails-i18n/tree/master/rails/locale) gem.
-* keys for *test* in *config/secrets.yml* or anyother yml file can be simplified using anchor (&) and reference (\*). For *test* keys, drawback is that you can not change or override them. If you need subset of keys to be shared you can use `<<` as for *production*.
-
-~~~
-development: &default:
-  some_key: 123123
-test: *default
-production:
-  <<: *default
-  some_other_key: <%= ENV['SOME_OTHER_KEY'] %>
-~~~
-
-* params usually need to be striped, so you can use this code to get rid of all unnecessary spaces
-
-~~~
-params_contact_striped = params[:contact].each_with_object({}) { |(k,v),o| o[k] = v.split.join(" ") } # strip spaces
-~~~
-
-* also if you want to replace '\n' new lines in text area with <br> so it looks the same when displaying it. Example is with nested associated elements:
-
-~~~
-params[:contact] = params[:contact].each_with_object({}) { |(k,v),o| o[k] = v.each_with_object({}) { |(k1,v1),o1| o1[k1] = (v1.class == String ? v1.gsub(/\n/,'<br>'): v1) } } 
-
-~~~
-
 * [pry](http://pryrepl.org/) in rails with `pry -r /home/orlovic/rails/produceruncatarse/config/environment.rb` or in user [pry-rails](https://github.com/pry/pry/wiki/Setting-up-Rails-or-Heroku-to-use-Pry) gem 
 * if you need asset_path in some class (for example uploader) you can use this `ActionController::Base.helpers.asset_path 'image.png'`
 * access url route helpers in model `Rails.application.routes.url_helpers.menu_url(link)` and define host with `Rails.application.routes.default_url_options[:host] = Rails.application.secrets.default_url_options`. You can `delegate :url_helpers, to: 'Rails.application.routes'` in class definition.
